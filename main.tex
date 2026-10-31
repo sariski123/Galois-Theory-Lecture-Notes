@@ -1,0 +1,77 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  PREAMBLE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper,openany]{book}
+
+\usepackage{preamble}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  DOCUMENT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Boldface proof name
+% \let\oldproofname=\proofname
+% \renewcommand{\proofname}{\rm\bf{\oldproofname}}
+
+% PORTADA/PREFACIO/ÍNDICE --------------------------------------------
+\frontmatter
+\pagenumbering{roman}
+
+% Portada
+\input{titlepage}
+
+% Prefacio
+%\include{Chapters/preface}
+%\cleardoublepage
+
+% Índice
+\cleardoublepage %quita la página en blanco
+\tableofcontents
+%\cleardoublepage
+
+% CUERPO -------------------------------------------------------------
+\mainmatter
+\pagenumbering{arabic}
+\fancychapterstyle
+
+\include{Chapters/cap1}
+\cleardoublepage
+
+\include{Chapters/cap2}
+\cleardoublepage 
+
+% APÉNDICES ----------------------------------------------------------
+\appendix %estilo apéndices 
+
+\include{Appendixes/Ap1.tex}
+
+\include{Appendixes/Ap2.tex}
+
+\include{Appendixes/Ap3.tex}
+
+\include{Appendixes/Ap4.tex}
+
+\standardchapterstyle
+
+% BIBLIOGRAFIA -------------------------------------------------------
+\backmatter
+%\addcontentsline{toc}{chapter}{Referencias}
+% \bibliographystyle{unsrt}
+%\bibliography{bibliography.bib}
+% \nocite{bib:...} %citar bibliografia no empleada explicitamente
+%\nocite{*} %citar toda la bibliografía
+
+
+% ÍNDICES EXTRA ------------------------------------------------------
+% Lista de figuras
+    %\listoffigures 
+
+% Lista de tablas
+    %\listoftables
+
+% Índice alfabético
+    %\addcontentsline{toc}{chapter}{\'Indice alfab\'etico}
+    %\printindex 
+
+
+\end{document}

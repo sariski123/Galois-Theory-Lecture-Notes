@@ -1,0 +1,144 @@
+
+\chapter{Ex\'amenes parciales}
+\section{Parcial 13/03/2026}
+\subsection*{DEFINICIONES}
+\begin{itemize}
+    \item \textbf{Caracteristica de un cuerpo:} Diremos que un cuerpo $k$ tiene caracter\'istica $p>0$ si $\modulo{\bb Z}{p \bb Z} = \bb F_p$ es un subcuerpo de $k$. Diremos que es de caracter\'istica 0 si $\bb Q$ es un subcuerpo de $k$.
+    \item \textbf{$k$-\'algebra finita:} Una $k$-\'algebra $A$ diremos que es finita si como $k$-espacio vectorial tiene dimensi\'on finita.
+    \item \textbf{Morfismo de $k$-\'algebras:} Sean $A, B$ dos $k$-\'algebras, $f: A \longrightarrow B$ es un morfismo de $k$-\'algebras si es un morfismo de anillos y de $k$-espacios vectoriales. Como $k \subset A$ y $k \subset B$, se debe verificar que $f|_k = Id$. Es decir, 
+    \begin{itemize}
+        \item $f(a+b) = f(a) +f(b) $
+        \item $f(ab) = f(a)f(b)$
+        \item $f(\lambda) = \lambda\, \forall \, \lambda \in k$ 
+    \end{itemize}
+    \item \textbf{Extensi\'on de un cuerpo:} Una extensi\'on de $k$ es una $k$-\'algebra finita que es un cuerpo: $k \hookrightarrow L$, siendo $L$ cuerpo. 
+    \item \textbf{Extension de $k$ por la ra\'iz del polinomio $p(x) \in k[x]$:} Es la $k$-álgebra $k[\alpha] \simeq k[x]/p(x)$ donde $\alpha$ es una raíz de $p(x)$ en el anillo cociente, siendo $p(x)$ irreducible.
+    \item \textbf{Cuerpo algebraicamente cerrado:} Es un cuerpo en el que todo polinomio $p(x) \in k[x]$ tiene alguna raíz en el propio cuerpo $k$.
+    \item \textbf{Producto directo de $k$-\'algebras:} Para $A_1$ y $A_2$ dos $k$-álgebras, es el anillo producto donde la multiplicación por escalares es $\lambda(a_1, a_2) = (\lambda a_1, \lambda a_2)$.
+    \item \textbf{$k$-\'algebra trivializable:} Una $k$-álgebra finita es trivial si es isomorfa a $k^n$.
+    \item \textbf{Grado de una extensi\'on de un cuerpo:}  Es la dimensión de la extensión $L$ considerada como $k$-espacio vectorial.
+    \item \textbf{Punto racional de $A$:} Es un punto $x \in Spec A$ cuyo cuerpo residual es isomorfo al cuerpo base, es decir, $A/\mathfrak{p}_x \simeq k$ ($\p_x=\m_x$). 
+    \item \textbf{$k$-\'algebra racional:} Es una $k$-álgebra finita donde todo punto de su espectro es racional. 
+    \item \textbf{$k$-\'algebra reducida:} Es aquella donde el conjunto de sus elementos nilpotentes es $\{0\}$. 
+    \item \textbf{Elemento nilpotente de un anillo:} Un elemento $a \in A$ es nilpotente si $a^n = 0$ para algún $n \in \mathbb{N}$. 
+    \item \textbf{$k$-\'algebra local:} Es una $k$-álgebra que tiene un único ideal maximal.
+    \item \textbf{Cuerpo residual de $x \in Spec \, A$:} Es el cociente $L = A/\mathfrak{m}_x$, y siempre es una extensión finita de $k$. 
+    \item \textbf{Radical de un anillo:} Es la intersección de todos los ideales primos de $A$ ($Rad(A) = \bigcap_{x \in Spec A} \mathfrak{p}_x$).
+    \item \textbf{$k$-\'algebra finita separable:}  Es aquella para la cual existe una extensión $k \hookrightarrow L$ tal que $A \underset{k}{\otimes} L = L^n$, es decir, es $L$-trivializable. 
+    \item \textbf{$k$-\'algebra universalmente reducida:} Es aquella en la que, para toda extensión $k \hookrightarrow L$, resulta que $A \underset{k}{\otimes} L$ es reducida. 
+    \item \textbf{Elemento $a \in A$ separable:} Un elemento $a \in A$ es separable si $k[a] \subset A$ es una $k$-álgebra separable, lo que equivale a decir que su polinomio mínimo $p(x)$ cumple que el máximo común divisor entre $p(x)$ y su derivada $p'(x)$ es 1.
+    \item \textbf{Cuerpo perfecto:} Es un cuerpo en el que toda extensión finita es separable. 
+    \item \textbf{Cierre algebraico de un cuerpo:} Sea $k$ un cuerpo, el cierre algebraico de $k$ es una extensión algebraica $k \hookrightarrow \overline{k}$ tal que $\overline{k}$ es algebraicamente cerrado y todo elemento $\alpha \in \overline{k}$ verifica ser raíz de alguna ecuación (es decir, existe un $p(x) \in k[x]$ tal que $p(\alpha) = 0$), o equivalentemente, que la extensión $k \hookrightarrow k[\alpha] \hookrightarrow \overline{k}$ es finita. 
+\end{itemize}
+\subsection*{PREGUNTAS CORTAS}
+Decidir razonadamente si las siguientes afirmaciones son verdaderas o falsas:
+
+\begin{enumerate}
+    \item $k[x]/(x^{7}-x^{3}+2)$ es una $k$-álgebra finita de dimensión 5. \\    
+    Falso. La dimensión de un cociente $k[x]/p(x)$ coincide exactamente con el grado del polinomio $p(x)$. Como el polinomio tiene grado 7, su dimensión es 7.
+    \item Toda $k$-álgebra finita e íntegra es un cuerpo. \\   
+    Verdadero. Al ser de dimensión finita e íntegra, la homotecia (multiplicación por un elemento no nulo) es inyectiva y, por tanto, biyectiva, lo que garantiza que todo elemento tiene inverso
+    \item Toda $k$-álgebra íntegra es un cuerpo. \\
+    Falso. La condición de ser ``finita'' es indispensable. Por ejemplo, el anillo de polinomios $k[x]$ es una $k$-álgebra íntegra, pero no es un cuerpo porque elementos como $x$ no tienen inverso polinómico.
+    \item Todo ideal primo de una $k$-álgebra finita es maximal. \\
+    Verdadero. En una $k$-álgebra finita, \textcolor{red}{si cocientas por un ideal primo obtienes un dominio íntegro de dimensión finita}, el cual obligatoriamente es un cuerpo. Si el cociente es un cuerpo, el ideal original es maximal.
+    \item Todo ideal primo de una $k$-álgebra es maximal. \\
+    Falso. Nuevamente, esto solo se garantiza en $k$-álgebras finitas. En $k$-álgebras generales como $k[x]$, el ideal $(0)$ es primo, pero no es maximal.
+    \item Sea $X$ un conjunto finito y $k$ un cuerpo. $F(X)=\{f:X\rightarrow k \text{ aplicación}\}$ es una $k$-álgebra trivializable. \\
+    Verdadero. \textcolor{red}{El anillo de funciones sobre un conjunto finito $X$ de $n$ elementos es isomorfo a $k^n$}. Por definición, una $k$-álgebra isomorfa a $k^n$ es trivializable.
+    \item $\text{Spec}(A\times B) = \text{Spec } A \coprod \text{Spec } B$. ($\coprod = $ unión disjunta). \\
+    Verdadero. Los ideales primos de un producto directo residen completamente en uno de los dos factores, dando lugar a una unión disjunta de sus espectros. En un producto de anillos $A \times B$, los elementos $(1,0)$ y $(0,1)$ cumplen que su producto es $(0,0)$. Como cualquier ideal primo debe contener al $(0,0)$, si el ideal es primo debe contener o bien al $(1,0)$ o bien al $(0,1)$. Esto fuerza a que los ideales primos vivan completamente en el primer factor (teniendo la forma $\mathfrak{p} \times B$) o en el segundo ($A \times \mathfrak{q}$). Geométricamente, el espacio de soluciones es la unión disjunta de los dos espacios.
+    \item Hay tantos elementos en $\text{Spec}_{r} k[x]/p(x)$ (espectro racional) como raíces en $k$ de $p(x)$. \\ 
+    Verdadero. El espectro racional está formado exactamente por los puntos que se corresponden con las raíces del polinomio que pertenecen al cuerpo base $k$.
+    \item $\text{Hom}_{k-\text{alg}}(k[x]/p(x),k) = \{\text{Raíces de } p(x) \text{ en } k\}$.\\
+    Verdadero. La fórmula de los puntos establece que los morfismos a $k$ coinciden con el espectro racional, y a su vez, estos corresponden a las raíces del polinomio en $k$.
+    \item $A$ es una $k$-álgebra trivializable si y solo si $A$ es racional y reducida. \\
+    Verdadero. Esta es una caracterización fundamental de las álgebras triviales.
+    \item Si $A$ es una $k$-álgebra finita tal que $|\text{Spec } A| = \dim_{k}A$, entonces $A$ es una $k$-álgebra trivial. \\
+    Verdadero. Por cálculo de dimensiones, una $k$-álgebra es trivial si y solo si el número de puntos de su espectro coincide con su dimensión como espacio vectorial.
+    \item Si una $k$-álgebra finita es producto de cuerpos entonces es reducida. \\
+    Verdadero. Un producto directo de cuerpos no tiene elementos nilpotentes no nulos, por lo que su radical es cero.
+    \item Si una $k$-álgebra finita es reducida entonces es producto de cuerpos. \\
+    Verdadero. Por el teorema de descomposición, si no existen nilpotentes (álgebra reducida), las componentes locales en las que descompone son cuerpos.
+    \item $\text{Hom}_{k-\text{al}}(A,L) = $ puntos racionales de la $L$-álgebra $A\otimes_{k}L$. \\
+    Verdadero. Esta afirmación es la conocida ``Fórmula de los puntos'' al hacer un cambio de base a $L$. Dar el morfismo $Hom_{k-alg}(A,L) \simeq Hom_{L-alg}(A\underset{k}{\otimes} L , L)$, y demostrar que $Hom_{k-alg}(A, k) = $ puntos racionales de $A$.  
+    \item Existe alguna $k$-álgebra finita local que no sea un cuerpo. \\
+    Verdadero. Un ejemplo clásico es $k[x]/(x^2)$. Es local porque solo tiene un ideal maximal (el generado por $x$), pero no es un cuerpo porque $x$ es un elemento nilpotente.
+    \item Si $A$ es una $k$-álgebra finita local y reducida entonces es un cuerpo. \\
+    Verdadero. En una $k$-álgebra local, los nilpotentes forman el único ideal maximal. Si es reducida, no hay nilpotentes, por lo que el ideal maximal es nulo, lo que implica que el anillo es un cuerpo
+    \item Una $k$-álgebra finita es separable si y solo si es universalmente reducida. \\ 
+    Verdadero. Este es el criterio de reducibilidad, un teorema clave para caracterizar la separabilidad
+    \item Una $k$-álgebra finita $A$ es trivializable si y solo si $\dim_{k}A = |\text{Hom}_{k-\text{al}}(A,k)|$. \\
+    Verdadero. Como $Hom_{k-al}(A, k)$ es el espectro racional, si su cardinal coincide con la dimensión, significa que $|Spec A| = \dim_k A$ y todos los puntos son racionales, cumpliendo la definición de trivializable. El conjunto de morfismos $\text{Hom}_{k-\text{al}}(A,k)$ representa el espectro racional $\text{Spec}_{\Omega} A$. Si la cantidad de puntos racionales alcanza a igualar la dimensión total del espacio vectorial, obliga a que todos los puntos del espectro general sean de dimensión 1 (racionales y simples). Esto hace que el álgebra descomponga en $n$ componentes isomorfas a $k$, volviéndola trivial
+    \item Sean $k \subset \overline{k} \subset L$ extensiones finitas. $\dim_{k}L = \dim_{k}\overline{k} \cdot \dim_{\overline{k}}L$. \\
+    Verdadero. Esta es la fórmula de la torre de cuerpos para los grados de extensión. Si tienes una base $\{\beta_1, \dots, \beta_r\}$ para subir del primer piso al segundo ($\overline{k}$ sobre $k$), y otra base $\{e_1, \dots, e_s\}$ para subir del segundo al tercero ($L$ sobre $\overline{k}$), multiplicar todos los elementos de ambas bases ($\beta_i \cdot e_j$) generará una base completa para saltar directamente del primero al tercero. El número total de combinaciones es el producto de sus dimensiones.
+    \item Si $k$ es un cuerpo perfecto, entonces $A$ es una $k$-álgebra separable si y solo si es producto de cuerpos.\\
+    Verdadero. En un cuerpo perfecto, la definición exige que toda extensión finita carezca de raíces múltiples, es decir, sea separable. Si el álgebra $A$ es un producto de cuerpos, cada uno de esos cuerpos es una extensión finita de $k$ y, gracias al cuerpo perfecto, es separable. Como el producto directo de $k$-álgebras separables mantiene la separabilidad, $A$ será separable. (La implicación inversa se da siempre: si es separable, es reducida, y por tanto, producto de cuerpos).
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\subsection*{PROBLEMAS}
+
+\begin{enumerate}
+    \item Sea $A=k[x,y]/(p(x,y), q(x, y))$ la $k$-álgebra.
+    \begin{enumerate}
+        \item[a)] Calcular el espectro de $A$ y su espectro racional.
+        \item[b)] Calcular los cuerpos residuales de $\text{Spec } A$.
+        \item[c)] Calcular la descomposición en $k$-álgebras locales de $A$.
+        \item[d)] Calcular una extensión finita de $k \hookrightarrow L$ de modo que $A\otimes_{k}L$ es una $L$-álgebra racional.
+        \item[d)] Decidir si $A$ es una $k$-álgebra racional, trivializable, reducida, universalmente reducida, separable.
+    \end{enumerate}
+\end{enumerate}
+\begin{sol}
+    El problema a resolver es el estudio de la $k$-álgebra $A=k[x,y]/(p(x,y), q(x,y))$ sobre el cuerpo $k = \mathbb{F}_3 = \{0, 1, -1\}$, con los polinomios: $p(x,y) = x + x^2 + xy + y^2 = 0$.$q(x,y) = -x + x^3 - y^2 = 0$. Procedemos como sigue:
+    
+    \noindent a) Calcular el espectro de $A$ y su espectro racional.
+    
+    Para calcular los puntos del espectro ($Spec~A$), resolvemos el sistema de ecuaciones algebraicas. Sumando ambas ecuaciones obtenemos:
+    $$p(x,y) + q(x,y) = x^2 + x^3 + xy = x(x+x^2+y) = 0$$
+    De aquí surgen dos ramas posibles: 
+    
+    Si $x = 0$: Sustituyendo en la primera ecuación obtenemos $p(0,y) = y^2 = 0 \implies y = 0$. Esto nos da el primer punto (ideal maximal): $\mathfrak{m}_0 = (x,y)$.
+    
+    Si $x \neq 0$: Entonces $x+x^2+y = 0 \implies y = -x-x^2$. Sustituyendo esta $y$ en $p(x,y)=0$ se llega a $x(1+x+x^2+x^3) = 0$. Como $x \neq 0$, analizamos el factor $1+x+x^2+x^3 = (x+1)(x^2+1) = 0$. 
+    
+    Raíz $x = -1$: En $\mathbb{F}_3$, $x=-1$ es solución. Sustituyendo, $y = -(-1)-(-1)^2 = 0$. Obtenemos el punto $\alpha_1 = (-1,0)$, con ideal $\mathfrak{m}_{\alpha_1} = (x+1, y)$. Factor $x^2+1=0$: Este polinomio es irreducible en $\mathbb{F}_3$ porque sus raíces son $\pm i$, las cuales no pertenecen al cuerpo base sino a la extensión $\mathbb{F}_3(i)$. Esto genera un tercer ideal maximal $\mathfrak{m}_{\alpha_2}$ asociado a la raíz conjugada $\alpha_2 = (i, 1-i)$. Conclusión: $Spec~A$ (Espectro total): Está formado por 3 puntos, $\{\mathfrak{m}_0, \mathfrak{m}_{\alpha_1}, \mathfrak{m}_{\alpha_2}\}$. $Spec_\Omega~A$ (Espectro racional): Está formado solo por las soluciones que viven completamente en $\mathbb{F}_3$, que son $\{\mathfrak{m}_0, \mathfrak{m}_{\alpha_1}\}$ (es decir, los puntos $(0,0)$ y $(-1,0)$).
+    
+    \noindent b) Calcular los cuerpos residuales de $Spec~A$
+    
+    El cuerpo residual se obtiene al hacer el cociente $A/\mathfrak{m}$. 
+    
+    Para $\mathfrak{m}_0=(0,0)$: El cuerpo residual es $A/\mathfrak{m}_0 \cong \mathbb{F}_3$. 
+    
+    Para $\mathfrak{m}_{\alpha_1}=(-1,0)$: El cuerpo residual es $A/\mathfrak{m}_{\alpha_1} \cong \mathbb{F}_3$.
+    
+    Para $\mathfrak{m}_{\alpha_2}$: Como la solución requiere la unidad imaginaria $i$, el cuerpo residual es la extensión $A/\mathfrak{m}_{\alpha_2} \cong \mathbb{F}_3(i) \cong \mathbb{F}_3[x]/(x^2+1)$.
+    
+    \noindent c) Calcular la descomposición en $k$-álgebras locales de $A$
+    
+    Toda $k$-álgebra finita descompone como producto directo de sus localizaciones en los ideales maximales: $A \cong A_{\mathfrak{m}_0} \times A_{\mathfrak{m}_{\alpha_1}} \times A_{\mathfrak{m}_{\alpha_2}}$. Calculando cada anillo local: 
+    
+    $A_{\mathfrak{m}_{\alpha_1}}$: Aquí $y = -x-x^2$, y se simplifica hasta quedar isomorfo a $\mathbb{F}_3$ (dimensión 1).
+    
+    $A_{\mathfrak{m}_{\alpha_2}}$: Sabiendo que $x^2+1=0$, el anillo local es isomorfo a la extensión $\mathbb{F}_3(i)$ (dimensión 2).
+    
+    $A_{\mathfrak{m}_0}$: En este punto el álgebra no es un cuerpo debido a la multiplicidad de la raíz (nilpotentes). Operando con los invertibles en el cero, se llega a que $x^3=0$ y el anillo local es isomorfo a $\mathbb{F}_3[y]/(y^3)$ (dimensión 3).Por lo tanto, la descomposición es: $A \cong \mathbb{F}_3[y]/(y^3) \times \mathbb{F}_3 \times \mathbb{F}_3(i)$. (Nota: La dimensión total es $3+1+2=6$ ).
+    
+    \noindent d) Calcular una extensión finita $L$ de modo que $A\underset{k}{\otimes} L$ sea racional.
+    
+    Para que la nueva álgebra sea racional sobre $L$, necesitamos que todos los cuerpos residuales se ``rompan'' y pasen a ser isomorfos al propio cuerpo $L$.
+
+    Como el ``problema'' está en la componente $\mathbb{F}_3(i)$, basta con tomar como extensión $L = \mathbb{F}_3(i)$.
+    Al hacer el producto tensorial, la parte $\mathbb{F}_3(i) \otimes_{\mathbb{F}_3} \mathbb{F}_3(i)$ descompondrá en $\mathbb{F}_3(i) \times \mathbb{F}_3(i)$ (ya que en $L$, $x^2+1$ se factoriza como $(x-i)(x+i)$), logrando que todos los puntos sean racionales sobre $L$.
+
+    \noindent e) Decidir si $A$ es racional, trivializable, reducida, universalmente reducida o separable.
+    
+    Racional: NO. No todos los puntos están en $\mathbb{F}_3$ (la raíz $\alpha_2$ requiere $\mathbb{F}_3(i)$).
+    
+    Reducida: NO. En la descomposición local tenemos la componente $\mathbb{F}_3[y]/(y^3)$. Esta componente tiene a $y$ como elemento nilpotente no nulo ($y^3=0$), por lo que el álgebra tiene nilpotentes.
+    
+    Trivializable: NO. Una $k$-álgebra es trivializable si y solo si es racional y reducida. Como falla en ambas, no lo es.
+    
+    Separable / Universalmente Reducida: NO. Por el criterio de reducibilidad, un álgebra es separable si y solo si es universalmente reducida. Sin embargo, para ser universalmente reducida debe ser, al menos, reducida en el cuerpo base. Como $A$ tiene nilpotentes en $\mathbb{F}_3$, es imposible que sea separable.
+    \end{sol}

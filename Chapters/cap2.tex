@@ -1,0 +1,972 @@
+\chapter{Extensiones de Galois}
+\justifying
+\begin{defi}
+    $k \hookrightarrow L$ diremos que es una \textbf{extensi\'on de Galois} si es una extensi\'on finita tal que $L\underset{k}{\otimes} L \simeq L \times \cdots \times L$, es trivial. 
+\end{defi}
+\begin{defi}
+    Llamaremos \textbf{grupo de Galois} de la extensi\'on $k \hookrightarrow L$ a $G = Hom_{k-alg}(L,L) = Aut_{k-alg}(L)$ con la composici\'on. 
+\end{defi}
+\begin{obs}
+    Si tenemos un automorfismo $k \hookrightarrow k(a_1,\ldots, a_n) \overset{\tau}{\longrightarrow} k(a_1,\ldots, a_n)$, dada una ra\'iz tenemos todas.
+\end{obs}
+\begin{teo}
+    Las siguientes afirmaciones son equivalentes:
+    \begin{enumerate}[$a)$]
+        \item $k \hookrightarrow L$ es de Galois.
+        \item $|G|=\dim_k L$
+        \item $k \hookrightarrow L$ es separable y verifica la siguiente propiedad:
+        $$\alpha \in L \text{ es ra\'iz de } p(x)\in k[x] \text{ irreducible } \Rightarrow \text{ todas las ra\'ices de } p(x) \text{ est\'an en } L $$
+        \item $k \hookrightarrow L$ separable y ``el agujero de $L$ en cualquier extensi\'on $k \hookrightarrow \bar L$ es \'unico'' (podemos pensar $L\hookrightarrow \bar L$ pero es un morfismo $f$, entonces $L \simeq f(L) \subset \bar L$, pero puede haber otro morfismo $g$ con $L\simeq g(L)$. Que el agujero sea el mismo significa que $f(L) = g(L)$). 
+     \end{enumerate}
+\end{teo}
+\begin{lem}
+    Recordemos la f\'ormula de los puntos
+    $$Hom_{k-alg}(A,L) = Hom_{L-alg}(A\underset{k}{\otimes}L, L) = \text{puntos racionales de } A\underset{k}{\otimes}L = A_1 \times \cdots \times A_s $$
+    con $A_i$ local, siendo $s\le \dim_L A\underset{k}{\otimes}L = \dim_k A$. 
+\end{lem}
+\begin{dem}
+    $a) \iff b)$ $L \underset{k}{\otimes}L \simeq L^n \iff $nº de puntos racionales de $L \underset{k}{\otimes}L = \dim_L L \underset{k}{\otimes}L = \dim_k L =n =Hom_{k-alg}(L,L) = |G|$, y $G=Hom_{k-alg}(L,L)$.
+
+    $c)$ $k \hookrightarrow L$ de Galois, y $p(x)\in k[x]$ irreducible, de modo que $\alpha \in L$ ra\'iz de $p(x)$, y queremos ver que $p(x)$ tiene todas sus ra\'ices en $L$. 
+
+    $k \hookrightarrow k(\alpha) \subset L$, $\modulo{k[x]}{p(x)} \underset{k}{\otimes}L = \modulo{L[x]}{p(x)} \hookrightarrow L \underset{k}{\otimes}L \simeq L^n$, $\modulo{L[x]}{p(x)} $ es racional y por tanto $p(x)$ tiene todas sus ra\'ices. 
+
+    $\Leftarrow)$ Si $k \hookrightarrow L$ es separable y tiene la propiedad $\alpha \in L$, $k(\alpha) \hookrightarrow L$ es una subextensi\'on separable, entonces $k(\alpha) \underset{k}{\otimes}L$ es racional y reducida, luego separable, luego es $k(\alpha) \underset{k}{\otimes}L= L^n$ es trivializable, entonces veamos que $L\underset{k}{\otimes}L$ es trivializable. Como $L = \langle a_1, \ldots, a_s \rangle$, $k[a_1] \underset{k}{\otimes}\cdots \underset{k}{\otimes}k[a_s]$, $k[a_i]$ trivializa sobre $k \hookrightarrow L$, luego $k[a_1] \underset{k}{\otimes}\cdots \underset{k}{\otimes}k[a_s]$ trivializa sobre $L$. Y con el morfismo de $k$-\'algebras epiyectivo
+    $$\bt A= k[a_1] \underset{k}{\otimes}\cdots \underset{k}{\otimes}k[a_s] \rar & L \\[-5mm] q(a_1) \otimes \cdots \otimes q(a_s) \rarmaps & q(a_1) \cdots q(a_s)  \et$$
+    luego $L$ es cociente de la $k$-\'algebra $A$, por lo que $L \underset{k}{\otimes}L$ es trivial. 
+
+    $d)$ $k \hookrightarrow L$ separable, veamos que entonces $k \hookrightarrow L$ es de Galois $\iff k \hookrightarrow L \overset{f, g}{\hookrightarrow} \bar L\, \Rightarrow \Im f= \Im g \iff \exists \text{ automorfismo } \tau: L \longrightarrow L  $ con $f=g\circ \tau$, y $\tau=g^{-1}\circ f$, es el automorifsmo de $L \to L$. Rec\'iprocamente, si $f$ y $g$ difieren en un automorfismo, entonces $f(L) = g(\tau(L)) = g(L)$ por ser $\tau$ automorfismo. Se tiene entonces que fijando una $ L \overset{g}{\hookrightarrow} \bar L$, el morfismo
+    $$\bt Hom_{k-alg} (L,L)\rar{\circ f} & Hom_{k-alg}(L,\bar L) \\[-5mm] \tau \rarmaps & g \circ \tau  \et$$
+    que es inyectivo por ser $g$ inyectiva. Y 
+    $$|Hom_{k-alg}(L,L)| = |Hom_{k-alg}(L,\bar L)| \iff \circ f \text{ es epiyectiva}$$
+    siendo $|Hom_{k-alg}(L,L)| = \dim_k L$ y $n \le |Hom_{k-alg}(L,\bar L)| = \text{nº de ptos racionales de } L\underset{k}{\otimes}\bar L \text{ como } \bar L-\text{\'algebra } \le \dim_{\bar L} L\underset{k}{\otimes}\bar L = \dim_k L $.
+
+    Supongamos que $k \hookrightarrow L$ separable verifica la propiedad del agujero \'unico. Cogemos una extensi\'on $L \subset \bar L$ donde $L$ trivializa, $L\underset{k}{\otimes}\bar L \simeq \prod \bar L$ por el Teorema de Kronceker, y entonces
+    $$ |Hom_k(L,L)|= |Hom_k(L,\bar L)| = \dim_k L$$ 
+\end{dem}
+\begin{cor}
+    En $k \hookrightarrow \bar k$ el cierre algebraico de $k$, $L$ es una extensi\'on de modo \'unico. 
+\end{cor}
+\begin{prop}
+    Sea $A$ una $k$-\'algebra separable, $L=$ cuerpo de descomposici\'on de $A$, es decir, una extesi\'on m\'inima donde $A\underset{k}{\otimes}L \simeq L^n$. Entonces, $k \hookrightarrow L$ es de Galois.
+\end{prop}
+\begin{dem}
+    Sea $a\in A$, $k[a] \underset{k}{\otimes}L = L[a]\subset A \underset{k}{\otimes}L$, y como $A \underset{k}{\otimes}L$ es trivial, $k[a]$ trivializa sobre $k\hookrightarrow L$.
+\begin{comment} 
+    Sea $A = \langle a_1, \ldots, a_n \rangle$, 
+    $$\bt k[a_1]\otimes \cdots \otimes k[a_n] \rar & A \\[-5mm] q_1(a_1) \otimes \cdots \otimes q_n(a_n) \rarmaps & q_1(a_1) \cdots q_n(a_n) \et$$
+    es un morfismo de $k$-\'algebras epiyectivo. Escogemos un morfismo $A \longrightarrow L$, pues $Hom_k(A, L) =$ puntos racionales de $A\underset{k}{\otimes}L$, que como trivializa, hay $n$. Entonces
+    $$\bt B=k[a_1]\otimes \cdots \otimes k[a_n] \arrow{rr}{\phi} \rar & A \rar & L \et$$
+    con $\Im \phi = L$ (si $\Im \phi = L' \subset L$, para que $B$ trivialice, $|Hom_k(B,L')| = \dim_{L'} B \iff B \underset{k}{\otimes}L'$ es trivial) luego $\phi$ es epiyectivo.  \end{comment}
+
+   Como $A\underset{k}{\otimes}L \simeq \prod L$, 
+   $$\{f_1, \ldots, f_n\} = |Hom_{k}(A,L)| = \dim_k A$$
+   con 
+   $$\bt A \rar & A \underset{k}{\otimes}\overset{n)}{\cdots} \underset{k}{\otimes}A \rar{\phi} & L \\[-5mm] a \rarmaps & a_1 \otimes \cdots \otimes a_n \rarmaps & f_1(a_1) \otimes \cdots \otimes f_n(a_n) \et$$
+    $|Hom_k(A,L)|=n$, $\Im \phi = L'$ y $A\underset{k}{\otimes}L' = \prod L'$, y $L$ es un cociente, por lo que $L\underset{k}{\otimes}L = \prod L$ trivializa. 
+\end{dem}
+\begin{lem}
+    El cuerpo de descomposici\'on es \'unico salvo isomorfismos.
+\end{lem}
+\begin{dem}
+    Sea $k \hookrightarrow \bar L$ otro cuerpo de descomposic\'on con el morfismo $A\underset{k}{\otimes}\cdots \underset{k}{\otimes}A \longrightarrow L$ epiyectivo, tendr\'iamos que $L \underset{k}{\otimes}\bar L = \prod \bar L$ que trivializa tambi\'en por trivialirzar el $L$, entonces hay un morfismo $L \longrightarrow \bar L$, de forma $\bar L$ no es m\'inimo, excepto si el morfismo es isomorfismo.
+\end{dem}
+\begin{ejem}
+    $\bb F_q \hookrightarrow \bb F_{q'=q^n}$ es de Galois, por el automorfismo de Frobenius $\tau(\alpha) = \alpha^n$ con $Aut_{\bb F_q} \bb F_{q'} = \langle \alpha \rangle$. 
+\end{ejem}
+\begin{defi}
+    Sea $p(x)$ separable (sin ra\'ices m\'ultiples), llamamos \textbf{cuerpo de descomposici\'on de }$p(x)$ al cuerpo de descomposici\'on de $\modulo{k[x]}{p(x)}$ $k \hookrightarrow K = k(\alpha_1, \ldots, \alpha_n)$ siendo las $\alpha_i$ ra\'ices de $p(x)$, y define un grupo $G = Aut_{k-alg}(K)$. 
+\end{defi}
+\begin{obs}
+    Recordemos que un grupo es c\'iclico si $G = \langle g\rangle = \{g^n , \, n \in \bb Z\}$, $x^n-a$, la extensi\'on de Galois de este polinomio es $k(\sqrt[n]{a})$, y si $\tau \in G$, $\tau(\alpha_i) = \alpha_j$ es ra\'iz de $p(x)$ con $G \subset Biy(\alpha_i)$ subgrupo. En el caso de $k(\sqrt[n]{a})$, los automorfismos son $\tau_{\varepsilon}(\sqrt[n]{a}) = \varepsilon \cdot \sqrt[n]{a}$, y hay tanto como ra\'ices $n$-\'esimas de la unidad, de forma que $Aut_k L = G = \mu_n = $ ra\'ices $n$-\'esimas de 1. 
+\end{obs}
+\begin{custom}
+    [Ecuaci\'on general de grado $n$] Sea $p(x) = x^n + a_1 x^{n-1} + \cdots + a_n \in L[x]$, siendo $L = k(a_1, \ldots, a_n)$, entonces $p(x)=(x-\alpha_1) \cdots (x-\alpha_n)$, donde $a_i = (-1)^i S_i(\alpha_1, \ldots, \alpha_n)$, con $S_i$ los polinomios sim\'etricos elementales, de forma que $L \subset \bar L \subset k(\alpha_1, \ldots, \alpha_n)$. 
+    
+    De esta forma, si $\tau \in S_n$, $\tau(p(\alpha_1, \ldots, \alpha_n))=p(\alpha_{\tau(1)}, \ldots, \alpha_{\tau(n)})$, entonces $\tau|_L = Id$, y $p(\alpha_1, \ldots, \alpha_n)$ es invariante por $S_n$, $p(\alpha_{\tau(1)}, \ldots, \alpha_{\tau(n)}) = p(\alpha_1, \ldots, \alpha_n)$ para todo $\tau \in S_n$. Es decir, $Aut_{L} \bar L = S_n$ es el grupo de Galois. 
+\end{custom}
+\begin{ejem}
+    Consideremos un $p(x)$ bicuadrado, es decir, que $p(x) = a_o + a_2 x^2+ \cdots +a_s x^{2s}$, y haciendo el cambio $y=x^2$ se resuleve. De forma que $\alpha$ es ra\'iz de $p(x) \, \iff \, -\alpha$ es ra\'iz de $p(x)$, es decir, admite un automorfismo (involutivo), $\langle \tau \rangle = H \subset G$ con 
+    $$\bt k(\alpha_1, \ldots, \alpha_n)\rar & k(\alpha_1, \ldots, \alpha_n)\\[-5mm] \alpha_i \rarmaps & -\alpha_i  \et$$
+    y se tiene que los elementos invariantes $k \hookrightarrow L^H \subset L$ son $L^H = \{\alpha \in L \, / \, h(\alpha) = \alpha\, \forall \, h\in H\}$. 
+\end{ejem}
+\begin{ejem}
+    Consideremos una ecuaci\'on rec\'iproca, $p(x) = a_o + a_1 x+\cdots + a_n x^n$, con $a_o = a_n, a_1 = a_{n-1}, \ldots$. Admiten el cambio de variable $y=x+\frac{1}{x}$, y sale $\frac{p(x)}{x^{n/2}} = q(y)$. Entonces si $\alpha$ es ra\'iz de $p(x) \, \iff \, \alpha^{-1}$ es ra\'iz de $p(x)$. 
+\end{ejem}
+\begin{ejem}
+    Dada la $\bb Q$-\'algebra $A = \modulo{k[x,y]}{p(x,y),q(x,y)}$, consideremos $\bb Q \hookrightarrow L$ el cuerpo de descomposici\'on $\modulo{A}{rad A}$, como $x^2+1 = 0$ y $x^2+2=0$, se tiene la extensi\'on de Galois $\bb Q \hookrightarrow \bb Q(\sqrt{2}) = L \hookrightarrow \bb Q(\sqrt{2})(i) = \bar L$, y como $\bb Q(\sqrt{2})\subset \bb R$ y $i\nin \bb R$, $i\nin \bb Q(\sqrt{2})$.
+
+    Se tiene el automorfimosmo $\tau \in Aut_L \bar L = G$, y $grado_{\bb Q} L = 2, grado_{L} \bar L=2\Rightarrow grado_{\bb Q} \bar L =4$, siendo $\tau (i) = \pm i, \tau (\sqrt{2}) = \pm \sqrt{2}$.
+    
+    Y entonces $G = Aut_{\bb Q} \bar L$ tiene 4 elementos, que son 
+    $$Id, \tau_2 = \begin{cases}
+        \tau_2(i) = i \\ \tau_2(\sqrt{2}) = -\sqrt{2}
+    \end{cases}, \tau_3 = \begin{cases}
+        \tau_3(i) = -i \\ \tau_3(\sqrt{2}) = \sqrt{2}
+    \end{cases}, \tau_4 = \begin{cases}
+        \tau_4(i) = -i \\ \tau_1(\sqrt{2}) = -\sqrt{2}
+    \end{cases}$$
+    con la tabla de multiplicar asociada
+    $$\begin{array}{c|c|c|c}
+        & \tau_2 & \tau_3 & \tau_4 \\ \hline 
+        \tau_2 & Id & \tau_4 & \tau_3 \\\hline 
+        \tau_3 & \tau_4 & Id & \tau_2 \\\hline \tau_4 & \tau_3 & \tau_2 & Id 
+    \end{array}$$
+    con $\tau^2 =Id$ y es $\modulo{\bb Z}{2}\times \modulo{\bb Z}{2}$. 
+\end{ejem}
+
+
+\begin{defi}
+ $k \hookrightarrow K$ una \textbf{extensi\'on de Galois} se dice \textbf{c\'iclica} si su grupo es c\'iclico. 
+
+ Se dice abeliana si su grupo es abeliano, o conmutativo.
+\end{defi}
+
+Si $k \hookrightarrow K$ es una extensi\'on de Galois de grado $p=$nº primo, entonces es una extesi\'on c\'iclica, $|G| = p$, $\langle \tau\rangle = G$. 
+
+Dado un grupo $G$
+\begin{defi}
+ Dar un $G$-conjunto es dar un conjunto $X$ dotado de una operaci\'on de $G$ en $X$
+ $$\bt G \times X \rar{*} & X \\[-5mm] (g,x) \rarmaps & g *x \et$$
+ que verifica 
+ \begin{enumerate}
+    \item Propiedad asociativa $(g_1\cdot g_2) * x = g_1 * (g_2* x)$
+    \item Elemento neutro $1\in G$, $1*x=x$
+ \end{enumerate}
+\end{defi}
+\begin{ejem}
+    \begin{enumerate}
+        \item $G$ operando en $G$ por la izquierda es un $G$-conjunto.
+        \item Dado un subgrupo $H \subseteq G$, $\modulo{G}{H}$ es un $G$-conjunto.
+        $$\bt G \times \modulo{G}{H}\rar & \modulo{G}{H}\\[-5mm] (g, \bar g H) \rarmaps & g \cdot \bar gH \et$$
+        a pesar de que $\modulo{G}{H}$ no es grupo, pues el producto depende del representante de la clase.
+    \end{enumerate}
+\end{ejem}
+\begin{defi}
+Dados $(X_1, \circ), (X_2,*)$ dos $G$-conjuntos, un morfismo de $G$-conjuntos es una aplicaci\'on 
+$f:X_1\longrightarrow X_2$ si $$f(g\circ x_1) = g*f(x_1) \quad \forall \, g \in G, \, x_1 \in X_1$$
+\end{defi}
+\begin{ejem} \textcolor{red}{FOTO 19/03}
+    $\pi: G \longrightarrow \modulo{G}{H}$ es un morfismo de $G$-conjuntos.
+
+    $h_g$
+    
+    $G\longrightarrow Biy \, X$
+
+    sea $k\hookrightarrow k(\alpha_1, \ldots, \alpha_n) = L$ el cuerpo de descomposici\'on de $p(x) \in k[x]$, 
+    $G = Aut_{k-alg}$, $\{\alpha_1, \ldots, \alpha_n\}$ es un $G$-conjunto con $\tau \cdot \alpha_i=\tau(\alpha_i), \, \tau\in G$. 
+    $L$ adem\'as es un $G$-conjunto, con $\tau\cdot a = \tau(a)$ con $a\in L$.
+\end{ejem}
+\begin{defi}
+    $X_1, X_2$ dos $G$-conjuntos son isomorfos si existe un morfismo de $G$-conjuntos $f:X_1\longrightarrow X_2$ biyectivo.
+\end{defi}
+\begin{defi}
+    $Y\subset X$ es un sub-$G$-conjunto de $X, \cdot$  si $g\cdot y \in Y$ para todo $g\in G, \, y \in Y$.  
+
+    Dado un $x\in X$, $\langle x \rangle = \{g\cdot X, \, g \in G\}$ es la \'orbita de $X$. 
+
+    Y tenemos el morfismo de $G$-conjuntos epiyectivo
+    $$\bt G \rar & \langle x \rangle \\[-5mm] g \rarmaps & g \cdot x \et$$
+    y se tiene el grupo de isotrop\'ia de $x \in X$, denotado por $H_x = \{g\in G \, / g\cdot x=x \}$, de forma que 
+    $$\bt \modulo{G}{H}_x \rar{\sim} & \langle x \rangle \\[-5mm] {[g]} \rarmaps & g\cdot x \et$$
+    est\'a bien definido y es un morfismo de $G$-conjuntos biyectivo. 
+\end{defi}
+\begin{defi}
+    Se tiene el espacio de \'orbitas $X/G$, siendo $X/G$ el espacio cociente por la relaci\'on de equivalencia $x \equiv x' \iff \, \exists \, g\in X \, / \, x'=g\cdot x$.
+    As\'i, $[x] = \{x' \in X, \, x\equiv x'\} = \{g\cdot x \,/\, g\in G\}$, que en verdad es la \'orbita de $x$, es decir, $\langle x\rangle = [x]$.
+\end{defi}
+\begin{prop}
+Como $\displaystyle X = \bigsqcup_{[x] \in X/G} [x]$, y entoces $\displaystyle X \simeq \bigsqcup_{[x] \in X/G} \modulo{G}{H}_x$, son isomorfos como $G$-conjuntos. 
+\end{prop}
+\begin{defi}
+    Dado un $G$-conjunto $X$, los \textbf{invariantes de $X$} por $G$ son $$X^G = \{x\in X\, / \, g\cdot x = x \, \forall \, g\in G\}$$
+\end{defi}
+\begin{ejem}
+    Si $G$ es un $G$ conjunto operando por la izquierda, 
+    $$G^G = \{g'\in G\,/\, g\cdot g'=g' \, \forall \, g\in G \} = \emptyset$$
+\end{ejem}
+\begin{prop}
+Sea $H \subset G$ un subrgrupo, 
+$$(\modulo{G}{H})^G = \{\bar g H \in G /H \, / \, g (\bar g H)  = g \bar g H= \bar g H \} = \emptyset $$ 
+\end{prop}
+\begin{dem}
+$G = \bar g H \bar g^{-1}, H = \bar g G \bar g^{-1}, g\bar g H = \bar g H \iff \bar g g \bar g^{-1} \in H \Rightarrow g \in \bar g H \bar g^{-1}$
+\end{dem}
+
+\begin{defi}
+    Dados dos $G$-conjuntos $X,Y$,
+    $$Hom_{G-conj}(X,Y) = \{f:X\to Y \text{ morfismo de }G\text{-conjuntos}\}$$
+    y como $\displaystyle X \simeq \bigsqcup_{i \in I} \modulo{G}{H_i}$ se tiene el diagrama 
+    $$\bt \bigsqcup \modulo{G}{H_i} \rar & Y \\[5mm] \modulo{G}{H_i} \arrow[hook]{u} \arrow{ur}{f_i} \et$$
+    que nos da la propiedad universal
+    $$Hom_{G-c}\left(\bigsqcup \modulo{G}{H_i}\right) \simeq \prod_{i \in I} Hom\left(\modulo{G}{H_i}, Y\right)$$
+\end{defi} 
+\begin{prop}
+    $Hom_{G-c}\left(\modulo{G}{H}, Y\right)= Y^H$
+\end{prop}
+\begin{dem}
+Se tiene el morfismo 
+$$\bt \modulo{G}{H}= \langle [1] \rangle \rar{f} & Y \\[-5mm] {[1]} \rarmaps & f({[1]})=y \\[-5mm] gH = g{[1]} \rarmaps &  g\cdot f({[1]}) = g\cdot y  \et$$
+por lo que se tienen morfismos para cada $y \in Y$
+$$\bt \modulo{G}{H}\rar{f_y} & Y \\[-5mm] {[g]} \rarmaps & g\cdot y \et$$
+que est\'a bien definida $\iff y \in Y^H$.
+
+$\Rightarrow)$ $h \in H, [h] = [1] \Rightarrow f_y([h]) = f([1]) = y  = h\cdot y$
+
+$\Leftarrow)$ $y \in Y^H, \, gH=[g]=[g'], g'\in gH, g'=gh, h\in H$, entonces
+$$f([g]) = g\cdot y,\, f([g']) = g' \cdot y = g(hy) = gy$$
+Notemos que $\modulo{G}{H}= \modulo{G}{H'} \iff H' = g H g^{-1}$ para alg\'un $g \in G$. 
+\end{dem}
+Dados dos $G$-conjuntos $X,Y$ y $Hom(X,Y)$
+\begin{prop}
+$G$ opera en $Hom(X,Y)$. Dado $g\in G$,
+$$ \bt X \arrow{d}{g\cdot } \rar{f}  & Y\arrow{d}{g\cdot }  \\ X \rar{\bar f} & Y \et$$
+con $g*f=\bar f$, y $\bar f=h_g \cdot f \cdot h_{g^{-1}}$. 
+\end{prop}
+\begin{cor}
+$Hom_{G-c}(X,Y) = Hom(X,Y)^G$
+\end{cor}\begin{dem}
+$f \in Hom(X,Y)^G \iff g*f = f \, \forall \, g\in G$, 
+$$f = g*f = h_g \cdot f \cdot h_{g^{-1}} = h_g \cdot f \cdot h^{-1}_{g} = \iff h_g \cdot f = f \cdot h_g $$
+$$ \iff (h_g \circ f)(x) = g\cdot f(x) = f(gx) = (f\circ h_g)(x)$$
+\end{dem}
+\begin{ejem}
+    Si consideramos $S_n = Biy(1,2, \ldots, n), X_n=\{1, 2, \ldots, n\} $ es un $S_n$-conjunto. De esta forma $orb(i) = \{\sigma(i) \, /\, \sigma \in S_n \} = X_n$, pues para todo $j \in X_n$ existe $\sigma\in S_n$ tal que $\sigma(j) = i$, de forma que $X_n / S_n = \{p\}$ y $X_n^{S_n} = \emptyset$ con $n=|X_n| = |S_n/H_i|$.  
+\end{ejem}
+\begin{ejer}
+Sea $ G = \langle \sigma \rangle$, $X_n$ es un $G$-conjunto y $orb(i) = \{i, \sigma(i), \sigma^2(i), \ldots, \sigma^{k-1}(i)\}$ si $|\sigma|=k$. Podemos descomponer $\sigma$ en ciclos disjuntos, $\sigma = \alpha_1\circ \cdots \circ \alpha_r$, entonces
+$$\modulo{X_n}{G} = \{ \alpha_1, \ldots, \alpha_r \}$$
+y $\sigma = (i, \sigma(i), \sigma^2(i), \ldots, \sigma^{k-1}(i))$
+\end{ejer}
+\begin{ejem}
+Dado un conjunto finito $X = \{x_1, \ldots, x_n\}$, $F(X) = \{f: X \to k\}$ es una $k$-\'algebra trivializable ($F(X) = k\times \cdots \times k$), por el isomorfismo de $k$-\'algebras $f \to (f(x_1, \ldots, f(x_n)))$, donde $|X| = \dim_k F(X)$. 
+
+Dado $f:X \to Y$ una aplicaci\'on, $f^*: F(Y) \overset{\circ f}{\longrightarrow} F(X)$ es un morfismo de $k$-\'algebras.
+
+Dado $X \sqcup Y$, $F(X \sqcup Y) \simeq F(X) \times F(Y)$. Y $F(X\times Y) \simeq F(X) \underset{k}{\otimes}F(Y)$. Dada $f \otimes g \longmapsto  (f\otimes g)(x,y) = f(x) \cdot g(x)$. Y es isomorfismo por ser de la misma dimensi\'on, pues $\sum f_i(x) \otimes g_i(x) \longmapsto \sum f_i(x)\cdot g_i(x) = h(x,y)$, siempre que sean finitos. 
+
+Si $Y \overset{i}{\hookrightarrow} X$ es inyectivo, $F(X) \overset{i^*}{\longrightarrow} F(Y)$ es epiyectivo, o cocientes. De la misma forma, si $X \longrightarrow Y$ es epiyectivo, $F(Y) \hookrightarrow F(X)$ es inyectivo, es decir, es una sub\'algebra.
+
+Lo que estamos viendo es que la categoria de conjuntos tiene un antiisomorfismo de ret\'iculos con las $k$-\'algebras trivializables.
+\end{ejem}
+\begin{teo}
+    La categor\'ia de conjuntos finitos es equivalente a la categor\'ia dual de las $k$-\'algebras finitas trivializables:
+    $$\bt X \text{ conj } \rar{F} & F(X) \\[-5mm] f:X\to Y \rarmaps & f^* :F(Y) \to F(X) \\[-5mm] Hom_{k-alg}(A, k) = Spec\, A & \arrow[mapsto]{l} A \et$$
+    y se tiene 
+    $$\bt X \rar & Hom_{k-alg}(F(X),k) \\[-5mm] x \rarmaps & \pi_x : F(X) \rar & k \\[-5mm] & f \rarmaps &  \pi_x(f) \coloneq f(x)  \et$$
+\end{teo}
+\begin{dem}
+    Veamos la equivalencia, es decir, que $F \circ G \simeq Id$ y $G \circ F \simeq Id$. $Hom_{conj}(X,Y) \simeq Hom_{k-alg}(F(Y), F(X))$ por $f\longmapsto f^*$. 
+    $$\bt X \rar{\sim} &  G(F(X)) = Hom_{k-alg}(F(X),k) = k^n \\[-5mm] x \rarmaps & \pi_x \et$$ 
+    $$\bt A \rar{\sim} & F(G(A)) &[-21mm] = F(Hom_{k-alg}(A,k)) = Hom_{conj}(Hom_{k-alg}(A,k), k) \\[-5mm]  a\rarmaps & a: Hom_{k-alg}(A,k) \rar & k \\[-5mm] & f \rarmaps & a(f) = f(a) \et$$
+    y es isomorfismo porque $a \longmapsto 0$ si y solo $a=0$ pues $f(a) = a(f) = 0 \forall f \in Hom_{k-alg}(A,k)$, y si consideramos sobre $f = \pi_i: k^n \to k$, es cero sobre todo $k^n$, es decir, $a = 0$. 
+\end{dem}
+
+Sea $k \hookrightarrow L$ una extensi\'on de Galois de grupo $G = Aut_{k-alg} (L)$. $A$ una $k$-\'algebra trivializable sobre $ k \hookrightarrow L$, $A \underset{k}{\otimes}L \simeq L^n$.
+
+Adem\'as, todo conjunto finito es $G$-conjunto por 
+$$\bt \{\text{Conjuntos finitos}\} \rar[hook] & \{G\text{-conjuntos finitos}\} \\[-5mm] X \rarmaps & X \,&[-30mm]\text{un } G\text{-conjunto con la operaci\'on trivial } \\[-5mm] && g\cdot x = x \, \forall \, g\in G, \, x\in X \et$$
+$$\bt A \rar & A\underset{k}{\otimes}L \rar & Hom_{L-alg}(A\underset{k}{\otimes} L, L ) = Hom_{k-alg}(A,L)\et$$
+de forma que $Hom_{k-alg}(A,L)$ es un $G$-conjunto, pues dado $f \in Hom_{k-alg}(A,L)$ y $g\in G$, con $g\cdot f = g\circ f$ siendo $g : L \longrightarrow L$.
+
+Sea $k \hookrightarrow L$ una extensi\'on de Galois de Grupo $G = Aut_{k-alg}(L)$. Entonces $A \underset{k}{\otimes} L$ es trivializable sobre $L$, y a todo $k$-\'algebra de una $L$-\'algebra trivializable $A\underset{k}{\otimes} L$, a la que le corresponde un conjunto, $Spec\, (A \underset{k}{\otimes} L) = Hom_{L-alg}(A\underset{k}{\otimes} L) = Hom_{k-alg}(A, L)$, que es un $G$-conjunto, con
+$$g : L \to L \in Aut_{k-alg}(L) , \, f : A \to L \in Hom_{k-alg}(A,L) \Rightarrow g\cdot f = g\circ f \in Hom_{k-alg}(A,L)$$
+
+Rec\'iprocamente, dado un $G$-conjunto (finito) $\Delta$, le corresponde $Hom_{conj}(\Delta, L)$, al que le corresponde $Hom_{G-conj}(\Delta, L)$. Es decir, se tienen las correspondencias
+$$\textcolor{red}{PEDIR}$$
+es decir, $F(\Delta) = Hom_{G-conj}(\Delta, L)$ es $k$-\'algebra trivial y $G(A) = Hom_{k-alg}(A,L)$, con $F\circ G \simeq Id$, $G\circ F \simeq Id$. 
+
+\begin{itemize}
+    \item \underline{$Id\simeq F\circ G$}. Se tiene siempre la aplicaci\'on 
+    $$ \bt A \rar & F\circ G(A) &[-13mm] = Hom_{G-conj}(Hom_{k-alg}(A,L),L) \\[-5mm] 
+    a \rarmaps & \phi(a): &[-30mm] Hom_{k}(A,L) \rar & L \\[-5mm] 
+    & & f \rarmaps & f(a) = \phi(a)(f) \et$$
+    y tenemos que demostrar que es isomorfismo, es decir, demostrar que es isomorfismo $A \longrightarrow (A\underset{k}{\otimes} L)^G$. 
+    \item \underline{$Id\simeq G \circ F$}. 
+    $$\bt \Delta \rar & (G\circ F)(\Delta) &[-13mm] = G(Hom_{G-conj}(\Delta,L)) =&[-13mm]  Hom_{k-alg}(Hom_{G-conj}(\Delta,L), L) \\[-5mm]
+    x\rarmaps & \varphi_x: &[-13mm] Hom_{G-c}(\Delta, L) \rar & L \\[-5mm] 
+    & & f \rarmaps & f(x) \et$$
+\end{itemize}
+y se comprueba que 
+$$F(X_1\sqcup X_2) = F(X_1) \times F(X_2)$$
+Se tiene que $X = \bigsqcup \modulo{G}{H_i}$, luego $F(X) = \prod F(\modulo{G}{H_i})$, por lo que 
+$$F(\modulo{G}{H}) = Hom_{G-c}(\modulo{G}{H}, L ) = L^H \subset L$$
+$$G(F(\modulo{G}{H})) = G(L^H) = Hom_{k-alg}(L^H, L) \overset{?}{=} \modulo{G}{H}$$
+y $(L \underset{k}{\otimes} L)^H = L^H \underset{k}{\otimes} L \simeq \prod L_{X_i}$, y como $A = L_1 \times \cdots \times L_s$ con $L_i\subset L$ un subcuerpo, entonces $G(L_1 \times \cdots \times L_s) = G(L_1) \sqcup \cdots \sqcup G(L_s)$ y basta demostrar que $ G(L_i)= Hom_{k-alg}(L_i, L)$ y hay que demostrar que como $G$-conjuntos $G(L_i) \simeq  \modulo{G}{H}$, de forma que $F(G(H)) = L^H$. Como $L_i \overset{\phi}{\hookrightarrow} L \overset{h}{\longrightarrow} L$, $g\circ \phi$ hace que $Hom_{k}(L,L) = \langle \phi\rangle_G\simeq \modulo{G}{H}_{\phi}$ con $H_{\phi}  = \{h\in G \, / \, h\circ \phi = \phi\} = Hom_{L_i}(L,L)$.
+
+As\'i, para $k \subset L' \subset L$ subcuerpos, aparece el subgrupo $Aut_{L'} L = H \subset G = Aut_{k-al}(L)$, y si $H\subset G$, $L ' = L^H$.
+
+\begin{teo}
+[de Artin] Si $k \hookrightarrow  L$ es una extensi\'on de Galois de grupo $G$, entonces $L^G = k$.
+\end{teo}
+\begin{dem}
+Supongamos que $L'=L^G$, de forma que $Aut_{L'}L = Aut_k L = G$, ahora, sabemos que $L' \hookrightarrow L$ es una extensi\'on de Galois, y vamos a probar que $L  \underset{L'}{\otimes} L$ es $L$-trivial. $L \underset{k}{\otimes} L$ es $L$-trivial, y es un cociente por la epiyecci\'on 
+$L \underset{k}{\otimes} L \longrightarrow L \underset{L'}{\otimes} L$ de forma que $L \underset{L'}{\otimes} L$ es $L$-trivial, es decir, de Galois, por lo que $\dim_{L'} L  = |Aut_{k} L | = |G| = \dim_k L$, pero $\dim_k L = \dim_{k} L' \cdot \dim_{L'} L$, por lo que $\dim_k L' = 1 \Rightarrow k = L'$. 
+\end{dem}
+
+Si $H \subset G$ es subgrupo
+$$k \hookrightarrow L^H \underset{Galois}{\subset} L, \, |H| \subseteq | Aut_{L^H} L | = \dim_{L^H} L$$
+y como $\dim_{k} L^H = |Hom_{k-alg}(L^H, L)|$, 
+$$|G| = \dim_k L = \dim_{L^H} L \cdot \dim_k L^H =  \cdot \dim_k L^H$$
+Pero por Artin, $L^H \hookrightarrow L$ es de Galois, $L^{Aut} L^H = L^H$ (m\'as adelante).
+
+Sea $E$ un $k$-espacio vectorial de dimensi\'on finita. $G$ grupo. \\ \textbf{Definici\'on.} Diremos $E$ es un \textbf{$G$-módulo} \'o que $G$ opera en $E$ si hay morfismo de grupos
+\[ G \longrightarrow \text{Aut}_{k\text{-lineales}}(E) \quad \text{y} \quad E \text{ un } G\text{-conjunto} \]
+(multiplicar por $g$ es lineal además de todo lo de $G$-conjuntos)
+
+\noindent \textbf{Ejemplo.} $k \hookrightarrow L$ de Galois, $G = \text{Aut}_{k\text{-alg}}(L) \subseteq \text{Aut}_{k\text{-ev}}(L)$
+
+\noindent \textbf{Definici\'on.} Un \textbf{morfismo de $G$-módulos} es $T : E_1 \longrightarrow E_2$ una aplicación lineal y de $G$-conjuntos.
+
+\noindent \textbf{Ejemplos.}
+\begin{itemize}
+    \item La operación trivial, $gx = x$, es lineal siempre.
+    \item $E_1 \oplus E_2$, $E_1 \underset{k}{\otimes} E_2$ son $G$-módulos, con
+    \[ \begin{cases} g(e_1, e_2) = (ge_1, ge_2) \\ g(e_1 \otimes e_2) = g(e_1) \otimes g(e_2) \end{cases} \]
+    \item $Hom_{k\text{-ev}}(E_1, E_2)$ es un $G$-módulo, $g * T = g \circ T \circ g^{-1}$
+\end{itemize}
+
+\noindent \textbf{Definici\'on.} $E$ un $G$-módulo. Los \textbf{invariantes} $E^G$ es el correspondiente para $G$-conj.
+\[ E^G = \{ e \in E : g \cdot e = e \quad \forall g \in G \} \]
+Otro $G$-módulo ($G$ opera por la $Id$) (obs. pues $G \longrightarrow \text{Aut}_{k\text{-ev}}(E)$).
+
+\vspace{0.2cm}
+
+\noindent \textbf{Observaci\'on.}  $\text{Hom}_{k\text{-ev}}(E, F)^G = \text{Hom}_{G\text{-mod}}(E, F)$, misma dem que para $G$-conj.
+
+\noindent \textbf{Ejemplo.} $A \underset{k}{\otimes} L$ es un $G$-módulo sobre $k$ ($G = \text{Aut}_k(L)$)
+\[ g(a \otimes l) = a \otimes g(l) \]
+
+\noindent \textbf{Proposici\'on.} $E_1$ un $G$-módulo y $E_2$ un $k$-ev. ($G$-m\'odulo trivial). Entonces
+\[ (E_1 \underset{k}{\otimes} E_2)^G = E_1^G \underset{k}{\otimes} E_2 \]
+(Si $E_2 \hookleftarrow k$ una extensi\'on sale lo que queríamos).
+
+\begin{dem}
+Tensorializar en $k$ es exacto (Teorema de Frobenius). Si $\#G = n < \infty$,
+\[ \bt 0 \rar & E^G \rar & E \rar{\phi} & E_1 \times \dots \times E_n \quad (E_i = E)  \\[-5mm]  
+& & e \rarmaps & (g_1 e - e, g_2 e - e, \dots, g_n e - e) \et\]
+$\phi$ es lineal (comp. de lineal) y $\ker \phi = E^G$ obv. Tensorializando por $E_2$ el $G$-conj. triv., $0 \longrightarrow E_1^G \underset{k}{\otimes} E_2 \longrightarrow E_1 \underset{k}{\otimes} E_2 \xrightarrow{\phi \otimes 1} (E_1 \underset{k}{\otimes} E_2)^n$ exacta \\
+y 
+$$(\phi \otimes 1) (e \otimes e_2) = ( (g_i e - e) \otimes e_2 )_i = ( \underbrace{g_i e \otimes e_2 }_{g_i (e \otimes e_2) = (g_i e \otimes e_2)} - e \otimes e_2 )$$
+luego se ve que $E_1^G \underset{k}{\otimes} E_2 = \ker (\phi \otimes 1)$ y $\phi \otimes 1$ es la aplicaci\'on de antes cuando $E$ es ahora $E \underset{k}{\otimes} E_2 \Rightarrow (E_1 \underset{k}{\otimes} E_2)^G = E_1^G \underset{k}{\otimes} E_2$. \\ 
+\end{dem}
+
+\noindent \textbf{Corolario.} Sea $k \subset L$ de Galois de grupo $G$, que $A$ una $k$-alg. fin.
+\[ (A \underset{k}{\otimes} L)^G = A\underset{k}{\otimes} L^G = A \underset{k}{\otimes} k = A \quad (L^G = k, \, G \text{ trivial sobre } A, \, A = E_2, \, L = E_1) \]
+
+\begin{prop} Sea $k \hookrightarrow L$ de Galois de grupo $G$, $H \subseteq G$ subgrupo $L^H$ sus invariantes. Luego $L^H = L' \hookrightarrow L$ es de Galois, y de grupo $H$. \end{prop}
+\begin{dem}
+De Galois: $L \underset{k}{\otimes} L \longrightarrow L \otimes_{L'} L$ epiyectiva ($a\otimes b \longmapsto a\otimes b$) pero $L \underset{k}{\otimes} L = L^n$, y como cociente de triviales es trivial $\Rightarrow L \otimes_{L^H} L = L^m \Rightarrow$ de Galois.
+\end{dem}
+
+\noindent Evidentemente, $H \subseteq \text{Aut}(L) \xrightarrow{\text{grupo de Gal } L' \text{ ext. de Gal. L.}} \text{ Veamos que es igual.}$ \\
+Se cumple $L^H = L^{\overline{G}}$ (Por Artin, $L^H = L^{\text{Aut}_{L^H} L} = L^{\overline{G}}$) ¿implica esto $H = \overline{G}$?
+
+\noindent Hay $L^H \otimes L \hookrightarrow L \otimes L \xrightarrow{\sim} L^m \otimes L$ triv y $L' = L^H$, se \\
+$(L \underset{k}{\otimes} L)^H = L^H \underset{k}{\otimes} L = L$ ($H$ opera en $L \otimes L$ por $H \otimes \text{Id}$), un $L$-ev de dim. 1.
+
+\noindent pero $(L \underset{k}{\otimes} L) \xrightarrow[\sim]{\phi} L_{g_1} \times \dots \times L_{g_m} \quad (L_{g_i} = L)$ \\
+$\overline{G} = \{g_1, \dots, g_m\} \cong \text{Aut de } L \text{ en } L' = \text{Hom}_{L'} (L \underset{k}{\otimes} L, L)$
+
+\noindent Calculando invariantes, como mult. por $h \in H$: $h(a \otimes \lambda) = h(a) \otimes \lambda$. \\
+Luego: 
+\begin{align*}
+a \otimes \lambda &\xrightarrow{\phi} (g_1(a)\lambda, \dots, g_m(a)\lambda) \\
+h \downarrow & \hspace{2cm} \downarrow h(a_{g_i}) = (a_{g_i \cdot h}) \text{ (una permutación)} \\
+h(a) \otimes \lambda &\xrightarrow{\phi} (g_1(h(a))\lambda, \dots, g_m(h(a))\lambda) = ((g_1 \cdot h)(a)\lambda, \dots, (g_m \cdot h)(a)\lambda)
+\end{align*}
+\hfill \textcolor{red}{\fbox{\text{ejer: es una comprobación.}}}
+
+\noindent luego $(L_{g_1} \times \dots \times L_{g_m})^H = \{ (a_{g_1}, \dots, a_{g_m}) \text{ con } a_{g_i \cdot h} = a_{g_i} \,\, \forall i, h \}$ \\
+$\langle (a, \dots, a) \rangle$ es invariante por ejemplo $\longrightarrow$ un ev. de dim \textbf{1}. \\
+$\langle (0, \dots, a_h, \dots, a_h, \dots, 0) \rangle$ ($\vec{0}$ salvo cuando $g_i \in H$, entonces un único ``un'') de dim 1 si $H \subsetneq \overline{G}$. \\
+Luego la dim es $\ge 2$, a menos que \underline{\underline{$H = \overline{G}$}}.
+
+\begin{teo}[de Galois]
+    $\{$subextensiones de $L\}$ $\equiv \{$subgrupos $H$ de $G\}$ por la equivalencia
+    $$\bt k \subset L' \subset L \rar & H = Aut_{L'} L \subset G  \\[-5mm] k \subset L^H \subset L & \arrow[mapsto]{l}  H \subset G \et$$ de forma que 
+    $$L' \longrightarrow H = Aut_{L'} L , L' \subset L \longrightarrow L^H = L$$
+    $$H \longmapsto L^H \subset L \longmapsto Aut_{L^H} L = \bar G, \text{ con } L^{\bar G} = L^H \Rightarrow \bar G = H$$
+     de forma que si $H\subset G \longmapsto L^H$, entonces se cumple que $\dim_k L^H = |\modulo{G}{H}|$, pues la extensi\'on $L^{H} \subset L$ tiene por grupo $H$, y $k \hookrightarrow L$ tiene por grupo $G$, $dim_k L = |G|$, y entonces $k \hookrightarrow L^H \subset L$ es $|\modulo{G}{H}|$.  
+\end{teo}
+\begin{prop}
+    $H \subset G$ un subrgupo es normal $\iff$ $k \hookrightarrow L^H$ es extensi\'on de Galois de grupo $\modulo{G}{H}$. 
+\end{prop}
+\begin{teo}
+[de Galois general] $k \hookrightarrow L$ una extesi\'on de Galois de grupo $G$. $\{k$-\'algebra finitas $A$ triviales sobre $L$ ($A\underset{k}{\otimes} L \simeq \prod L) \} \equiv \{G\text{-conjuntos finitos}\}$.
+
+$k$-\'algebra trivial sobre $L \longmapsto A\underset{k}{\otimes} L, \, L$-\'algebra trivial $\longmapsto Spec\, A\underset{k}{\otimes} L = Hom_{L-alg}(A\underset{k}{\otimes} L , L) = Hom_{k-alg}(A, L)$, que es un $G$-conjunto gracias a que para $f: A \longrightarrow L$ morfismo de $k$-\'algebras, $g\cdot f = g \circ f, (g\cdot f)(a) =  (g(f(a)))$ con $g:L \to L$.
+
+Rec\'iprocamente, si $\Delta$ es un $G$-conjunto $\longmapsto Hom_{G-conj}(\Delta,L) = (Hom(\Delta,L))^G = (A\underset{k}{\otimes} L )^G = A$ pues $(A\underset{k}{\otimes} L )^G = A\underset{k}{\otimes} L ^G = A\underset{k}{\otimes} k = A$.
+
+Comprobemos la funtorialidad con $F\circ G = Id$ y $G\circ F = Id$. 
+
+$f:A \to B$ morfismo de $k$-\'algebras, se comprueba que el morfismo $F(f)=f^*: F(B) = Hom_{k-alg}(B,L) \longrightarrow F(A) = Hom_{k-alg}(A,L)$ con $h \longmapsto h \circ f$, es de $G$-conjuntos. Dado $f:\Delta \longrightarrow \Delta'$ morfismo de $G$-conjuntos, $G(f) = f^*: G(A) = Hom_{G-conj}(\Delta', L)\longrightarrow G(B)=Hom_{G-conj}(\Delta, L)$, con $g \longmapsto g\circ f$, es un morfismo de $k$-\'algebras. 
+
+As\'i pues, 
+$$Hom_{G-conj}(F(B),F(A)) \simeq Hom_{k-alg}(A,B) \qquad Hom_{G-conj}(\Delta, \Delta') = Hom_{k-alg}(G(\Delta'), G(\Delta))$$
+$$\bt A \rar & G(F(A)) = Hom_{G-c}(Hom_{k-al}(A,L),L) = (A\underset{k}{\otimes} L)^G = A \\[-5mm] a \rarmaps & \phi(a) : Hom_{k-alg}(A,L) \rar & L  \\[-5mm] & f \rarmaps & f(a) = \phi(a)(f)  \et $$
+$$\bt \Delta \rar & F(G(\Delta)) = F(Hom_{G-conj}(\Delta,L)) = &[-12mm] Hom_{k-alg}(Hom_{G-conj}(\Delta,L),L) = \\[-5mm] & = Hom_{L-alg}(Hom(\Delta, L)^G \underset{k}{\otimes} L, L) =  \\[-5mm] x \rarmaps & \bar \phi(x) : Hom_{G-conj}(\Delta,L) \rar & L  \\[-5mm] & f \rarmaps & f(x)  \et$$
+y en efecto, 
+$$Hom(\Delta , L)^G \underset{k}{\otimes} L = \Delta_L^G \underset{k}{\otimes} L \simeq Hom(\Delta, L)$$
+y como $\Delta = \bigsqcup \modulo{G}{H_i}$, el isomorfismo se reduce a cuando $\Delta = \modulo{G}{H}$. Como $Hom_{G-conj}\left(\modulo{G}{H},L\right) = L^H$, $L^H \underset{k}{\otimes} L \simeq Hom\left(\modulo{G}{H}, L\right)$, tienen la misma dimensi\'on y se comprueba el isomorfismo. 
+
+Como $G(\Delta_1 \sqcup \Delta_2) = G(\Delta_1) \times G(\Delta_2)$ y $F(A_1\times A_2) = F(A_1)\sqcup F(A_2)$, basta probarlo para $\Delta=\modulo{G}{H}$. Se tiene que $\modulo{G}{H}\longmapsto Hom_{k-alg} (Hom_{G-conj}(\modulo{G}{H}, L)) \simeq Hom_{k-alg}(L^H,L)$ por $g \cdot H \longmapsto g\circ i$, y este morfismo es inyectivo: si $g'\circ i = g\circ i \Rightarrow g^{-1}\circ g' \circ i = i \Rightarrow g^{-1} \circ g \in Aut_{L^H} L = H $, luego es epiyectivo por c\'alculo de orden pues $|Hom_{k}(L^H,L)| = \dim_k L^H = \left|\modulo{G}{H}\right|$. 
+\end{teo}
+\begin{teo}
+    [de prolongaci\'on] Para toda extensi\'on $L' \overset{i}{\hookrightarrow} L$ y todo morfismo $f: L ' \longrightarrow L$ existe un $g: L \longrightarrow L$ automorfismo con $f=g\circ i$. 
+\end{teo}
+\begin{prop}
+    $$\bt Hom_{k-alg}(F(A),F(B)) \rar{\sim} & Hom_{G-c}(H(B),H(A)) \\[-5mm] f \rarmaps & f^* \\[-5mm] g^* & \arrow[mapsto]{l} \et$$
+\end{prop}
+\begin{cor}
+    $H \subset G$ es normal $\iff$ $k \hookrightarrow L^H$ es extensi\'on de Galois (y su grupo de Galois es $\modulo{G}{H}$).
+\end{cor}
+\begin{dem}
+    $k \hookrightarrow L^H$ es de Galois $\iff$ $|Aut_k L^H| = \dim_k L^H = |\modulo{G}{H}|$ y a su vez, $|Aut_k L^H| = |Hom_{k-alg}(L^H,L^H) = \left|Hom_{G-c}(\modulo{G}{H}, \modulo{G}{H})\right| =  \left(\modulo{G}{H}\right)^H$ por ser $L^H = G(\modulo{G}{H})$ el transformado por el funtor $G$.  Es decir, es de Galois si y solo si $\modulo{G}{H}= (\modulo{G}{H})^H$, todos son invariantes. Entonces $gH \in (\modulo{G}{H})^H \iff hgH = gH \forall h\in H \Rightarrow g^{-1} h g \in H \Rightarrow g^{-1} H g = H$, que es la condici\'on de que $H$ sea subgrupo normal. 
+\end{dem}
+\section{Radicales}
+\begin{ejem}
+    Consideremos la extensi\'on $k \overset{n}{\hookrightarrow} k(\sqrt[n]{a}) = L$, con $a\in k$. $\mu_n\subset k$ son las ra\'ices $n$-\'esimas de 1, y si $\varepsilon$ es una ra\'iz primitva de 1, $\langle \varepsilon \rangle  = \mu_n$ y $G = Aut_kL=\langle \tau_{\varepsilon} \rangle$ siendo $\tau_{\varepsilon} (\sqrt[n]{a}) = \varepsilon \sqrt[n]{a}$.
+    
+    $k \hookrightarrow L$ es una extensi\'on c\'iclica si $G$ es c\'iclico. Sea $k \hookrightarrow L$ c\'iclica de grado $n$ ($\mu_n\subset k$). Sea $G=\langle \tau\rangle$ y como es de grado $n$ ($|G|=n$), $\tau^n = Id$ y queremos ver que existe $k \in L$ tal que $\tau(R)=\varepsilon R$. Fijemonos que $\tau^n-Id$ tiene a $x^n-1$ como polinomio que anula. Y si fuera el m\'inimo, tendr\'ia por ra\'ices la de la unidad pues $x^n-1 = \prod_i=0^n(x-\varepsilon^i)$, y los valores propios de $\tau:L \to L'$ son los $\{\varepsilon^i\}$, luego existe un vector propio de valor propio $\varepsilon$.  
+
+    Adem\'as, $R$ es un radical porque 
+    $$\tau(R) = \varepsilon R \quad \tau (R^2) = \tau (R) \tau (R) = \varepsilon^2 R^2 \quad  \cdots \quad \tau (R^n) = \varepsilon^n R^n = R^n$$
+    y $a=R^n \in L^G = k \Rightarrow R = \sqrt[n]{a}$. Adem\'as, $k(\sqrt[n]{a})=L' \subset K = k(\sqrt[n]{a})$, y si no fuera igual $L=L'$ existir\'ia un automorfismo $\bar \tau = \tau^i \in G$ con $\tau^i (\sqrt[n]{a}) \neq \sqrt[n]{a}$. 
+\end{ejem}
+\begin{teo}
+    [de independencia lineal de los automorfismos] Sea $k \overset{n}{\hookrightarrow} L$ una extensi\'on de Galois de grupo $G = \{\tau_1, \ldots, \tau_n\} \in End_{k-ev} L$. Sean $\tau_1, \ldots, \tau_n$ linealmente independientes sobre $k$, $G = \{1, \tau, \tau^2, \ldots, \tau^{n-1}\}$.
+\end{teo}\begin{dem}$k \hookrightarrow L$, 
+$$ \bt L\underset{k}{\otimes} L \rar{\sim} &  L \times \cdots \times L  \\[-5mm] a\otimes \lambda \rarmaps & (\tau_1(a)\cdot \lambda, \ldots, \tau_n(a)\lambda) \et$$
+y como $\tau_1, \ldots, \tau_n \in End_{k-ev}(L = E) \subset Hom_{k-ev}(L\underset{k}{\otimes} L, L)$, $\tau_1 \otimes 1, \ldots, \tau_n\otimes 1\in End_{L-ev}(L\underset{k}{\otimes} L, L )$ por ser $Hom_{k-ev}(L,L)\simeq Hom_{L-ev}(L\underset{k}{\otimes} L ,L)$, y hacemos las proyecciones can\'onicas $L\times \cdots \times L \overset{\pi_i}{\longrightarrow} L$ siendo $\pi_i = \tau_i \otimes 1$ y as\'i los $\tau_i$ son linealmente independientes por ser las proyecciones can\'onicas. 
+\end{dem}
+\begin{obs}
+    Dada $k \hookrightarrow L$, $a\in L$ y $G = \{ \tau_1, \ldots, \tau_n\}$, tenemos el polinomio $(x-\tau_1(a)) \cdots (x-\tau_n(a)) \in k[x] = L^G$, pues $\tau(\sum)$
+\end{obs}\begin{defi}
+    $k \hookrightarrow L$ es una \textbf{extensi\'on radical} si $L=k(\sqrt[n]{a})$ con $a\in k$. 
+     \end{defi}
+   \begin{defi} Diremos que $k \hookrightarrow L$ \textbf{extensi\'on de Galois} es \textbf{radical} si su grupo de Galois $G$ es c\'iclico.
+ \end{defi}
+   \begin{defi} $k \hookrightarrow L$ extensi\'on de Galois, diremos que es una \textbf{extensi\'on por radicales} si existe una cadena de subextensiones $k \hookrightarrow L_1 \hookrightarrow L_2 \hookrightarrow \cdots \hookrightarrow L_n = L$ siendo $L_i \hookrightarrow L_{i+1} = L_i(\sqrt[n]{a_i}) \, / \, a_i \in L_i$ una extensi\'on por un radical.
+ \end{defi}
+    Por el teorema de Galois, como $L^{H_i} = L_i$ tenemos $H_i \subset G$ un subgrupo normal, y entonces $H_{i+1} \subset H_i \subset G$ ambas inclusiones normales, teni\'endose una cadena de subrgupos normales $\{e\} \subset \cdots \subset H_{i+1} \subset H_i \subset \cdots \subset G$, pero como en $L^{H_{i+1}} \hookrightarrow L^{H_i}$ tiene por grupo de Galois $H_i / H_{i+1}$, este es c\'iclico.
+ \begin{defi}
+    $G$ es un \textbf{grupo resoluble (por radicales)} si existe una cadena de subgrupos $H_n = \{e\} \subset H_{n-1} \subset \cdots \subset H_1\subset G$, $H_{i+1} \subset H_i$ es normal y $H_i / H_{i+1}$ es c\'iclico. 
+ \end{defi}
+ \begin{teo}
+    Una extensi\'on de Galois $k \hookrightarrow L$ de grupo $G$ es una extensi\'on por radicales $\iff$ $G$ es resoluble. 
+
+    $p(x) \in k[x]$ es resoluble por radicales si su cuerpo de descomposici\'on $k \hookrightarrow k(\alpha_1, \ldots, \alpha_n)= L = k(\sqrt[\ell_1]{a_1}, \sqrt[\ell_2]{a_2}, \ldots)$ es una extensi\'on por radicales. 
+    
+    $p(x)\in k[x]$ es resoluble $\iff$ su grupo $G$ es ci\'clico.
+ \end{teo}
+ \begin{ejem}
+    Para $ax^2+bx+c=0$, $\alpha = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$, su cuerpo de desomposici\'on es $k \hookrightarrow k(\sqrt{b^2-4ac})$ es resoluble porque siempre podemos extender por el radical.
+
+    Para grado $n$, $G=S_n$, y para grado $n\ge 5$, no tiene m\'as subrgupos normales que $A_n = \{\sigma \in S_n \, / \, sig \, \sigma = \pm 1\}$ el grupo sim\'etrico. Por lo que hay que discutir si es resoluble. Por lo que $k \overset{\frac{n}{2}!}{\hookrightarrow} L^{A_n} \overset{\bb Z/2}{\hookrightarrow} L = k(\alpha_1, \ldots, \alpha_n )$ y el grado de la extensi\'on total $k \hookrightarrow L$ es $n!$. 
+ \end{ejem}
+ \begin{ejer}
+ [Problema 4 Prueba 2] Resolver $x^4-x^2-1$ y hallar su grupo de Galois.
+ \end{ejer}
+ \begin{dem}
+    Al ser una bicuadrada, acepta el cambio $y^2-y+1 = 0$, $y=\frac{1 \pm \sqrt{1-4}}{2} = \frac{1 \pm \sqrt{-3}}{2}$, entonces $x=\pm \sqrt{y}$, $\bb Q \hookrightarrow \bb Q(\sqrt[2]{-3}) = L_1 \hookrightarrow L_2 = L_1(\sqrt{{\frac{1+\sqrt{-3}}{2}}})$. $L_1 = L^H$ con $H\subset G$ subgrupo. Las dos extensiomes son de grado 2, por lo que la extensi\'on total tiene grado 4 y $G$ tendr\'a orden 4. La primera extensi\'on tiene grupo $\modulo{G}{H}= \langle \bar \tau \rangle = Aut_k L_1$ con $\bar \tau^2 =1$ un automorfismo con $\bar \tau(\sqrt{-3}) = -\sqrt{-3}$. El grupo de la segunda extensi\'on es $H = Aut_{L_1} L_2 = \langle \sigma \rangle$ y $Aut_{L_1}L_2 = Aut_{k} L_2$, siendo $\sigma\left(\sqrt{{\frac{1+\sqrt{-3}}{2}}}\right) = -\sqrt{{\frac{1+\sqrt{-3}}{2}}}$ y $\sigma(\sqrt{-3}) = \sqrt{-3}$.
+    
+    Se tiene el diagrama 
+    $$\bt L_1\rar[hook] \arrow{d}{\bar \tau} & L_2 \arrow{d}{\tau} \\ L_1\rar[hook] & L_2  \et$$
+    y $\tau\left(\sqrt{{\frac{1+\sqrt{-3}}{2}}}\right) = \pm \left(\sqrt{{\frac{1+\sqrt{-3}}{2}}}\right)$ pero al restringir a $\bar \tau$ se tiene que cumplir que $\tau (\sqrt{-3}) = -\sqrt{-3}$, y como 
+    $$\tau(\beta^2) = \tau(\beta)^2 = \bar \beta^2 = \tau\left({\frac{1+\sqrt{-3}}{2}}\right)= \frac{1-\sqrt{-3}}{2}$$
+    porque $\bar \beta = \sqrt{\frac{1-\sqrt{-3}}{2}}$. 
+
+    Las extensiones son $k\left(\sqrt{-3}, \sqrt{{\frac{1+\sqrt{-3}}{2}}} = \beta, \sqrt{{\frac{1-\sqrt{-3}}{2}}} = \bar \beta \right)$, y los automorfismos est\'an determinados por las im\'agenes de los radicales, y $\tau(\sqrt{-3})= + \sqrt{-3} \in Aut_{L_1} L$ con $\tau \in G$. Entonces
+    $$\tau\left( \sqrt{{\frac{1+\sqrt{-3}}{2}}} \right) = \beta \qquad \tau\left( {\frac{1+\sqrt{-3}}{2}} \right) = \beta^2$$
+     Falta otra extensi\'on $L_1 \hookrightarrow L_3 = L_1\tau\left( \sqrt{{\frac{1-\sqrt{-3}}{2}}} \right)$.
+
+     Calculamos el cuerpo de descomposici\'on gracias a ser bicuadrada $ y = \frac{1 \pm \sqrt{-3}}{2} = \{\alpha, \bar \alpha\}$ y $x = \pm \sqrt{\alpha}, \pm \sqrt{\bar \alpha}$, y extendemos $ k \hookrightarrow k (\alpha) = k(\sqrt{-3}) = k(\bar \alpha) = L_1$ y hay que volver a extender $L_1 \hookrightarrow L_1(\sqrt{\alpha}, \sqrt{\bar \alpha}) = k(\sqrt{\alpha}, \sqrt{\bar \alpha})= L$, de forma que $k \hookrightarrow L$ es de grado 8, pues son de grado 2 y 4 respectivamente.
+    
+     Sea $H$ el grupo de la segunda, $G/H$ es el de la primera, de forma que calculamos $H = Aut_{L_1} L, |H|=4$. Y como $|G/H| = 2, G/H \simeq \bb Z_2$. $\tau \in H$ deja fijo a $L_1$, esd ecir, sobre $\alpha$ y $\bar \alpha$ es $Id$, es decir, $\tau(\alpha) = \alpha$ y $\tau(\bar \alpha) = \bar \alpha$. Luego
+     $$\tau(\sqrt{\alpha}) = \pm \sqrt{\alpha} \qquad \tau(\bar \alpha) = \pm \sqrt{\bar \alpha}$$
+     $$\begin{array}{c|c|c|c|c}
+        & \alpha & \bar \alpha & \sqrt{\alpha} & \sqrt{\bar \alpha} \\ \hline 
+        \tau_1 & \alpha & \bar \alpha & \sqrt{\alpha} & -\sqrt{\bar \alpha}\\\hline 
+        \tau_2 & \alpha & \bar \alpha & -\sqrt{\alpha} & +\sqrt{\bar \alpha} \\\hline 
+        \tau_3 & \alpha & \bar \alpha & -\sqrt{\alpha} & - \sqrt{\bar \alpha}
+    \end{array}$$
+    de forma que $H = \{Id, \tau_1, \tau_2, \tau_3\}$, $\tau_1^2 = Id, \tau_2^2 = Id, \tau_1\circ \tau_2 = \tau_3 = \tau_2 \circ \tau_1$. $H = \langle \tau_1 \rangle \times \langle \tau_2 \rangle = \bb Z_2 \times \bb Z_2$, que es abeliano. 
+
+    Ahora $\{1, \bar \sigma\} = G/H = Aut_k L_1$ siendo $\bar \sigma: L_1 \longrightarrow L_1$ con $\bar \sigma (\sqrt{-3}) = -\sqrt{-3}$, y entonces $G = H \sqcup \sigma H$ con 
+    $$\bt G \rar & G/H \\[-5mm] \sigma \rarmaps & \bar \sigma \et$$
+    vamos a considerar $\sigma : L \longrightarrow L$ tal que $\sigma |_{L_1} = \bar \sigma$. As\'i, $\bar \sigma(\alpha) = \bar \alpha, \, \bar \sigma(\bar \alpha) =  \alpha$
+     $$\begin{array}{c|c|c|c|c}
+        & \alpha & \bar \alpha & \sqrt{\alpha} & \sqrt{\bar \alpha} \\ \hline 
+        Id &  \alpha &  \bar \alpha & \sqrt{\alpha} & \sqrt{\bar \alpha}\\\hline 
+        \tau_1 & \alpha & \bar \alpha & \sqrt{\alpha} & -\sqrt{\bar \alpha}\\\hline 
+        \tau_2 & \alpha & \bar \alpha & -\sqrt{\alpha} & +\sqrt{\bar \alpha} \\\hline 
+        \tau_3 & \alpha & \bar \alpha & -\sqrt{\alpha} & - \sqrt{\bar \alpha}\\\hline 
+        \sigma & \bar \alpha & \alpha & - \sqrt{\bar \alpha} &  \sqrt{\alpha} \\\hline
+        \sigma \circ \tau_1 & \bar \alpha & \alpha & -\sqrt{\bar \alpha} & -\sqrt{\alpha} \\\hline
+        \sigma \circ \tau_2 & \bar \alpha & \alpha  \\\hline
+        \sigma \circ \tau_3 & \bar \alpha & \alpha  \\\hline 
+    \end{array}$$
+    por ser $$\sigma(\sqrt{\alpha})^2 = \sigma(\alpha) = \bar \alpha \Rightarrow \sigma(\sqrt{\alpha}) = \pm \sqrt{\bar \alpha}$$
+    $$\sigma(\sqrt{\bar \alpha}) = \pm \sqrt{\alpha}$$
+    de forma que la tabla de multiplicar general, no conmutativa, es $$\begin{array}{c|c|c|c|c|c|c|c}
+        & Id & \tau_1 & \tau_2 & \tau_3 & \sigma \circ \tau_1 &\sigma \circ \tau_2 &\sigma \circ \tau_3 \\ \hline
+        \tau_1 & & &  \\\hline 
+        \tau_2 & & \tau_3 &  \\\hline 
+        \tau_3 &  &  & \\\hline 
+        \sigma \circ \tau_1 &  &  & \\\hline 
+        \sigma \circ \tau_2 &  &  & \\\hline 
+        \sigma \circ \tau_3 &  &  & \\\hline 
+    \end{array}$$
+    $$\tau_1 \circ \sigma \circ \tau_1 (\sqrt{\alpha}) = -\sqrt{\bar \alpha} \Rightarrow \sigma \circ \tau_i \circ \sigma^{-1} =\sigma \circ \tau_i \circ  \sigma = \tau_j$$
+    el caso es que aunque los grupos son resolubles y el final tambi\'en, no es conmutativo. 
+    \end{dem} 
+    \begin{defi}
+        Se tiene la ecuaci\'on general de grado $n$
+        $$p(x) = x^n + a_1 x^{n-1} + \cdots  + a_n \in k(a_1, \ldots, a_n)[x]$$
+        y $p(x) = (x-\alpha_1) \cdots (x-\alpha_n) \in k(\alpha_1, \ldots, \alpha_n)[x]$, con $k(a_1, \ldots, a_n)[x] \subset  k(\alpha_1, \ldots, \alpha_n)$. 
+
+        Se tiene que $K = k(a_1, \ldots, a_n) = L^{S_n}$ con $S_n = Biy\{\alpha_1, \ldots, \alpha_n\}$, $K \hookrightarrow L=  k(\alpha_1, \ldots, \alpha_n) = K (\alpha_1, \ldots, \alpha_n)$ es de Galois, de grupo $S_n$, siendo $L$ el cuerpo de descomposici\'on de $p(x) \in K[x]$, y no es resoluble, pues el \'unico subgrupo normal (por ser $\ker sig$) es $A_n \subset S_n$, y cuyo cociente $S_n / A_n \simeq \{1,-1\} = \bb Z/2$. Para $n \ge 5$, $A_n$ no tiene subgrupos normales, por lo que para grado $\ge 5$ $p(x)$ no es resolube por radicales, es decir, no podemos despejar la $x$. 
+
+        Para $n =2$, $S_2 \simeq \bb Z / 2$, $n=3$ es $Id \subset A_3 \subset S_3$ es una cadena de subgrupos con 3 elementos, con $|A_3| =\frac{3!}{2} = 3$ y $A_3 = \langle (1,2,3)\rangle$. Para $n=4$, $Id\subset K_4 \subset A_4 \subset S_4$ siendo $K_4$ el subrgupo de Klein $\{Id, (1,2)(3,4), \, (1,3)(2,4), (2,3)(1,4)\}$ que es abeliano pero no es c\'ilcico y es $\bb Z/2 \times \bb Z/2$. 
+
+        Entonces $k \overset{S_n/A_n}{\hookrightarrow} k(\alpha_1, \ldots, \alpha_n)^{A_n} \overset{A_n}{\subset} k(\alpha_1, \ldots, \alpha_n)$
+    \end{defi}
+\begin{obs}
+    Sea $ L^{S_n}= k \overset{2}{\hookrightarrow} L^{A_n} \subset L$, entonces $L^{A_n} = k(\sqrt{D})$ siendo $D$ el discriminante. En el caso de $p(x) = \prod_{i=1}^n (x-\alpha_i) $, $D(p(x)) = R(p(x), p'(x)) = \prod_{i\neq j}(\alpha_i - \alpha_j) \in L^{S_n}$, pues $\alpha_i - \alpha_j = -(\alpha_j - \alpha_i)$, y 
+    $$\sigma\left( \prod_{1\le i < j \le n}(\alpha_i - \alpha_j) \right) = \prod_{i < j} (\alpha_{\sigma(i)} - \alpha_{\sigma(j)}) = sig \,\sigma \prod_{1\le i < j \le n}(\alpha_i - \alpha_j)  $$
+    Y de esta forma, $\displaystyle D = \left( \prod_{i < j} (\alpha_{\sigma(i)} - \alpha_{\sigma(j)}) \right)^2$, y $\sqrt{D} = \prod_{i < j} (\alpha_{\sigma(i)} - \alpha_{\sigma(j)}) \in L^{A_n}$.
+\end{obs}
+\begin{obs}
+    Sea $k$ finito, $k \hookrightarrow L$ con $ch(k)= p$, no divide a $n$
+\end{obs}
+\begin{prop}
+    [Resolvente de Lagrange] Sea $k \overset{n}{\hookrightarrow} L$ una extensi\'on c\'iclica de grupo $G = \langle \sigma \rangle$. Sea $\alpha \in L$, $\mu_n = $ra\'ices $n$-\'esimas de 1 $=\langle \varepsilon \rangle = \{1, \varepsilon, \ldots,\varepsilon^{n-1}\}$. Se tiene que la resolvente de Lagrange es
+    $$\boxed{R(\alpha, \varepsilon) = \sum_{i=1}^n \varepsilon^i \cdot \sigma^i(\alpha) = \alpha + \varepsilon \cdot \sigma(\alpha) +\varepsilon^2 \cdots \sigma^2(\alpha) + \cdots + }$$
+    y $R(\alpha, \varepsilon)^n \in k$ porque $\sigma(R(\alpha, \varepsilon)) = \varepsilon^{-1} \cdot R(\alpha, \varepsilon) ,\, \varepsilon \neq 1$. Si $\langle \varepsilon \rangle = \mu_n$, $R(\alpha, \varepsilon^i)$ son todos radicales y cumplen que 
+    $$\boxed{\alpha = \frac{1}{n}\sum_{i=0}^{n-1} R(\alpha, \varepsilon^i)}$$
+\end{prop}
+\begin{dem}
+    $R\in L$ es un radical $\iff \, \sigma(R) = \varepsilon R, \, \varepsilon \in \mu_n \Rightarrow R^n \in k = L^{\sigma}$. Considerando $\sigma: L \longrightarrow L$ un endomorfismo, $\varepsilon$ es un valor propio de $\sigma$, luego $0 = \sigma^n - Id$, $x^n-1 = (x-1)(x-\varepsilon) \cdots (x-\varepsilon^{n-1}) = (x-\varepsilon)q(x)$ entonces queremos calcular $R \in \ker(\sigma -\varepsilon)$. $L = \ker(\sigma - \varepsilon) \oplus \ker q(\sigma)$, por lo que $\ker(\sigma-\varepsilon) = q(\sigma) \cdot L$ porque $q(\sigma)$ es invertible en $\ker(\sigma-\varepsilon)$. 
+
+    Como $\varepsilon \in \mu_n$, $x^n-1 = (x-1)(x^{n-1} + x^{n-2} + \cdots + x+ 1)$, luego si $\varepsilon \neq 1$, 
+    $$(\varepsilon^i)^{n-1} + (\varepsilon^i)^{n-2} + \cdots +(\varepsilon^i)+1=0 \qquad \forall 0< i < n$$
+    y entonces 
+    $$R(\alpha, 1) = \alpha + \sigma(\alpha) + \cdots + \sigma^{n-1} (\alpha)$$
+$$R(\alpha, \varepsilon) = \alpha + \varepsilon \cdot \sigma(\alpha) + \cdots +\varepsilon^{n-1} \sigma^{n-1} (\alpha)$$
+$$\vdots$$
+$$R(\alpha, \varepsilon^{n-1}) = \alpha + \varepsilon^{n-1} \cdot \sigma(\alpha) + \cdots +(\varepsilon^{n-1})^{n-1} \sigma^{n-1} (\alpha)$$
+y al sumar todas, 
+$$n \alpha+ \underbrace{(1+\varepsilon + \varepsilon^2 + \cdots + \varepsilon^{n+1})}_{=0} \sigma(\alpha) + 0 \sigma^2(\alpha) +  \cdots  = n \alpha$$ 
+demostrando as\'i la segunda igualdad del enunciado.
+\end{dem}
+\begin{ejem}
+    Vamos a reoslver la ecuaci\'on de segundo grado. Sea $x^2+bx+c = (x-\alpha_1)(x-\alpha_2)$, $S_2 = \langle \sigma \rangle$ con $\sigma(\alpha_i) = \alpha_j$, $\mu_2 = \{1,-1\}$
+    $$\alpha_1 = \frac{R(\alpha_1,1) + R(\alpha_1,-1)}{2}$$
+    siendo $$R(\alpha_1,1) = \alpha_1 +  \sigma(\alpha_1) = \alpha_1 +  \alpha_2 = -b$$
+    $$R(\alpha_1,-1) =  \alpha_1 + (-1)\sigma( \alpha_1 ) =  \alpha_1 -  \alpha_2 $$
+    de forma que $( \alpha_1 +  \alpha_2)^2 =  \alpha_1^2 +  \alpha_2^2 -2 \underbrace{\alpha_1 \alpha_2 }_{=c} $
+    $$( \alpha_1 + \alpha_2)^2 - 2 \alpha_1  \alpha_2 - 2  \alpha_1  \alpha_2 = b^2 - 4  \alpha_1  \alpha_2 $$
+\end{ejem}
+\begin{ejem}
+    En la ecuaci\'on de tercer grado, $x^3 + ax^2 + bx+c$ con ra\'ices $ \alpha_1 , \alpha_2,  \alpha_3$, $\mu_3  = \{1,\varepsilon, \varepsilon^2 = -1-\varepsilon\}$, y como $x^3-1 = 0 = (x-1)(x^2+x+1)$ entonces $\varepsilon^2+ \varepsilon +1=0$. $S_3$ no es c\'iclico, por lo que trabajamos en la extensi\'on $k \overset{S_3/A_3}{\hookrightarrow} A_3 \hookrightarrow S_3$ siendo $A_3 = \langle (1,2,3)\rangle$, y $L^{A_3} = k (\sqrt{\alpha})$. As\'i, $\alpha_1 = R(\alpha_1,1)$, 
+    $$R( \alpha_1 ,1) = \alpha_1 +\sigma( \alpha_1 ) + \sigma^2( \alpha_1) =  \alpha_1 + \alpha_2+ \alpha_3 = -a$$
+    $R(\alpha, \varepsilon)^n \in L^G $
+    $$R(\alpha, \varepsilon) = c_o + c_1\varepsilon + \cdots + c_{n-1} \varepsilon^{n-1}$$
+    $$R(\alpha, \varepsilon^i)^n = c_o + c_1 \varepsilon^i + \cdots +  c_{n-1} (\varepsilon^i)^{n-1}$$
+    $$R(\alpha_1, \varepsilon) = \alpha_1 + \varepsilon \sigma(\alpha_1) + \varepsilon^2 \sigma^2(\alpha_1) = \alpha_1 + \varepsilon\alpha_2 - (\varepsilon+1) \alpha_3 =\alpha_1 - \alpha_3 + (\alpha_2 - \alpha_3)\varepsilon$$
+    $$R(\alpha_1, \varepsilon)^3 = (\alpha_1 - \alpha_3 + (\alpha_2 - \alpha_3) \varepsilon)^2 = (\alpha_1-\alpha_3)^3 + 3(\alpha_1-\alpha_3)^2 (\alpha_2 - \alpha_3) \varepsilon + $$ 
+    $$ + 3 (\alpha_1-\alpha_3)(\alpha_2-\alpha_3)^2 \varepsilon^2 + (\alpha_2 - \alpha_3)^2 \cancelto{1}{\varepsilon^3}= c_o + c_1\varepsilon$$
+    $$R(\alpha_1, \varepsilon^2)^3 = $$
+\end{ejem}
+\begin{ejer}
+    Resolver por radicales por la resolvente de Lagrange $x^3+x+1$ sobre $\bb F_5$. 
+\end{ejer}
+\noindent $3 \alpha = \sqrt[3]{1-\varepsilon} + \sqrt[3]{2+\varepsilon}, \text{ con } \varepsilon = \frac{1+\sqrt[2]{-3}}{2}$. Luego como $\frac{1}{3} = 2$, 
+\begin{align*}\alpha & = 2\sqrt[3]{1 - \frac{1+\sqrt{-3}}{2}} +2 \sqrt[3]{2 + \frac{1+\sqrt{-3}}{2}} = 2 \sqrt[3]{\frac{2-1-\sqrt{-3}}{2}} + 2 \sqrt[3]{\frac{-1+1+\sqrt{-3}}{2}} \\ & = 2 \sqrt[3]{\frac{1-\sqrt{-3}}{2}} +2 \sqrt[3]{\frac{\sqrt{-3}}{2}}\end{align*}
+\noindent \textcolor{red}{\textbf{Soluci\'on de Teresa}} \\
+Si $k \hookrightarrow L $ el cuerpo de descomposici\'on de $p$. Si $\mu_n \subseteq k$ bien. Si no, hago $k \hookrightarrow L(\varepsilon)$ y los añado y hago $L(\varepsilon)$ en vez de $L$. Tan resoluble es $k \subset L$ como $k(\varepsilon) \subset L(\varepsilon)$.
+
+\noindent \textit{Ejercicio}. todo subgrupo de G es resoluble si G lo es
+Tomamos 
+$$\bt & L_1 \arrow{rd} & \\ k \arrow[hook, swap]{ur}{G_1} \arrow[hook]{dr}{G_2}  & & L_1 \cdot L_2 \\ & L_2 \arrow{ru} &  \et = \bar{L} \text{ un compuesto de } L_1 \text{ y } L_2$$
+Si $G_1$ y $G_2$ son resolubles, $G = G_{k \to bar{L}}$ y tambi\'en. $k \hookrightarrow \bar{L}$ noc. es de Galois pues $\bar{L} = \frac{L_1 \otimes_k L_2}{algo}$. $k \hookrightarrow \bar{L}$ es de Galois pues si $k \hookrightarrow L_1$ de Galois entonces $$L_1 \otimes_k L_1 = L_1^n \Rightarrow \begin{cases} L_1 \otimes_k \bar{L} = \bar{L}^n \\ L_2 \otimes_k \bar{L} = \bar{L}^m \end{cases}$$
+
+\noindent \textit{Ejercicio}. $H$ normal y $G$ resoluble $\Rightarrow G/H$ es resoluble.
+
+\noindent Luego $L_1 \otimes_k L_2$ es $\bar{L}$-trivializable y entonces su cociente por $\bar{L}$ tambi\'en lo es sobre $L$ 
+
+\noindent Si 
+$$\bt L_2 \arrow[swap]{dr}{H_2} & \\ & L' \\ L_1 \arrow{ur}{H_1} & \et \quad \Rightarrow \quad \begin{cases}
+G_1=G/H_1 \\ G_2= G/H_2 \end{cases}$$ con $G_1$ y $G_2$ resolubles por la extensi\'on de Galois. Como $G_1$ es resoluble, si veo que $H_1$ es resoluble $\Rightarrow G$ resoluble.
+
+\noindent \textit{Ejercicio}. $G$ resoluble $\iff \, H, G/H$ resolubles siendo $H \subseteq G$ cualquiera normal.
+
+$H_1 = \text{Aut}_{L_1} \bar{L}$, $\bar{L} = L_1 \cdot L_2$, $H_1 \hookrightarrow \text{Aut}_{L_1 \cap L_2} L_2$ un $\tau : L_1 L_2 \to L_1 L_2$, por lo del agujero único $\tau|_{L_2}$ es automorfismo y valora en $L_2$ (la inyectividad es gratis). Luego $H_1 \hookrightarrow \underbrace{G/H_2} \text{(resoluble)}\Rightarrow H_1$ es resoluble.
+
+\noindent \textit{Ejercicio}. Resolver por radicales $x^3+x+1$ en $\mathbb{F}_5$ 
+
+\textbf{A)} Cuerpo de descomposici\'on (cdd) de $p(x) = x^3+x+1$. $x^3+x+1$ es irreducible en $\mathbb{F}_5$ pues no hay raíces. Luego el cdd es $\mathbb{F}_5(\alpha) = \mathbb{F}_5(\alpha, \alpha^5, \alpha^{25})$, de grado 3 luego es $\mathbb{F}_{125}$, \boxed{\alpha^3+\alpha+1=0}
+
+\textbf{B)} $\mu_3 = \text{soluciones de } (x-1)(x^2+x+1) \subsetneqq \mathbb{F}_5$ luego $\mu_3 \subseteq \mathbb{F}_5(\varepsilon) = \mathbb{F}_{25}$
+
+\textbf{C)} Trabajamos en $L(\varepsilon) = \mathbb{F}_5(\alpha, \varepsilon) = \mathbb{F}_{5^6}$
+
+\textbf{D)} $G = \langle \sigma \rangle$, con $\sigma(s) = s^5 \quad \forall s \in \mathbb{F}_{5^6}$. Como $\alpha^3 = -1-\alpha$, $\alpha^5 = -\alpha^2 - \alpha^3 = \boxed{1+\alpha-\alpha^2 = \alpha_2}$ 
+\begin{align*} \alpha^{25} = & \, \alpha_3 = \alpha_2^5 \underbrace{=}_{\text{ch 5}} 1 + \alpha^5 - \alpha^{10} = 1 + 1 + \alpha - \alpha^2 - (1 + \alpha - \alpha^2)^2 =  \\
+= & \, 2 + \alpha - \alpha^2 - (1 + \alpha^2 + \alpha^4 + 2\alpha - 2\alpha^3 - 2\alpha^2) =  \\
+= & \, 1 - \alpha + 2\alpha^3 - \alpha^4 = 1 - \alpha + 1 + \alpha - \alpha^2 - \alpha - \alpha^2 + \alpha^3 = \\
+= & \, 2 - \alpha - 2\alpha^2 + 1 + \alpha - \alpha^2 = 2 - 3\alpha^2 = \boxed{2(1+\alpha^2) = \alpha_3} \end{align*}
+\hspace*{6cm} (A ella le da \underline{$-1-2\alpha+\alpha^2 = \alpha_3$}) 
+
+\textbf{E) La resolvente de Lagrange} \\
+$R(\alpha, 1) = \alpha_1 + \alpha_2 + \alpha_3 = -0 = 0$ (coef de $x^2$ en $x^3+x+1$)
+\begin{align*} R(\alpha, \varepsilon) & = \alpha + \varepsilon \alpha^5 + \varepsilon^2 \alpha^{25} = \alpha + \varepsilon(1+\alpha-\alpha^2) + \varepsilon^2(1-2\alpha+\alpha^2) \text{ y } \varepsilon^2 = -1-\varepsilon \Rightarrow \\
+R(\alpha, \varepsilon) & = (\alpha + 1 + 2\alpha - \alpha^2) + \varepsilon(1 + \alpha - \alpha^2 + 1 + 2\alpha - \alpha^2) = \\
+& = (1 + 3\alpha - \alpha^2) + \varepsilon(2 + 3\alpha - 2\alpha^2) \Rightarrow R(\alpha, \varepsilon^2) =  (1 + 3\alpha - \alpha^2) + \varepsilon^2(2 + 3\alpha - 2\alpha^2)
+\end{align*}
+
+\noindent $R(\alpha, \varepsilon)^3$ vale en $\mathbb{F}_5(\varepsilon)$ (la $k(\varepsilon)$, cuando $\mu_3 \subseteq k $ era en $k$). 
+\begin{align*} R(\alpha, \varepsilon)^3 & = (1+3\alpha-\alpha^2)^3 + 3 \varepsilon (1+3\alpha-\alpha^2)^2 (2+3\alpha-2\alpha^2) + \\ & +  3 \varepsilon^2 (1+3\alpha-\alpha^2) (2+3\alpha-2\alpha^2)^2+(2+3\alpha-2\alpha^2)^3 \end{align*}
+
+Acaba dando, se van todos los $\alpha$, $a+b\varepsilon = 1-\varepsilon$, luego $R(\alpha, \varepsilon^2)^3 = 1-\varepsilon^2 = 1+1+\varepsilon = 2+\varepsilon$
+luego $R(\alpha, \varepsilon) = \sqrt[3]{1-\varepsilon}, \, R(\alpha, \varepsilon^2) = \sqrt[2]{2+\varepsilon}$
+$$\alpha = \frac{1}{3} \left( \sqrt[3]{1-\varepsilon} + \sqrt[3]{2+\varepsilon} \right) \quad \quad \frac{1}{3} = 2$$
+y $\varepsilon = \frac{-1+\sqrt{-3}}{2} = \frac{-1+\sqrt{2}}{2} = -3 + 3\sqrt{2}$ luego $$\boxed{\alpha = 2 \left( \sqrt[3]{1-3\sqrt{2}} + \sqrt[3]{1+3\sqrt{2}} \right) = 2 \left( \sqrt[3]{1+2\sqrt{2}} + \sqrt[3]{1-2\sqrt{2}} \right) }$$
+\begin{ejer}
+    $G$ grupo, $H\subseteq G$ subgrupo normal, $G$ es resoluble $\iff \, H$ y $G/H$ es reosluble. 
+\end{ejer}
+\begin{dem}
+    $\Rightarrow)$ Si $G$ es resoluble existe una cadena $H_o = \{1\} \subset H_1 \subset \cdots \subset H_n = G$ con $H_i \subset H_{i+1}$ es normal y $H_i / H_{i+1}$ es c\'iclico. Se coge la cadena de subrgupos de $H$
+    $$H_o = \{1\} \subset H_1 \cap H \subset \cdots \subset H_n \cap H= H$$
+     de forma que 
+     $$\modulo{H_{i+1} \cap H}{H_i \cap H} \subset H_{i+1}/H_i$$
+     y tenemos un subgrupo de un grupo c\'iclico, y todo subgrupo de un c\'iclico es c\'iclico, por lo que $H_{i+1}/H_i$ es c\'iclico. 
+
+        Sea $p$ epiyectiva
+     $$\bt H_i \rar[phantom]{\subset} \arrow{d}{p} &[-8mm] G \arrow{d}{p} \\ p(H_i) = \bar H_i \rar[phantom]{\subset} &[-8mm] G/H \et \qquad \bt H_i \rar[phantom]{\subset} \arrow{d}{p} &[-8mm] H_{i+1} \arrow{d}{p} \\ \bar H_i \rar[phantom]{\subset} &[-8mm] \bar H_{i+1} \et$$
+     y por tanto es normal, y es c\'iclico porque si $H_{i+1} / H_i \overset{p}{\longrightarrow} \bar H_{i+1} / \bar H_i$ es epiyectiva con $p([a]) = [p(a)]$ y  $\langle \sigma \rangle = H_{i+1} / H_i$, entonces $\langle p(\sigma) \rangle = \bar H_{i+1} / \bar H_i$.
+
+     $\Leftarrow)$ Sea $H$ resoluble con $H_o = \{1\} \subset H_1 \subset \cdots \subset H_k = H$ con $H_{i+1} / H_i$ c\'iclico, $\{1\} = \bar H_k \subset \bar H_{k+1} \subset \cdots \subset \bar H_n = G/H$ es una cadena de modo que $\bar H_{k+1} / \bar H_{k}$ es c\'iclico. Consideramos $p: G \longrightarrow G/H$ y como es epiyectiva, consideramos la cadena 
+     $$H_k = p^{-1}(\bar H_k) \subset  p^{-1}(\bar H_{k+1}) \subset \cdots \subset  p^{-1}(\bar H_n) = G$$
+     y $ p^{-1}(\bar H_{i+1}) /  p^{-1}(\bar H_i) \overset{p}{\longrightarrow} \bar H_{i+1} / \bar H_i$ es un morfismo epiyectivo y adem\'as es inyectivo pues si $[z] \longmapsto p(\bar z) = [p(z)] =  [1] \Rightarrow p(z) \in \bar H_i$, por lo que $z \in p^{-1}(H_i)\Rightarrow [z]=\{1\}$, por lo que es isomorfismo, y $p^{-1}(\bar H_{i+1}) /  p^{-1}(\bar H_i) $ es c\'iclico si $\bar H_{i+1} / \bar H_i$. 
+\end{dem}
+\section{Radicales modificados}
+Sea $k$ con $ch(k) = p > 0$, \begin{defi}
+    Un \textbf{radical modificado} es la ra\'iz de $x^p - x+a\in k[x]$ y se denota por $\usqrt[p]{a}$. 
+\end{defi}
+\begin{prop}
+    Si $\alpha$ es una ra\'iz de $x^p-x+a$, $\alpha^p-\alpha+a=0$ entonces $\alpha+1$ es ra\'iz de $x^p-x+a$.
+\end{prop}
+\begin{dem}$$
+        (\alpha+1)^p-(\alpha+1)+a = \cancel{\alpha^p} + \cancel{1^p} - \alpha - \cancel{1} + a=0$$
+        Y $\alpha, \alpha+1, \ldots, \alpha_p-1$ son ra\'ices de $x^p-x+a$.
+\end{dem}
+\begin{prop}
+    $p(x) = x^p-x+a \in k[x]$ es irreducible $\iff$ no tiene rac\'ices en $k$.
+\end{prop}
+\begin{dem}
+    Sea $p(x) = p_1(x) \cdot p_2(x)$ no irreducible, con $p_1(x)$ irreducible y ra\'iz $\alpha$ en alguna extensi\'on, en general $\alpha^p$ es ra\'iz de $p(x)$ pero si $\alpha$ es ra\'iz, tambi\'en lo es $\alpha+1, \alpha+2, \ldots$, $\alpha^p = \alpha+i$ es ra\'iz, y por la misma raz\'on, $\alpha \in k$ pues 
+    $$p(x) = (x-\alpha)(x-\alpha-i_1)(x-\alpha-i_2)\cdots \Rightarrow s\alpha - (i_1+i_2 +\cdots+ i_s) \in k$$
+    $$\alpha+\alpha-i_1 + \alpha-i_2 + \cdots + \alpha-i_s$$
+
+    Si $x^p-x+a$ no tiene ra\'ices en $k$, $k \hookrightarrow \modulo{k[x]}{x^p-x+a} = k(\usqrt[p]{a})$ es una extensi\'on de Galois con grupo c\'ilcico $G = \modulo{\bb Z}{p}, +$ con $i \in \bb Z/p$, $\sigma_i(\usqrt[p]{a}) = \usqrt[p]{a} + i$ y $\sigma_i \circ \sigma_j = \sigma_{i+j}$, es decir, $G$ es isomorfo por
+    $$\bt \bb Z/p \rar{\sim} & G \\[-5mm] [i] \rarmaps & \sigma_i \et$$
+\end{dem}
+\begin{propi}
+$\usqrt[p]{a+b} = \usqrt[p]{a} + \usqrt[p]{b}$
+\end{propi}
+    \begin{dem}
+    Usando la definici\'on de que es ra\'iz de $x^p-x+a+b$,
+    $$\left( \usqrt[p]{a} + \usqrt[p]{b} \right)^p - \usqrt[p]{a} + \usqrt[p]{b} + a+ b =  \left( \usqrt[p]{a} \right)^p + \left( \usqrt[p]{b} \right)^p - \usqrt[p]{a} + \usqrt[p]{b} + a+ b = 0 $$    
+    \end{dem}
+\begin{prop}
+    $k \hookrightarrow L$, $G$ c\'iclica de orden $=p^s\cdot q$ donde $p$ no divide a $q$, $G = \langle g \rangle$ y $ord(g) = n=p^s\cdot q$, $\langle g^{p^s} \rangle = H$ siendo $|H|=q$ siendo este por radicales, y se tienen las extensiones
+    $$k \overset{p^n}{\underset{G/H}{\hookrightarrow}} L_1 \overset{q}{\underset{H}{\hookrightarrow}} L = L(\sqrt[q]{a}) $$
+
+    Si $|G|=p^n$, necesitamos una extensi\'on de orden $p$
+    $$k \overset{p^n}{\underset{}{\hookrightarrow}} L_2 = k (\usqrt[p]{a}) \overset{p^{n-1}}{\underset{H}{\hookrightarrow}} L_1 $$
+    de forma que $H = \langle g^p\rangle$ y $L_2= L^H$ si $G=\langle g \rangle$
+\end{prop}
+\begin{prop}
+    Si $k \hookrightarrow L$ es una extensi\'on c\'iclica de grado $p \Rightarrow G = \langle \sigma \rangle$, $L = k(\usqrt[p]{a})$.
+\end{prop}
+\begin{obs}
+    Para radicales vimos que $R$ es radical si y solo $\sigma(R) = \varepsilon R \Rightarrow R = \sqrt[n]{a}$, ahora, $R_m$ es un radical modificado
+    $$R_m \in L \iff \sigma(R_m) = R_m + i \quad i \in \bb F_p$$
+    $\langle i \rangle =\bb Z / p^i$, calculemos el polinomio m\'inimo de $R_m$,
+    $$\sigma^2(R_m) = \sigma(R_m) + i = R_m +2i $$
+    $$\vdots $$
+    $$\sigma^{p-1}(R_m) = R_m + (p-1)i $$
+    de forma que para cualquiera $(x-R_m)(x-\sigma(R_m))\cdots (x - \sigma^{p-1}(R_m)) \in L^G$, se tiene que llamando $y=x-R_m$, 
+    $$y(y-i)(y-2i)\cdots (y-k\cdot i)\cdots (y-(p-1)i) = y(y-1) \cdots (y-(p-1)) = y^p - y = 0 $$
+    por ser $\langle i \rangle =\bb Z / p $ y en $\bb F_p$, se verifica que $y^p=y$. Deshaciendo el cambio, $y^p-y = (x-R_m)^p - (x-R_m) = x^p- R_m^p - x - R_m = x^p - x - (R_m^p+R_m) = 0$ y $R_m^p - R_m \in k = L^G$. 
+\end{obs}
+\begin{lem}
+    Si $ch(k) = p$ y $k \overset{p}{\hookrightarrow} L = k(\usqrt[p]{a})$ es una extensi\'on de Galois, entonces $G$ es c\'iclico con $|G|=p$. 
+\end{lem}
+\begin{dem}
+    $\alpha=\usqrt[p]{a} \iff \sigma (\alpha) = \alpha+i, \, i \in \bb F_p$ y si 
+    
+    $\Rightarrow)$ $\alpha$ es ra\'iz de $x^p-x+a \Rightarrow \alpha+i = \sigma(\alpha)$ es ra\'iz de $x^p-x+a$.  
+
+    $\Leftarrow)$ $\sigma(\alpha) = \alpha+i \Rightarrow \alpha^p - \alpha \in k = L^G$ pues
+    $$\sigma(\alpha^p - p ) = \sigma(\alpha)^p - \sigma(\alpha) = (\alpha+i)^p - (\alpha+i) = \alpha^p + i^p - \alpha - i = \alpha^p - \alpha$$
+    por ser $i^p = i $ en $\bb F_p$. 
+\end{dem}
+\begin{defi}
+    Se define la traza como la aplicaci\'on
+    $$\bt L \rar & k \\[-5mm] \alpha \rarmaps & \alpha+ \sigma(\alpha) + \cdots + \sigma^{p-1}(\alpha) \et$$
+    y $traza (1)=0$.
+
+    $\ker traza \neq L$ pues $Id + \sigma + \cdots + \sigma^{p-1} = 0$ porque $Id, \sigma, \ldots, \sigma^{p-1}$ son linealmente independietes por la independencia ya vista. Entonces existe $a\in L$ con $traza(a) =\lambda \neq 0$ de forma que $traza(\frac{a}{\lambda}) = 1$. 
+\end{defi}
+
+Sea $k \hookrightarrow L$, $\alpha\in L$, $\alpha \nin k$, $k \hookrightarrow k(\alpha)$, si $traza(\alpha) = 1$ y definimos el resolvente modificado
+$$R_m(\alpha,1) = \alpha+ 2\sigma(\alpha) + 3 \sigma^2(\alpha) + \cdots + (p-1) \sigma^{p-2}(\alpha)$$
+de forma que $R_m(\alpha) = \usqrt[p]{c}$ con $c\in k$. Veamos que $\sigma(R_m) = R_m+1$:
+$$\sigma(R_m) = \sigma(\alpha)+2\sigma^2(\alpha) + 3 \sigma^3(\alpha) + \cdots  + (p-2) \sigma^{p-2}(\alpha) + (p-1)\sigma^{p-1}(\alpha)$$
+$$R_m - \sigma(R_m)= \alpha  +  \sigma(\alpha) +  \sigma^2(\alpha) + \cdots +  \sigma^{p-2}(\alpha) - (p-1)\sigma^{p-1}(\alpha) = $$
+$$= \alpha  +  \sigma(\alpha) +  \sigma^2(\alpha) + \cdots +  \sigma^{p-2}(\alpha)+ \sigma^{p-1}(\alpha) = traza(\alpha) = 1  $$
+y en $\bb Z/p$, $p-1=-1$, 
+$$\sigma(R_m) = R_m-1$$
+comprob\'andose as\'i que es un radical modificado. 
+
+Se tiene que $k(R_m) = k(\alpha)$, $\alpha= a_o + a_1 R_m+ \cdots  + a_{p-1} R_m^{p-1}$, $R_m = f(\alpha)$
+
+\begin{ejem} Resolvamos $x^2+ax+b$ con $ch(k)=2$. Sea $\alpha$ una ra\'iz, $G = \langle \sigma\rangle$ hace que $\sigma(\alpha) = \bar \alpha$ la otra ra\'iz. $\sigma^2=Id$. Para calcular la resolvente, usamos un elemento con traza $\neq 0$, y $traza(\alpha) = \alpha+\bar \alpha= -a \neq 0$, luego $traza \frac{\alpha}{-a}=-1$ y la resolvente modificada de 
+$$R_m \left( -\frac{\alpha}{a} \right) = - \frac{\alpha}{a} $$
+y veamos qu\'e radical modificado es 
+$$\left( -\frac{\alpha}{a} \right)^2 - \left( -\frac{\alpha}{a} \right) \in k$$
+$$\frac{\alpha^2}{a^2} + \frac{\alpha}{a} = \frac{-a\alpha - b}{a^2} + \frac{\alpha}{a} = -\frac{b}{a^2} \in k$$
+con $\alpha^2=-a\alpha-b$. Entonces $\frac{\alpha}{a} = \usqrt[2]{-\nicefrac{b}{a^2}}$ y $\alpha = a \usqrt[2]{-\nicefrac{b}{a^2}}$.  
+\end{ejem}
+\begin{ejem}
+    En $ch(k)=3$, $A_3 \subset S_3$ se tienen las extensiones $k \overset{\bb Z/2}{\hookrightarrow} L^{A_3} \overset{A_3}{\hookrightarrow} \bar L$
+\end{ejem}
+\begin{ejer}
+    Resolver por radicales modificados $p(x)= x^3+x^2-x+1=0$ en $\bb F_3$. 
+\end{ejer}
+\begin{dem}
+    Se trata de un polinomio irreducible en $\bb F_3=\{0,1,-1\}$ pues al sustituir no dan cero. Entonces su cdd es $k \overset{3}{\hookrightarrow} k(\alpha) = L$ es de Galois c\'iclica por el grupo generado por $\sigma$ con $\sigma(z) = z^3$ el automorfismo de Frobenius. Encontramos un elemento $\alpha$ de $traza \alpha \pm 1$, $\frac{\alpha}{-1} = \bar \alpha$ es ra\'iz de $-x^3+x^2+x+1$ de forma que 
+    $$R_m(\bar \alpha) =  + 2\sigma(\bar \alpha) = \bar \alpha + 2\bar \alpha^3 = \bar \alpha - \bar \alpha^2 - \bar \alpha - 1=-\bar \alpha^2-1$$
+    por ser $\bar \alpha^3 = \bar \alpha^2+\bar \alpha+1$. Vamos a ver que el resultado es un radical moficado, es decir, que $R_m^3- R_m \in \bb F_3^2$:
+    $$R_m^3- R_m = -(\bar \alpha^2+1)^3 + \bar \alpha^2 + 1  = -\bar \alpha^6-1+\bar \alpha^2+1 = -\bar \alpha^6 + \bar \alpha2 =\bar \alpha = - (\bar \alpha^2 -\bar \alpha-1)^2 +\bar \alpha^2 =$$
+    $$= - (\bar \alpha^4 + \bar \alpha^2+1-2\bar \alpha^3 - 2\bar \alpha^2+2\bar \alpha)+ \bar \alpha = -\bar \alpha^4 - 2\bar \alpha^3 +2\bar \alpha-1 = $$
+    $$ = -\bar \alpha^2 - \bar \alpha+1 +\bar \alpha^2+\bar \alpha+1 -1-\bar \alpha = \cdots = \pm 1$$
+    con $\bar \alpha^4 = \bar \alpha^3+\bar \alpha^2+\bar \alpha = \bar \alpha^2 + \bar \alpha+1+\bar \alpha^2+\bar \alpha=-\bar \alpha^2-\bar \alpha+1$. Entonces $R_m= \usqrt[3]{1}$ o $R_m= \usqrt[3]{-1}$. Calculamos $\bar \alpha$, 
+    $$\bar \alpha=a_o + a_1 R_m + a_3 R_m^2 = a_o + a_1 (-\bar \alpha^2-1) + a_2 (-\bar \alpha - 1)^2 = \cdots $$
+\end{dem}
+\chapter{Geometr\'ia. Construcciones con regla y comp\'as.}
+\textcolor{red}{FALTA D\'IA 24/03/2026 FOTO \'ALVARO}
+
+\textbf{Perpendicular a la recta que pasa por A y B y el punto medio de A y B}
+
+\textbf{Paralela a la recta que pasa por A y B y pasa por C}
+
+\textbf{Perpendicular a la recta que pasa por A y B y por otro punto C} $1\circ 2$
+
+\textbf{Circunferencia que pasa por 3 puntos no alineados}
+
+\textbf{Bisectriz de dos rectas}
+\begin{lem} $a+bi \in \bb C$ es constructible $\iff$ $a$ y $b$ son constructibles. 
+    \end{lem}\begin{teo}
+    Las construcciones con regla y comp\'as o el conjunto de los puntos constructibles $\mc C \subset \bb C$, forman un cuerpo que contiene a $\bb Q$ y es cerrado por ra\'ices cuadradas. Si $\alpha \in \mc C \Rightarrow \sqrt{2} \in \mc C$. 
+\end{teo}
+\begin{dem}
+    Por el lema, se reduce a probar que si $a,b\in \bb R \cap \mc C \Rightarrow a+b, a-b, a\cdot b, \frac{a}{b} \in \mc C$. Con dibujos.
+\end{dem}
+
+Dado $z = r(\cos\alpha+i \sin\alpha) \in \bb C$, entonces $\sqrt{z} = \sqrt{r} (\cos \frac{\alpha}{2} + i \sin \frac{\alpha}{2})$. \begin{prop} Entonces queda ver que si $a\in \bb R^+ \cap \mc C$ entonces $\sqrt{a} \in \mc C$
+\end{prop}
+\begin{dem}
+    $$\left(x-\frac{a-1}{2}\right)^2  + y^2= \left(a-\frac{a-1}{2}\right)^2 = \left(\frac{a+1}{2}\right)^2 \iff \frac{a^2+1-2a}{4} + y^2 = \frac{a^2+1+2a}{4} $$ 
+    $$\Rightarrow y^2=a \Rightarrow y = \sqrt{a} $$
+    de forma que $\bb Q \hookrightarrow \bb Q(\alpha) \hookrightarrow \bb Q(\sqrt{a_1}, \sqrt{a_2}, \ldots, \sqrt{a_s})$ se extiende por radicales y $a_i \in \bb Q(\sqrt{a_1}, \sqrt{a_2}, \ldots, \sqrt{a_s})$. Rec\'iprocamente, si $\alpha$ pertenece a una extensi\'on as\'i, es constructible, por construcci\'on. 
+\end{dem}
+\begin{defi}
+    $G$ se dice que es un $p$-grupo si $|G| = p^n$ con $p$ primo.
+\end{defi}
+\begin{teo}
+    Todo $p$-grupo es resoluble.
+\end{teo}
+\begin{dem}
+    Por inducci\'on sobre $n$, si $n=1$, $|G|=p, \, G = \langle g \rangle$ con $g\neq 1$. 
+
+    Necesitamos un subgrupo normal para hacer la cadena y que sea resoluble. Consideramos el centro $Z[G]=\{g\in G / g\cdot \bar g = \bar g \cdot \, \forall \bar g \in G\}$ y veamos que es no trivial, es decir, $Z[G] \neq \{e\}, |Z[G]| >1$. $G$ opera en $G$ por conjugaci\'o, es decir, $g*\bar g = g\cdot \bar g \cdot g^{-1}$. 
+
+    Como $G = \bigsqcup_{[g]\in G/conj} orb(\bar g)$, con $orb(\bar g)=\{g*\bar g\} = $
+    y $1 = |orb(\bar g)| = \{ g\cdot \bar g \cdot g^{-1}\}$, es decir, $| orb(\bar g)| = 1\iff \bar g \in Z[G]$. Adem\'as, como $orb(\bar g) = G/H_{\bar g}, \, |orb(\bar g)|=p^s, \, s\ge 1$, entonces 
+    $$p^n =  |G|=\sum |orb(\bar g)| = \sum_{|orb(\bar g)| =1} |orb(\bar g)| +\sum_{|orb(\bar g)| >1} |orb(\bar g)| = |Z[G]| + \dot{p} $$
+
+    Suponemos cierto hasta $n-1$, $Z[G] \hookrightarrow G \longrightarrow G/Z[G]$ es resoluble
+ \end{dem}
+ \begin{cor}
+    $k \hookrightarrow L$ una extensi\'on de Galois es una extensi\'on por radicales cuadr\'aticos si y solo si $k \hookrightarrow L_1 \hookrightarrow L_2 \hookrightarrow \cdots \hookrightarrow L_n = L$, $L_i \subset L_{i+1}(\sqrt[2]{a})$ y como cada extensi\'on es de grado 2, $k\hookrightarrow L$ de Galois es por radicales cuadr\'aticos $\iff grado_k L = 2^n$. 
+ \end{cor}
+ \begin{teo}
+    $\alpha \in \bb C$ es construtcible con regla y comp\'as $\iff$ la envolvente de Galois $\bb Q(\alpha)$ es de grado $2^n$.  
+ \end{teo}
+ \begin{custom}[Cuadratura del c\'irculo]
+ El objetivo era convertir el c\'irculo en un cuadrado de misma \'area, y como el \'area del cuadrado $=l^2$ y la del c\'irculo es $=\pi \cdot r^2$, entonces buscamos $ l = \sqrt{\pi} \cdot r$, entonces la extensi\'on $Q \hookrightarrow Q(\pi) \hookrightarrow Q(\sqrt{\pi})$ son extensiones infinitas, pues $\pi$ no es ra\'iz de ningu\'n polinomio.
+ \end{custom}
+ \begin{custom}
+    [Duplicaci\'on del cubo] Dado un cubo de volumen $c=l^3$, se busca construir un cubo de volumen $2c$, de forma que $\bar c = \bar l^3 = 2l^3 \Rightarrow \bar l = \sqrt[3]{2} l$
+    pero $\sqrt[3]{2}$ no es constructible aunque la extensi\'on $Q \hookrightarrow Q(\sqrt[3]{2})$ es de grado 3. 
+ \end{custom}
+ \section{Construcci\'on con regla y comp\'as de un pol\'igono regular de $n$ lados}
+ Se tiene que un pol\'igono regular es $\varepsilon = \cos(\frac{2\pi}{n}) + i \sin(\frac{2\pi}{n})$ es la ra\'iz primitiva $n$-\'esima de la unidad y los otr\'os v\'ertices son $n \varepsilon$. 
+
+ Entonces $\bb Z/n = \mu_n = \{1, \varepsilon , \varepsilon^2, \ldots, \varepsilon^{n-1}\}$,  y  $\bb Q \hookrightarrow \bb Q(\varepsilon)$ tiene por grupo de Galois $(\bb Z/n)^{\times}$, que son los generadores con la suma, y $(\bb Z/n)^{\times} = \{\tau_a\}$. Entonces $\tau$ es constructible con regla y comp\'as $\iff |(\bb Z/n)^{\times}| = 2^s = \phi(n)$. Si $n=p_1^{l_1}\cdots p_s^{l_s}$ descomposici\'on en primos, entonces 
+ $$\bb Z / n = \bb Z / p_1^{l_1} \times \cdots \times \bb Z / p_s^{l_s}$$
+ $$(\bb Z/n)^{\times} = (\bb Z / p_1^{l_1})^{\times}  \times \cdots \times (\bb Z / p_s^{l_s} )^{\times} $$
+ $$\phi(n) = \phi(p_1^{l_1})\cdots \phi(p_s^{l_s})$$
+ de forma que los invertibles de $\bb Z / p^n$ son los elementos que no pertenecen a $(p)$, el anillo de ideal maximal $(p)$, luego $(p) = (p\cdot s ) ,\,  0 \le s < p^{n-1}$, luego $|(p)|=p^{n-1}$. Entonces $|Z/p^n|=p^n, |\nin (p) | = p^n - p^{n-1} = p^{n-1}(p-1)$ luego $\phi(p^n) = (p-1)p^{n-1}$. 
+
+ Entonces veamos que $\phi(n) = 2^s$. $n = 2^m \cdot p_1^{l_1} \cdots  p_s^{l_s}$  con $2<p_i$ primos. Luego $\phi(n) = \phi(2^m) \cdot \phi( p_1^{l_1}) \cdots \phi(p_s^{l_s}) = 2^{m-1} \cdot (p_1-1) p_1^{l_1-1} \cdots (p_s-1) p_s^{l_s-1} = 2^s$ y $l_i-1 \ge 1$ no es posible porque $p_i \neq 2$, $l_i-1=0\Rightarrow l_i=1$, de forma que 
+ $\phi(n) = 2^{m-1} (p_1-1) \cdots (p_s-1) \Rightarrow p_i-1=2^{l_i} \Rightarrow p_i = 1+2^{l_i}$, que son los primos de Fermat. $\phi(n) =2^s \iff n =2^m \cdot p_1 \cdots p_s$ y $p_i=1+2^{l_i}$
+
+ \begin{ejem}
+    Si $n=4,5,6$ son potencias de dos o sumando 1. En $n=7$ no es constructible. 
+ \end{ejem}
+\chapter{Repaso final}
+\section{Extensiones ciclot\'omicas}
+$\mu_n = \{ \alpha \in \bb C / \alpha^n = 1\} \subset \bb C$ es un grupo c\'iclico por $\mu_n = \langle e^{\frac{2\pi i}{n}} \rangle$ con $e^{\frac{2\pi i}{n}} = \cos \frac{2\pi}{n} + i \sin \frac{2\pi}{n}$, es decir, $\mu_n = \{e^{\frac{2\pi i}{n} k}\}$ y llamamos ra\'iz primitiva $n$-\'esima de 1 a un generador de $\mu_n$. El polinomio ciclot\'omico $\phi_n(x) = \prod_{\varepsilon_i \in \mu_n} (x-\varepsilon_i)$ es aquel cuyas ra\'ices son la ra\'ices $n$-\'esimas de la unidad, es decir, $x^n-1 = \prod(x-\varepsilon)$. Como $\varepsilon$ es un generador de $\mu_n$, $x^n-1=\prod_{i=0}^{n-1}(x-\varepsilon^i)$.
+
+Los generadores de un grupo c\'ilico son los elementos cuyas potencias generan todo el grupo. Como todo grupo c\'ilico es isomorfo a $\bb Z/n$, encontrar los generadores de $\mu_n$ es encontrar los de $\mu_n$. El orden de un elemento es el m\'inimo $k$ tal que $\alpha^k=1$, luego generadores de $\mu_n = \{\alpha \in \mu_n \, / \, ord(\alpha) = n\}$. Si $ord(\alpha) = k$, $\alpha^k=1$ y ese $k$ es m\'inimo, luego $\langle \alpha \rangle = \mu_k$, es decir, que $\alpha$ es ra\'iz de $\phi_k(x)$. Luego $x^n-1 =\displaystyle \prod_{d|n} \phi_d(x)$. Entonces
+$$\phi_n(x) = \frac{x^n-1}{\displaystyle \prod_{d|n} \phi_d(x)}$$
+y como numerador y denominador son polinomios con coeficientes en $\bb Z$, $\phi_n(x)$ es polinomio con coeficientees en $\bb Z$. Usando las f\'ormulas de c\'alculo, 
+
+\noindent$\phi_1(x) = x-1$
+
+\noindent$\phi_2(x) = \frac{x^2-1}{x-1} = x+1$
+
+\noindent$\phi_p(x) = \frac{x^p-1}{x-1} = x^{p-1} + \cdots  + x+ 1$
+
+\noindent$\phi_{p^n}(x) = \phi_p(x^{p^n-1} ) = 1+x^{p^n-1} + x^{2p^n-1} + \cdots + x^{(p-1) p^n-1} \qquad \varepsilon^{p^n} = 1 \iff ord(\varepsilon^{p^n-1}) = p$.
+\begin{ejer}
+    Sea $p$ primo y $r$ no divisible por $p$, entonces 
+    $$\phi_{p^n\cdot r}(x) = \frac{\phi_r(x^{p^n})}{\phi_r(x^{p^n-1})} $$
+    y si $r>2$ es impar, $\phi_{2r}(x) = \phi_r(-x)$.
+\end{ejer} 
+Se tiene que generadores de $\bb Z/n$ con + $=(\bb Z/n)^{\times} = \{\text{invertibles con } \cdot\} = \{ [m] \, / \, 0 < m <n \, / \, m, n \text{ primos entre s\'i}\}$, y $[m]$ es generador de $\bb Z/n = \langle [1] \rangle \iff [1]\in \langle [m]\rangle \iff \, \exists\, k \in \bb N \, / \, 1=[1]=k[m]=[km]=[k][m]\iff [m] \in (\bb Z/n)^{\times}$.
+\begin{lem}
+    [de Bezout] $m$ y $n$ son primos entre s\'i $\iff \, 1=mx+ny \iff 1=mx \mod n\bb Z \iff [m]$ invertible en $\bb Z/n$.
+\end{lem}
+Sea $n = p_1^{l_1} \cdots p_s^{l_s}$, $p_i \neq p_j (i \neq j)$ primos, $\bb Z/n \simeq \bb Z /  p_1^{l_1} \times \cdots \times  \bb Z/p_s^{l_s}$, entonces $(\bb Z / n)^{\times} =(\bb Z /  p_1^{l_1}) ^{\times}\times \cdots \times  (\bb Z/p_s^{l_s})^{\times}$, luego
+$$\phi(n) = |(\bb Z / n)^{\times}| =|(\bb Z /  p_1^{l_1}) ^{\times}|  \cdots |(\bb Z/p_s^{l_s})^{\times}| = \phi( p_1^{l_1}) \cdots  \phi(p_s^{l_s})$$
+de forma que $[m]\in \bb Z/p^n$, $m$ es divisible por $p^n \iff m$ no es divisible por $p$, es decir, $m$ es divisible por $p\iff m = pq < p^n, \, 0< q< p^{n-1}$ y as\'i, el n\'umero de $[m]$ divisible por $p = p^{n-1}$, y por tanto, el n\'umero de $[m]$ no divisible por $p$ es $p^n-p^{n-1} = p^{n-1}(p-1)$, es decir, $\phi(p^n) = p^{n-1} (p-1)$. 
+\begin{prop}
+    $\bb Q \longrightarrow \bb Q(\varepsilon) = \bb Q[x] / \phi_n(x)$ tiene por cuerpo de resoluci\'on $x^n-1$
+\end{prop}
+\begin{dem}
+    $\phi_n(x) \in \bb Z[x]$ es irreducible luego $\phi_n(x) = p(x)\cdot q(x), p(x)$ irreducible y $\bb Q \longrightarrow \bb Q(\varepsilon) = \bb Q/ p(x)$ es una extensi\'on de Galois. Pero $(\bb Z/n)^{\times}$ opera en $\bb Q(x)$ dado $[k]\in (\bb Z/n)^{\times}$ produce un morfismo $\tau_k (\varepsilon) = \varepsilon^k$. Sea $\varepsilon$ ra\'iz de $p(x)$ y $\varepsilon^p$ ra\'iz de $\phi_n(x)$, $\varepsilon^p$ es ra\'iz de $p(x)$, $p(\varepsilon^p)=0$, $p(x)$ y $p(x^p)=q(x)$ tienen la ra\'iz com\'un $\varepsilon$, y es otro polinomio irreducible que divide a $\phi_n(x)$. En $\bb Z/p$ es $p(x^p) = p(x)^p \Rightarrow p(\varepsilon^p) = 0 \mod p$.  
+\end{dem}
+\begin{teo}
+    $\phi_n(x) \in \bb Z[x]$ es irreducible.
+\end{teo}
+\begin{dem}
+    Supongamos que $\phi_n(x) = p(x)\cdot q(x)$, siendo $p(x)$ es irreducible, y $\varepsilon$ es ra\'iz de $p(x)$, y como las ra\'ices de $\phi_n(x)$ son $\varepsilon^k$, $0<k<n$ siendo $k$ primo con $n$. Entonces $\phi_n(x) = p(x)$ si $\varepsilon^k$ es ra\'iz de $p(x)$, y basta ver que $\varepsilon^p$ es ra\'iz de $p(x)$ para todo $p$ primo que no divida a $n$. 
+
+    Supongamos que $\varepsilon^p$ no es ra\'iz de $p(x)$, entonces es ra\'iz de $q(x)$, $q(\varepsilon^p)=0$, lo que implica que $q(x^p)$ y $p(x)$ tienen una ra\'iz en com\'
+    un, por lo que no son primos entre s\'i. Entonces en $\bb F_p[x]$, $\bar \phi_n(x) = \bar p(x)\cdot \bar q(x)$, $\bar q(x^p) = \bar q(x)^p$ por ser $\mod p$, y como ten\'ian una ra\'iz en com\'un, $\bar p(x)$ y $\bar q(x)$ tambi\'en y es $\varepsilon$. Entonces $\bar \phi_n(x)$ tiene una ra\'iz doble, pero $\bar \phi_n(x)$ es un divisor de $h(x)=x^{n}-1$, pero no tiene ra\'ices dobles en $\bb F_p[x]$ pues al derivarlo, $h'(x)=n \cdot x^{n-1}$, llegando a una contradicci\'on y $n \neq 0\mod p$ pues $p$ no divide a $n$. 
+\end{dem}
+\begin{prop} Tenemos pues que $\bb Q \hookrightarrow \modulo{\bb Q}{\phi_n(x)} = \bb Q(\varepsilon)$ es una extensi\'on de Galois. El grupo de Galois de $\phi_n(x)$ es $(\bb Z/n)^{\times}$.
+\end{prop}
+\begin{dem}
+    Es una extensi\'on de Galois porque es el cuerpo de descomposici\'on de $x^n-1$. 
+
+    Se tiene el isomorfismo de grupos
+    $$\bt (\bb Z/n)^{\times} \rar & Aut_{\bb Q}\bb Q(\varepsilon) \\[-5mm] k \rarmaps & \tau_k \et\qquad \tau_k(\varepsilon) = \varepsilon^k$$
+    siendo $k$ primo con $n$. En efecto, es morfismo de grupos porque $\tau_{k \cdot s} = \tau_ k \circ \tau_s$ y es epiyectivo porque $\tau_k(\varepsilon) = \varepsilon^k$ es ra\'iz de $\phi_n(x)$. Adem\'as es inyectivo por c\'alculo de n\'umero de elementos, pues $|(\bb Z/n)^{\times}| = \phi(n)$ y $| Aut_{\bb Q}\bb Q(\varepsilon)| = \dim_{\bb Q}\bb Q(\varepsilon) = gr(\phi_n(x))$. 
+\end{dem}
+\begin{teo}[de Kronecker-Webber]
+    Si $\bb Q \hookrightarrow L$ es una extensi\'on abeliana (o de Galois con grupo asociado abeliano), toda extensi\'on abeliana est\'a contenida en una extensi\'on ciclot\'omica, es decir, $\bb Q \hookrightarrow L \subset \bb Q(\varepsilon)$. 
+\end{teo}
+\begin{ejer}
+    Traducir enunciados de grupos a extensiones. 
+
+    Todo subgrupo de un grupo abeliano es abeliano y todo cociente de un grupo abeliano es abeliano.
+
+    Si $k \hookrightarrow L$ es una extensi\'on abeliana de grupo $G$, $H\subset G$ subgrupo, entonces $k \overset{G/H}{\hookrightarrow} L' \overset{H}{\hookrightarrow} L$ y toda subextensi\'on $L' \subset L$ es abeliana y $k \subset L'$ es abeliana. 
+\end{ejer}
+\begin{ejer}
+    Calcular el grupo de Galois sobre $\bb Q$ del polinomio $(x^3+3)(x^2+3)$. 
+\end{ejer}
+\begin{dem}
+    Es el grupo de Galois de su cuerpo de descomposici\'on, que es extender por las ra\'ices de $p(x)$. Esto es
+    $$\bt \bb Q \rar{\bb Z/2}[swap]{2} \arrow{dr} & \bb Q(\sqrt[2]{-3}) \rar{\bb Z/3}[swap]{3} & L\\ & \bb Q(\sqrt[3]{-3}, \varepsilon \cdot \sqrt[3]{-3}) \arrow{ru} &  \et$$
+    siendo $L$ un compuesto de las otras extensiones, y $\varepsilon$ ra\'iz de $x^3-1 = (x-1)(x^2+x+1)$, es decir, $\varepsilon$ ra\'iz de $x^2+x+1$, es decir, $\varepsilon = \frac{-1\pm \sqrt[2]{-3}}{2}$, es decir $\bb Q(\sqrt[3]{-3}, \varepsilon\sqrt[3]{-3}) = \bb Q(\sqrt[3]{-3}, \varepsilon) = \bb Q(\sqrt[3]{-3}, \sqrt[2]{-3})$ de forma que $L = \bb Q(\sqrt[2]{-3}, \sqrt[3]{-3})$ y es una extensi\'on de Galois. Vamos a calcular el grupo de Galois. Sea $\bb Z/3 = \langle\tau\rangle$ y $\bb Z/2 = \langle \sigma \rangle$, $\tau(\sqrt[3]{-3}) = \varepsilon\cdot \sqrt[3]{-3}$ y $\tau(\sqrt[2]{-3})=\sqrt[2]{-3}$. Sea $\langle \tau \rangle =H$, $G/H = \langle \bar \sigma \rangle$ con $\sigma|_{\bb Q(\sqrt[2]{-3})} = \bar \sigma$. Entonces
+    $$\sigma(\sqrt[2]{-3}) = -\sqrt[2]{-3} \quad \sigma(\sqrt[3]{-3}) = \varepsilon^i \cdot \sqrt[3]{-3}\qquad i = 0,1,2$$
+    $\sigma (\varepsilon) = \bar \varepsilon = 1-\varepsilon$. Por la teor\'ia de extensiones, el grupo de la extensi\'on es $|G|=6$, $\langle \tau \rangle = H_1 \subset G$, y $\tau$ queda definido por sus im\'agenes, al igual que $\langle \sigma \rangle = H_2 \subset G$, con la tabla de multiplicar
+    $$\begin{array}{c|c|c}
+        & \sqrt[2]{-3} & \sqrt[3]{-3}   \\ \hline 
+        \tau & \sqrt[2]{-3} & \varepsilon\cdot \sqrt[3]{-3}  \\\hline 
+        \sigma & -\sqrt[2]{-3}  & \sqrt[3]{-3}  \\\hline 
+        \tau \circ \sigma & -\sqrt[2]{-3} & \varepsilon \cdot \sqrt[3]{-3} \\\hline
+        \sigma \circ \tau & - \sqrt[2]{-3}  & \bar \varepsilon \cdot \sqrt[3]{-3} 
+    \end{array}$$
+    y no es conmutativo, y $G =\{Id, \tau, \sigma, \tau\circ \sigma, \sigma \circ \tau, \tau^2\}$, y aunque $H_1$ es normal, $H_2$ no es normal. El grupo es resoluble por radicales (son extensiones por radicales) y se tiene la resoluci\'on $0\subset H_1 \subset G$. 
+\end{dem}
+\begin{prop}
+    Sea $k$ con $ch(k)=0$ y $k \hookrightarrow L$ una extensi\'on de Galois de grupo $G$, $H = \{\tau_1, \ldots, \tau_r\} \subset G$ subgrupo, 
+    $$\bt L \rar & L^H \\[-5mm] a \rarmaps & \tau_1(a) + \cdots + \tau_r(a)  \et$$ 
+    es una aplicaci\'on lineal epiyectiva, de forma que escogiendo un n\'umero finito de vectores que generan, es $k$-lineal.
+\end{prop}
+\begin{defi}
+Dado $a\in L$, se define la traza de $a$ como $traza(a) = traza(h_a)$ siendo $h_a: L \longrightarrow L $ el morfismo multiplicar por $a$, y es dado su polinomio caracter\'istico es su coeficiente $c_1$, $|h_a-xId| = x^n- c_1x^{n-1} + \cdots$. La aplicaci\'on $traza: L \longrightarrow k$ es $k$-lineal.
+\end{defi}
+Entonces si $k \overset{n}{\hookrightarrow} L$ es de Galois de grupo $G=\{\tau_1, \ldots, \tau_n\}$, $traza(a) = \tau_1(a) + \cdots + \tau_n(a) \in k = L^G$. 
+
+Aplicando a $L^H \overset{H}{\hookrightarrow} L$ de Galois de grupo $H$, y como $traza: L \longrightarrow k$ es una forma lineal, $\Im traza \subseteq k$ o es $k$ o es 0. Para ver que es epiyectiva, si $\lambda \in k$, $traza(\lambda)=traza(h_{\lambda}) = n \cdot \lambda \neq 0$. 
+
+Como $L\otimes_k L$ es trivial, y $h_a: L \longrightarrow L$ se tiene el morfismo de $L$-espacios vectoriales
+$$\bt L\otimes_k L\rar{h_a\otimes 1} & L\otimes_k L \\[-5mm] x\otimes l \rarmaps & ax \otimes l  \et$$
+de forma que si $L = \langle e_1, \ldots, e_n \rangle$, $L\otimes_k L = \langle e_1\otimes 1, \ldots, e_n \otimes 1\rangle$, $h_a= \big( a_{ij} \big) = h_a\otimes 1$ y $traza (h_a) = traza(h_a\otimes 1)$. De esta forma
+$$\bt L\otimes_k L \rar{\sim} & L\times \cdots \times L  \\[-5mm]  a\otimes b \rarmaps & (\tau_1(a)\cdot b, \ldots, \tau_n(a)\cdot b) \et$$
+$$a\otimes 1= (\tau_1(a)\cdot b, \ldots, \tau_n(a)\cdot b) = c$$
+$$h_c(e_i) = c \cdot e_i = \tau_i(a)\cdot e_i $$
+y como $Hom_{L-alg}(L\otimes_k L, L)\simeq Hom_{k-alg}(L,L)$.
+
+Si $\alpha\in L$, veamos cu\'al es el polinomio m\'inimo de $\alpha$. Si $k \hookrightarrow k(\alpha) \overset{H}{\hookrightarrow} L$, $H\subset G$ subrgupo. $\alpha$ ra\'iz de $p(x) \in k[x]$, $\tau_1(\alpha), \ldots, \tau_n(\alpha)$ ra\'ices de $p(x)$ con $\tau_i\in H$, habr\'a ciertas $\tau_i(\alpha) = \alpha$ y hay que quitar las ra\'ices que se repiten. De forma que 
+$$p(x) = \prod_{[\tau_i] \in G/H} (x-\tau_i(\alpha)) \in k[x] $$
+porque sus coeficientes est\'an en $L^G$ pues si $\tau\in G$, 
+$$\tau(p(x)) = \prod_{[\tau_i] \in G/H} (x-\tau\circ \tau_i(\alpha))=\prod_{[\bar\tau_i] \in G/H} (x-\bar \tau_i(\alpha))$$
+con $\bar \tau_i = \tau \circ \tau_i$. Y es el m\'inimo porque $|G/H| = grado_k(k(\alpha))$ y $grado(p(x)) = |G/H|$. 
+\begin{prop}
+    $\bb Q(\sqrt[2]{2}, \sqrt[2]{3}) = \bb Q(\sqrt[2]{2}+\sqrt[2]{3})$
+\end{prop}
+\begin{dem}
+    $$\bt \bb Q \rar{2}& \bb  Q(\sqrt[2]{2}) \rar{2} & \bb Q( \sqrt[2]{2} , \sqrt[2]{3}) = L \et$$
+    siempre que $\sqrt[2]{3} \nin \bb Q(\sqrt[2]{2})$. En efecto, si $\sqrt[2]{3} = a+b \sqrt[2]{2}$ con $a,b \in \bb Q, \, (a+b\sqrt[2]{2})=3 \iff a^2+b^2\cdot 2+2ab\sqrt[2]{2}=3$ y si $b=0$, $a=\sqrt[2]{3} \nin \bb Q$, y si $a\neq 0$, $2b^2=3\Rightarrow b = \sqrt[2]{\frac{3}{2}} \nin \bb Q$. De forma que $\bb Q(\sqrt[2]{2}+\sqrt[2]{3})  =L \iff $ el polinomio m\'inimo de $\sqrt[2]{2}+\sqrt[2]{3}$ es de grado 4. Como $G = \{1,\tau, \sigma, \tau\circ \sigma\}$, $\langle \tau\rangle$ es el grupo de $\bb Q(\sqrt[2]{3}) \hookrightarrow L$ y $\langle \sigma\rangle$ el grupo de $\bb Q\sqrt[2]{2} \hookrightarrow L$. 
+
+    Entonces $H = \{h\in G, h(\sqrt[2]{2}+\sqrt[2]{3}) = \sqrt[2]{2}+\sqrt[2]{3}\}$, $\bb Q(\sqrt[2]{2}+\sqrt[2]{3}) = L^H$, y si $\tau \in G$, 
+    $$\tau(\sqrt[2]{2}+\sqrt[2]{3}) = -\sqrt[2]{2}+\sqrt[2]{3}$$
+    $$\sigma(\sqrt[2]{2}+\sqrt[2]{3}) = \sqrt[2]{2}-\sqrt[2]{3}$$
+    $$\tau \circ \sigma(\sqrt[2]{2}+\sqrt[2]{3}) = \tau(\sqrt[2]{2}-\sqrt[2]{3}) = -\sqrt[2]{2}-\sqrt[2]{3}$$
+\end{dem}
+\begin{defi}
+Sea $k \hookrightarrow L$ una extensi\'on $\alpha \in L$ es un elemento primitivo si $k(\alpha) = L$. 
+\end{defi}\begin{prop}
+    $\alpha$ es primitivo $\iff$ polinomio m\'inimo de $\alpha = $ polinomio anulador de $h_{\alpha} = grado(h_{\alpha})$. Si $|h_{\alpha}-xId| = $ polinomio anulado de $h_{\alpha}$ entonces $\alpha$ es un elemento primitivo. 
+\end{prop}
+\begin{dem}
+    [Existencia del elemento primitivo] Si $ch(k)=0$, $k \hookrightarrow L$, $L = \langle e_1, \ldots, e_n\rangle$, $\alpha = \lambda_1 e_1 + \cdots + \lambda_n e_n$ con $\lambda_1, \ldots, \lambda_n \in k$, entonces
+    $$|h_{\alpha} - xId =q(x)| = x^n + a_1(\alpha) x^{n-1} + \cdots + a_n(\alpha)$$
+    tiene ra\'ices distintas $\iff$ Discriminante de $q(x) = D(x_1, \ldots, x_n) = D(q(x)) \neq 0$ polinomio en $\lambda_1, \ldots, \lambda_n$.  
+
+    Si $k \hookrightarrow L$ es separable, $k \hookrightarrow \bar L$, $\alpha \in  L \otimes_k \bar L =\bar L \times \cdots \times \bar L = \langle e_1\otimes 1, \ldots, e_n\otimes 1\rangle$. $\bar \alpha = \bar \lambda_1 e_1\otimes 1 + \cdots + \bar \lambda_n e_n \otimes 1$ con $\bar \lambda_i \in \bar L$. De forma que $D(\bar \lambda_1, \ldots, \bar \lambda_n) = D(q_{\alpha}(x))$, y $D(x_1, \ldots, x_n) \neq 0 \iff D(\bar \lambda_1, \ldots, \bar \lambda_n) \neq 0$ para ciertos $\bar \lambda_i$. De forma que $h_{\bar \alpha}$ es diagonal en la base $\bar e_i$ can\'onica. 
+
+    As\'i, $\bb F_q = k$ finito con $q=p^s$, $\bb F_q \hookrightarrow L = \bb F_{q'} = \{0, \alpha^n\} = \bb F_q(\alpha)$, $\langle \alpha \rangle = \bb F_{q'}^{\times} = \{x^{q'-1}-1=0\}$. 
+\end{dem}
+\begin{prop}
+    Sea $k \hookrightarrow K$ una extensi\'on de Galois de grupo $G$, $H_1, H_2\subset G$ subgrupos, $K^{H_1}, K^{H_2} \subset K$. $\langle H_1, H_2\rangle$ es el m\'inimo subrgupo que contiene a $H_1$ y $H_2$ y $H_1 \cap H_2$ es el m\'aximo subgrupo contenido en ambos, y $K^{H_1} \cdot K^{H_2} = K^{H_1 \cap H_2}$ el compuesto la m\'inima subextensi\'on contenida en ambos y $K^{\langle H_1, H_2\rangle} = K^{H_1}\cap K^{H_2}$ es la m\'axima subextensi\'on.
+    
+    $H_1\cdot H_2 = \{ h_1\cdot h_2 \, / \, h_1\in H_1, h_2 \in H_2\}$ es grupo solo si uno es normal. 
+
+    Si $k \hookrightarrow L \hookrightarrow K \rightsquigarrow H \subset G, K^H=L$, $H_1\subset H_2\subset G$, $H_1, H_2\subset G$, $K^H \subset K^{H_1}, K^H \subset K^{H_2}$. 
+\end{prop}
+\begin{prop}
+    Si $k \hookrightarrow L$ es una extensi\'on finita separable, probar que hay un n\'umero finito de subextensiones de Galois. 
+\end{prop}

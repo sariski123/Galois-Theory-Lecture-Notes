@@ -1,0 +1,412 @@
+
+\chapter{Examen final}
+\section{25/05/2025}
+\subsection*{DEFINICIONES}
+\begin{itemize}
+    \item Compuesto de dos extensiones: extensión mínima $L$ que contiene a dos extensiones dadas $K_1$ y $K_2$ de cuerpo base $k$ ($k \hookrightarrow K_1$ y $k \hookrightarrow K_2$). Se construye como un cuerpo residual del producto tensorial $K_1 \otimes_k K_2$.
+    \item $G$-conjunto: conjunto $X$ dotado de una operación de un grupo $G$ ($G \times X \rightarrow X$) que verifica las propiedades asociativa ($(g_1 \cdot g_2) * x = g_1 * (g_2 * x)$) y de elemento neutro ($1 * x = x$). 
+    \item Morfismo de $G$-conjuntos: aplicación $f: X_1 \rightarrow X_2$ entre dos $G$-conjuntos que preserva la acción del grupo, es decir, $f(g \cdot x_1) = g \cdot f(x_1)$ para todo $g \in G$ y $x_1 \in X_1$.
+    \item Invariantes por $G$ de un $G$-conjunto $X$: subconjunto formado por los elementos de $X$ que permanecen fijos bajo la acción de todos los elementos del grupo: $X^G = \{x \in X / g \cdot x = x, \forall g \in G\}$.
+    \item Extensión de Galois: extensión finita $k \hookrightarrow L$ tal que el producto tensorial $L \otimes_k L$ es $L$-trivializable (isomorfo a un producto de cuerpos $L \times \dots \times L$).
+    \item Grupo de una extensión de Galois: el grupo de todos los automorfismos de la extensión que dejan fijo el cuerpo base $k$, denotado como $G = Aut_{k-alg}(L)$. Su orden coincide con el grado de la extensión.
+    \item Cuerpo de descomposición de un polinomio $p(x) \in k[x]$: extensión mínima $K = k(\alpha_1, \dots, \alpha_n)$ que contiene todas las raíces del polinomio $p(x)$. 
+    \item Envolvente de Galois de una $k$-álgebra: (Se deduce de la definición de cuerpo de descomposición de una $k$-álgebra separable) Es la extensión mínima $k \hookrightarrow L$ tal que $A \otimes_k L \simeq L^n$.
+    \item Extensión cíclica: extensión de Galois cuyo grupo de Galois asociado es un grupo cíclico.
+    \item Extensión abeliana: extensión de Galois cuyo grupo de Galois asociado es abeliano (o conmutativo).
+    \item Extensión por radicales: extensión de la forma $L = k(\sqrt[n]{a})$ con $a \in k$, o más generalmente, una extensión que se obtiene mediante una cadena de extensiones por radicales simples.
+    \item Grupo resoluble: grupo $G$ es resoluble si existe una cadena de subgrupos $\{e\} = H_n \subset H_{n-1} \subset \dots \subset H_0 = G$ tal que cada $H_{i+1}$ es normal en $H_i$ y el cociente $H_i/H_{i+1}$ es cíclico. 
+    \item $p$-grupo: grupo cuyo orden es una potencia de un número primo $p$ ($|G| = p^n$). 
+    \item Número complejo constructible con regla y compás: un número $z = a+bi \in \mathbb{C}$ es constructible si sus partes real ($a$) e imaginaria ($b$) son constructibles mediante operaciones geométricas básicas con regla y compás. Esto equivale a que pertenezca a una torre de extensiones de grado 2.
+    \item  Extensión por radicales cuadráticos: Es una extensión de Galois que se puede obtener mediante una cadena de subextensiones donde cada paso es una extensión de grado 2 (añadiendo una raíz cuadrada).
+    \item Polinomio general de grado $n$: polinomio $p(x) = x^n + a_1x^{n-1} + \dots + a_n$ donde los coeficientes $a_i$ son variables independientes sobre un cuerpo $k$.
+    \item Traza de $a \in A$ ($k$-álgebra finita): es la traza del endomorfismo de multiplicación $h_\alpha: A \rightarrow A$ ($h_\alpha(b) = \alpha \cdot b$). Si $k \hookrightarrow L$ es de Galois, coincide con la suma de las imágenes de $\alpha$ por todos los elementos del grupo de Galois
+    \item Polinomio mínimo de $a \in A$ ($k$-álgebra finita): polinomio $p(x) \in k[x]$ de grado mínimo tal que $p(\alpha) = 0$. 
+    \item Elemento mínimo de una extensión $k \rightarrow L$ finita: elemento $\alpha \in L$ tal que $L = k(\alpha)$, es decir, que genera toda la extensión
+    \item Polinomio ciclotómico $n$-ésimo: polinomio de menor grado cuyas raíces son las raíces primitivas $n$-ésimas de la unidad, denotado como $\phi_n(x)$. 
+\end{itemize}
+\subsection*{TEORÍA}
+\begin{itemize}
+    \item Teorema de Galois categorial. Enunciado y demostraci\'on. Se supone conocido lo que hace falta de los $G$-conjuntos, el teorema de Artin y que si $k \hookrightarrow L$ es una extensi\'on de Galois de grupo $G$ y $H$ un subgrupo de $G$ tal que $L^H = k$, entonces $H = G$. Tambien se supone conocido que la categor\'ia de $k$-\'algebras finitas triviales es equivalente a la categor\'ia dual de conjuntos finitos.
+    
+    Dada $k \hookrightarrow L$ una extensi\'on de Galois de grupo $G$
+    $$\bt \{k\text{-\'algebras triviales sobre } L\} \rar[phantom]{\equiv} & \{G\text{-conjuntos}\}^{\circ} \\[-5mm] A \rarmaps & F(A) = Hom_k(A,L) \\[-5mm] A \overset{h}{\rightarrow} A' \rarmaps & h^*: F(A) \rightarrow F(A') \\[-5mm] Hom_{G-c}(\Delta, L) & \arrow[mapsto]{l} \Delta \\[-5mm] h^* : H(\Delta') \rightarrow H(\Delta) &  \arrow[mapsto]{l}  h: \Delta \rightarrow \Delta' \et $$
+    y $Hom_{G-c}(\Delta, L) =H(\Delta)$ es trivial. Al final hay que demostrar que 
+    $$A \overset{\sim}{\longrightarrow} H \circ F(A) \qquad \Delta\overset{\sim}{\longrightarrow} F\circ H(\Delta)  $$
+
+    Damos por sentado que $\{k$-\'algebras triviales$\} \equiv \{$Conjuntos finitos$\}$. Y las equivalencias de  categorias ya se parecen mucho. Tambi\'en podemos suponer el Teorema de Artin, es decir que $L^G=k$. Y que si $H \subset G$, entonces si $L^H=k\Rightarrow H=G$. 
+
+    \begin{dem}
+        $f:A \to B$ morfismo de $k$-\'algebras, se comprueba que el morfismo $F(f)=f^*: F(B) = Hom_{k-alg}(B,L) \longrightarrow F(A) = Hom_{k-alg}(A,L)$ con $h \longmapsto h \circ f$, es de $G$-conjuntos. Dado $f:\Delta \longrightarrow \Delta'$ morfismo de $G$-conjuntos, $G(f) = f^*: G(A) = Hom_{G-conj}(\Delta', L)\longrightarrow G(B)=Hom_{G-conj}(\Delta, L)$, con $g \longmapsto g\circ f$, es un morfismo de $k$-\'algebras. 
+        Ahora debemos probar que 
+        $$A \overset{\sim}{\longrightarrow} H \circ F(A) \qquad \Delta\overset{\sim}{\longrightarrow} F\circ H(\Delta)  $$
+        \begin{itemize}
+            \item $Id\simeq F\circ H$
+            $$F(H(\Delta)) = Hom_{k-alg}(Hom_{G-c}(\Delta,L),L) $$
+            y sabemos que $\Delta \simeq Hom_{L-alg}(Hom(\Delta,L),L) ??$ luego
+            $$Hom_{L-alg}(Hom(\Delta,L),L) \overset{*}{=} Hom_{L-alg}(Hom(\Delta,L)^G \otimes_k L, L) = $$
+            $$= Hom_{k-alg}(Hom_{G-c}(\Delta,L),L)$$
+            y $*$ es $Hom(\Delta,L)\simeq Hom(\Delta,L)^G \otimes_k L$ pues si $G=\bigsqcup \modulo{G}{H_i}$ es la uni\'on de sus \'orbitas, 
+            $$Hom\left( \bigsqcup \modulo{G}{H_i}, L \right)^G \otimes_k L = \left( \prod Hom\left( \modulo{G}{H_i}, L \right) \right)^G \otimes_k L = \prod Hom\left( \modulo{G}{H_i}, L \right)^G \otimes_k L $$
+            y entonces
+            $$Hom\left( \modulo{G}{H} ,L\right)^G\otimes_k L = Hom_{G-c}\left(\modulo{G}{H}, L\right) \otimes_k L = L^H \otimes_k L = Hom\left( \modulo{G}{H} , L \right)$$
+            donde la \'ultima igualdad se cumple por c\'alculo de dimensiones. 
+            \item $Id \simeq H\circ F$
+            $$H(F(A)) = Hom_{G-c} (Hom_{k-alg}(A, L), L)$$
+            y sabemos que $A\otimes_k L \simeq Hom(Hom_{L-alg}(A\otimes_k L, L), L) ??$ y al tomar invariantes por $G$
+            $$A = A\otimes_k k= A\otimes_k L^G = (A\otimes_k L)^G = $$
+            $$= Hom(Hom_{L-alg}(A\otimes_k L, L), L)^G = Hom_{G-c}(Hom_{L-alg}(A\otimes_k L, L), L)$$
+            como quer\'iamos demostrar. 
+        \end{itemize}
+        Para los ?? usar que
+        
+        ``El isomorfismo se obtiene mediante la aplicación evaluación natural $x \mapsto ev_x$, siendo un isomorfismo válido debido a que en ambos casos se trata del anillo de funciones de un conjunto finito en un cuerpo (isomorfo a $L^n$), cuyos únicos morfismos al cuerpo $L$ son exactamente las proyecciones puntuales''.
+    \end{dem}
+    \item Cuerpos finitos: nº de elementos. Dar la definici\'on de automorfismo de Frobenius probando que es un automorfismo. Probar que toda extensi\'on de cuerpos finitos es una extensi\'on c\'iclica.
+
+    \subsection*{1. Número de elementos de un cuerpo finito}
+Sea $k$ un cuerpo finito. Todo cuerpo finito posee una característica $p$ que es un número primo. Esto implica que $k$ contiene un subcuerpo isomorfo al cuerpo primo $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$. 
+
+Como $k$ es una extensión finita de $\mathbb{F}_p$, podemos considerar a $k$ como un $\mathbb{F}_p$-espacio vectorial de dimensión finita $n$. Si $\{e_1, \dots, e_n\}$ es una base de $k$ sobre $\mathbb{F}_p$, todo elemento $\alpha \in k$ se expresa de forma única como:
+\[ \alpha = \lambda_1 e_1 + \dots + \lambda_n e_n, \quad \lambda_i \in \mathbb{F}_p \]
+Dado que existen $p$ opciones para cada coeficiente $\lambda_i$, el número total de elementos del cuerpo es $q = p^n$.
+
+\subsection*{2. Automorfismo de Frobenius}
+\begin{defi}
+Sea $A$ una $\mathbb{F}_p$-álgebra. Se define el \textbf{morfismo de Frobenius} como la aplicación $\tau: A \to A$ tal que $\tau(a) = a^p$.
+\end{defi}
+
+\begin{prop}
+La aplicación de Frobenius es un automorfismo de cuerpos finitos.
+\end{prop}
+
+\begin{dem}
+Para que $\tau$ sea un automorfismo, debe cumplir las siguientes propiedades:
+\begin{itemize}
+    \item \textbf{Morfismo de producto:} $\tau(ab) = (ab)^p = a^p b^p = \tau(a)\tau(b)$.
+    \item \textbf{Morfismo de suma:} $\tau(a+b) = (a+b)^p = a^p + b^p = \tau(a) + \tau(b)$, ya que en característica $p$, los coeficientes binomiales $\binom{p}{k}$ son nulos para $0 < k < p$.
+    \item \textbf{Inyectividad:} $\ker \tau = \{a \in k \mid a^p = 0\}$. Al ser $k$ un cuerpo, esto implica $a = 0$. Por tanto, $\tau$ es inyectivo.
+    \item \textbf{Epiyectividad:} Al ser $k$ un conjunto finito, toda aplicación inyectiva de $k$ en sí mismo es biyectiva.
+\end{itemize}
+\end{dem}
+
+\subsection*{3. Carácter cíclico de las extensiones de cuerpos finitos}
+Sea $\mathbb{F}_q \hookrightarrow \mathbb{F}_{q^n}$ una extensión de cuerpos finitos de grado $n$. 
+
+\begin{itemize}
+    \item \textbf{Extensión de Galois:} La extensión es de Galois pues el grupo de automorfismos $G = \text{Aut}_{\mathbb{F}_q}(\mathbb{F}_{q^n})$ está generado por el automorfismo de Frobenius relativo a $\mathbb{F}_q$, definido como $\tau(b) = b^q$.
+    \item \textbf{Orden del grupo:} El orden del grupo de Galois coincide con el grado de la extensión, $|G| = n$.
+    \item \textbf{Generador:} Se verifica que $\tau^n(b) = b^{q^n} = b$ para todo $b \in \mathbb{F}_{q^n}$, por lo que $\tau^n = Id$. Al no existir una potencia menor que sea la identidad, $\tau$ es un generador de orden $n$.
+    \item \textbf{Conclusión:} Al estar generado por un único elemento ($\tau$), el grupo de Galois es cíclico: $G = \langle \tau \rangle = \{\tau, \tau^2, \dots, \tau^n = Id\}$.
+\end{itemize}
+    \item Polinomio ciclotómico: Dar la definici\'on de $\phi_n(x)$ probando que es un polinomio con coeficientes en $\bb Z$ irreducible y de orden $\phi(n) =$ nº de $m < n$ y primos con $n$. Cálculo. Probar que $\bb Q \rightarrow \bb Q[x]/\phi_n(x)$ es una extensi\'on abeliana.
+\subsection*{1. Definición y Coeficientes}
+\begin{defi}
+El $n$-ésimo polinomio ciclotómico $\phi_n(x)$ se define como el polinomio cuyas raíces son las raíces primitivas $n$-ésimas de la unidad:
+\[ \phi_n(x) = \prod_{\substack{1 \le k \le n \\ \gcd(k,n)=1}} (x - e^{2\pi i k / n}) \]
+Su grado es, por definición, $\phi(n)$.
+\end{defi}
+
+\begin{prop}
+$\phi_n(x)$ es un polinomio mónico con coeficientes en $\mathbb{Z}$.
+\end{prop}
+\begin{dem}
+Consideramos la relación $x^n - 1 = \prod_{d|n} \phi_d(x)$. Procedemos por inducción sobre $n$:
+\begin{itemize}
+    \item Para $n=1$, $\phi_1(x) = x-1 \in \mathbb{Z}[x]$.
+    \item Suponiendo que $\phi_d(x) \in \mathbb{Z}[x]$ para todo $d < n$, entonces $f(x) = \prod_{d|n, d < n} \phi_d(x)$ es un polinomio mónico en $\mathbb{Z}[x]$.
+    \item Por el algoritmo de la división, como $x^n - 1 = \phi_n(x) f(x)$, y tanto el dividendo como el divisor son mónicos en $\mathbb{Z}[x]$, el cociente $\phi_n(x)$ debe tener coeficientes en $\mathbb{Z}$.
+\end{itemize}
+\end{dem}
+
+\subsection*{2. Irreducibilidad}
+\begin{teo}
+El polinomio $\phi_n(x)$ es irreducible en $\mathbb{Q}[x]$.
+\end{teo}
+(La demostración se basa en que si $p$ es un primo tal que $p \nmid n$, y $\epsilon$ es raíz de un factor irreducible, entonces $\epsilon^p$ también debe serlo, evitando raíces múltiples en característica $p$).
+
+\subsection*{3. Extensión Abeliana}
+Sea $L = \mathbb{Q}(\epsilon) \simeq \mathbb{Q}[x]/\phi_n(x)$. 
+\begin{itemize}
+    \item La extensión es de Galois por ser el cuerpo de descomposición de $x^n-1$.
+    \item El grupo de Galois $G = \text{Aut}_{\mathbb{Q}}(L)$ es isomorfo al grupo multiplicativo $(\mathbb{Z}/n\mathbb{Z})^\times$.
+    \item El isomorfismo viene dado por $\psi: (\mathbb{Z}/n\mathbb{Z})^\times \to G$, donde $\psi([k]) = \tau_k$ tal que $\tau_k(\epsilon) = \epsilon^k$.
+    \item Como $(\mathbb{Z}/n\mathbb{Z})^\times$ es un grupo conmutativo, la extensión es abeliana.
+\end{itemize}
+\end{itemize}
+\subsection*{PROBLEMAS}
+\begin{enumerate}
+    \item Calcular el grupo de Galois del polinomio $p(x)=(x^3 + 3)(x^2 + 3)$.
+    \begin{dem}
+        Para calcular el grupo de Galois de $p(x)$ calculamos su cuerpo de descomposici\'on. Como sus ra\'ices son $\sqrt[2]{-3}$ y $\sqrt[3]{-3}$, extenderemos por ellas, siendo cada extensi\'on de grado 2 y 3, la total es de grado 6 y son
+        $$\bt \bb Q \rar{\bb Z/2}[swap]{2} \arrow{dr} & \bb Q(\sqrt[2]{-3}) \rar{\bb Z/3}[swap]{3} & L\\ & \bb Q(\sqrt[3]{-3}, \varepsilon \cdot \sqrt[3]{-3}) \arrow{ru} &  \et$$
+        siendo $\varepsilon$ ra\'iz de $x^3-1 = (x+1)(x^2+x+1)$. 
+
+        Si $\bb Z/2 = \langle \sigma \rangle$ y $\bb Z/3 = \langle \tau \rangle$, entoces
+        $$\tau \circ \sigma(\sqrt[3]{-3}) = \tau(\sigma(\sqrt[3]{-3})) = \tau(\sqrt[3]{-3}) = \varepsilon\cdot \sqrt[3]{-3}$$
+        $$\sigma  \circ \tau (\sqrt[3]{-3}) = \sigma(\tau(\sqrt[3]{-3})) = \sigma(\varepsilon \sqrt[3]{-3}) = \bar \varepsilon \cdot \sqrt[3]{-3}$$
+        pues $\sigma$ es la conjugaci\'on compleja para elementos de $\bb Q(\sqrt[2]{-3})$ a donde pertenece $\varepsilon$. Es decir, el grupo de Galois total no es conmutativo de forma que 
+        $$G = \{Id, \sigma, \tau, \sigma \circ \tau, \tau\circ \sigma, \tau^2\} \equiv S_3$$
+        $H = \langle \tau \rangle = \{Id, \tau, \tau^2 \} = A_3$ por lo que se tiene la resoluci\'on $0 \subset A_3 \subset S_3$. 
+    \end{dem}
+    
+    \item ¿Es $\mathbb{Q}(\sqrt[3]{2}, \sqrt[3]{3}) = \mathbb{Q}(\sqrt[3]{2} + \sqrt[3]{3})$? Calcular el polinomio mínimo anulador de $\sqrt[3]{2} + \sqrt[3]{3}$ con coeficientes en $\mathbb{Q}$.
+    \begin{dem}
+        Se cumple que el grado de $\bb Q \hookrightarrow \bb Q(\sqrt[2]{2}, \sqrt[2]{3}) = 4$ si $\sqrt{3} \nin \bb Q(\sqrt{2})$. En efecto, si $\sqrt{3} = a + b\sqrt{2} \Rightarrow 3 = a^2+2b^2 + 2b\sqrt{2}$ con $a,b \in \bb Q$, como $\sqrt{2} \nin \bb Q$, $2ab=0$ y en tal caso, si $a=0 \Rightarrow b=\sqrt{\frac{3}{2}}$ y si $b=0 \Rightarrow a =\sqrt{3}$, por lo que no es posible en ning\'un caso y $\sqrt{3} \nin \bb Q(\sqrt{2})$. 
+
+        El grupo de Galois de la extensi\'on $\bb Q(\sqrt{2},\sqrt{3})$ es $\bb Z/2 \times \bb Z_2$ por ser $\tau, \sigma$ los automorfismos de $\bb Q \hookrightarrow \bb Q(\sqrt{2})$ y $\bb Q \hookrightarrow \bb Q(\sqrt{2})$ y $\bb Q \hookrightarrow \bb Q(\sqrt{2}, \sqrt{3})$ la composici\'on de estos (un morfismo cambia de signo un radical y el otro morfismo cambia de signo el otro radical y la composic\'on cambia ambos).
+        
+        Si consideramos la ra\'iz $\alpha= \sqrt{2} + \sqrt{3}$, su grupo de isotrop\'ia es $H=\{Id\}$ (subgrupo del grupo de Galois de $\bb Q \hookrightarrow \bb Q(\sqrt{2}, \sqrt{3})=L$) pues ning\'un otro elemento del grupo de Galois la deja fija, y entonces $L^H = \bb Q(\alpha)$, pero $L^H = L^{\{Id\}} = L$ y $L= \bb Q(\sqrt{2},\sqrt{3})$, luego se concluye que $\bb Q(\sqrt{2},\sqrt{3})=\bb Q(\sqrt{2}+\sqrt{3})$.
+
+        Para calcular el polinomio m\'inimo, hacemos 
+        $$\alpha = \sqrt{2}+\sqrt{3} \Rightarrow \alpha- \sqrt{2}= \sqrt{3} \Rightarrow (\alpha-\sqrt{2})^2 =\sqrt{3} \Rightarrow \alpha^2 -2\alpha\sqrt{2} + 2 = 3  $$
+        $$ \Rightarrow \alpha^2-1 = 2\alpha\sqrt{2} \Rightarrow (\alpha^2-1)^2 = \alpha^4 - 2\alpha^2 +1 = 4\alpha^2 \cdot 2 \Rightarrow \alpha^4 + 10\alpha^2 + 1=0 $$
+        de forma que $x^4 -10x^2+1 \in \bb Q[x]$ y es m\'onico y m\'inimo al intentar resolverlo como bicuadrado. 
+    \end{dem}    
+    \item Sea $k$ un cuerpo de característica nula y sea $k \rightarrow L$ una extensión de Galois de grupo $G$. Si $H = \{\tau_1, \dots, \tau_n\}$ es un subgrupo de $G$, probar que es epiyectiva la aplicación $k$-lineal:
+    \[ s : L \rightarrow L^H, \quad s(\alpha) = \tau_1(\alpha) + \cdots + \tau_n(\alpha) \]
+    \begin{dem}
+\begin{comment}        Veamos que $s(\alpha) \in L^H$. Sea $\tau\in H$,
+        $$\tau(s(\alpha)) = \tau(\tau_1(\alpha) + \cdots + \tau_n(\alpha)) = \tau(\tau_1(\alpha)) + \cdots + \tau(\tau_n(\alpha)) = s(\alpha)$$
+        pues $\tau \circ \tau_i \in H$ y será $\tau \circ \tau_i=\tau_j$. 
+
+        Por el teorema de independencia lineal, sabemos que $\{\tau_1, \dots, \tau_n\}$ son linealmente independientes como elementos de $End_{k-ev}L$, por lo que $\tau_1 + \cdots + \tau_n \neq 0$ y existe cierto $\alpha \in L \, / \, s(\alpha) \neq 0$.
+
+        Sea $\lambda \in L^H$, veamos si existe $\beta\in L \, / \, s(\beta) = \lambda$. Como los $\tau_i$ dejan fijo $L^H$, $s$ es $L^H$-lineal ($s(\lambda \cdot a) = \lambda\cdot s(a) \, \forall \, a \in L$) y sabemos que existe $\alpha \, / \, s(\alpha) = \gamma \neq 0, \, \gamma \i L^H$.
+
+        Definiendo $\beta = \alpha\cdot \frac{\lambda}{\gamma}$,
+        $$s(\beta) = s\left( \alpha \cdot \frac{\lambda}{\gamma} \right) = \frac{\lambda}{\gamma}\cdot s(\alpha)= \frac{\lambda}{\cancel{\gamma}} \cdot \cancel{\gamma} = \lambda $$
+        por lo que todo elemento de $L^H$ proviene de uno de $L$ y por tanto $s$ es epiyectiva.            
+        \end{comment}
+    Por el Teorema Fundamental de la Teoría de Galois, al ser $H \le G$ un subgrupo de orden $n$, la extensión $L^H \hookrightarrow L$ es una extensión de Galois cuyo grupo de Galois es exactamente $H = \{\tau_1, \dots, \tau_n\}$.
+
+    La aplicación $s : L \rightarrow L^H$ dada por $s(\alpha) = \sum_{i=1}^n \tau_i(\alpha)$ es la traza de la extensión $L/L^H$. Sabemos que $s$ no solo es $k$-lineal, sino que es **$L^H$-lineal**. En efecto, para cualquier $\lambda \in L^H$ y $\alpha \in L$:
+    $$s(\lambda \alpha) = \sum_{i=1}^n \tau_i(\lambda \alpha) = \sum_{i=1}^n \tau_i(\lambda)\tau_i(\alpha)$$
+    Como $\lambda \in L^H$, queda fijo por todos los elementos de $H$, luego $\tau_i(\lambda) = \lambda$. Por tanto:
+    $$s(\lambda \alpha) = \sum_{i=1}^n \lambda \tau_i(\alpha) = \lambda \sum_{i=1}^n \tau_i(\alpha) = \lambda s(\alpha)$$
+
+    Como $s$ es una aplicación $L^H$-lineal entre el espacio vectorial $L$ y el espacio vectorial $L^H$ (ambos vistos sobre el cuerpo base $L^H$), su imagen $\Im(s)$ debe ser un subespacio vectorial de $L^H$.
+    
+    Dado que la dimensión de $L^H$ sobre sí mismo es 1, sus únicos subespacios vectoriales posibles son el subespacio nulo $\{0\}$ o el espacio completo $L^H$. Por consiguiente:
+    $$\Im(s) = \{0\} \quad \text{o} \quad \Im(s) = L^H$$
+
+    Para descartar que la imagen sea el subespacio nulo, basta con encontrar un solo elemento cuya imagen no sea cero. Tomemos el elemento identidad $1 \in L^H \subset L$:
+    $$s(1) = \tau_1(1) + \cdots + \tau_n(1) = 1 + \cdots + 1 = n$$
+    
+    Como por hipótesis el cuerpo $k$ tiene **característica nula**, y $k \subset L^H$, el cuerpo $L^H$ también tiene característica nula. En un cuerpo de característica nula, el entero $n$ (con $n \ge 1$) es distinto de cero. 
+    Por lo tanto:
+    $$s(1) = n \neq 0$$
+
+    Al existir un elemento con imagen no nula, deducimos que $\Im(s) \neq \{0\}$. Por descarte, obligatoriamente $\Im(s) = L^H$. Como la imagen coincide con todo el conjunto de llegada, la aplicación $s$ es epiyectiva.
+    \end{dem}
+    
+    \item Sea $k \rightarrow K$ una extensión de Galois de grupo $G$. Sean $H_{1}, H_{2}$ dos subgrupos de $G$ y denotemos $\langle H_{1}, H_{2} \rangle \subseteq G$ el mínimo subgrupo de $G$ que contiene a $H_{1}$ y $H_{2}$. Probar:
+    \begin{itemize}
+        \item[a)] $K^{H_{1}} \cdot K^{H_{2}} = K^{H_{1} \cap H_{2}}$
+        \item[b)] $K^{H_{1}} \cap K^{H_{2}} = K^{\langle H_{1}, H_{2} \rangle}$
+    \end{itemize}
+    \begin{dem}
+        Recordemos que se definen $K^H = \{ \alpha \in K \mid h(\alpha) = \alpha, \forall h \in H \}$. Probaremos que tomar invariantes en subgrupos invierte las inclusiones, es decir, $H_1\subseteq H_2 \subseteq G \iff K^{H_2} \subseteq K^{H_1}$.
+        
+        $\Rightarrow)$ Sea $\alpha \in K^{H_2}$, $h(\alpha)=\alpha$ con $h\in H_2$, y como $H_1 \subseteq H_2$, cualquier $h_1 \in H_1$ tambi\'en verifica que $h_1 \in H_2$, luego $h_1 (\alpha) = \alpha \, \forall \, h_1 \in H_1$, por lo que $\alpha \in K^{H_2}$ es tambi\'en $\alpha \in K^{H_1}$, es decir, $K^{H_2} \subseteq K^{H_1}$. 
+
+        $\Leftarrow)$ Sea $\sigma\in H_1$, $\sigma$ deja fijo a todo elemento de $K^{H_1}$, luego $\sigma(x) = x\, \forall\,  x \in K^{H_1}$ y como $K^{H_2} \subseteq K^{H_1}$, todo $y\in K^{H_2}$ es $y\in K^{H_1}$, luego $\sigma(y) = y \,  \forall \, y\in K^{H_2}$, luego $\sigma\in Aut_{K^{H_2}} K = H_2$, pues es un automorfismo de $K$ que deja fijo $H_2$. 
+        \begin{itemize}
+            \item[a)] $K^{H_{1}} \cdot K^{H_{2}} = K^{H_{1} \cap H_{2}}$
+            \begin{itemize}
+                \item $\boxed{\subseteq}$ 
+                $$\begin{cases}
+                    H_1 \cap H_2 \subseteq H_1 \\ H_1 \cap H_2 \subseteq H_2
+                \end{cases} \Rightarrow \begin{cases}
+                    K^{H_1} \subseteq K^{H_1\cap H_2} \\ K^{H_2} \subseteq K^{H_1\cap H_2}
+                \end{cases}$$
+                y como $K^{H_1}\cdot K^{H_2}$ es el m\'inimo cuerpo que contiene ambos $K^{H_1}$ y $K^{H_2}$, y $K^{H_1\cap H_2}$ tambi\'en los contiene, obligatoriamente 
+                $$K^{H_1}\cdot K^{H_2} \subseteq K^{H_1\cap H_2}$$
+                \item $\boxed{\supseteq}$ Sea $H$ el grupo de Galois del compuesto, $K^H = K^{H_1}\cdot K^{H_2}$,
+                $$\begin{cases}
+                    K^{H_1} \subseteq K^H \\ K^{H_2} \subseteq K^H
+                \end{cases} \Rightarrow \begin{cases}
+                    H \subseteq H_1 \\ H \subseteq H_2
+                \end{cases} \Rightarrow H\subseteq H_1\cap H_2 \Rightarrow K^{H_1\cap H_2} \subseteq K^H = K^{H_1} \cdot K^{H_2}$$
+            \end{itemize}
+            \item[b)] $K^{H_{1}} \cap K^{H_{2}} = K^{\langle H_{1}, H_{2} \rangle}$
+            \begin{itemize}
+                \item $\boxed{\supseteq}$ 
+                $$\begin{cases}
+                    H_1 \subseteq \langle H_{1}, H_{2} \rangle \\ H_2 \subseteq \langle H_{1}, H_{2} \rangle
+                \end{cases} \Rightarrow \begin{cases}
+                    K^{\langle H_{1}, H_{2} \rangle} \subseteq K^{H_1} \\ K^{\langle H_{1}, H_{2} \rangle} \subseteq K^{H_2}
+                \end{cases} \Rightarrow K^{\langle H_{1}, H_{2} \rangle} \subseteq K^{H_1} \cap K^{H_2}$$
+                pues si pertenece a ambos, pertenece a la intersecci\'on.
+                \item $\boxed{\subseteq}$ Sea $\alpha \in K^{H_1} \cap K^{H_2} \Rightarrow \alpha\in K^{H_1}$ y $\alpha \in K^{H_2}$, por lo que $\tau(\alpha) = \alpha \, \forall \, \tau \in H_1 \cup H_2$. Como los automorfismos que dejan fijo $\alpha$ es un subgrupo y contiene a $H_1$ y a $H_2$, entonces contiene al m\'inimo que alberga a los dos, que es $\langle H_{1}, H_{2} \rangle $, es decir, $\langle H_{1}, H_{2} \rangle $ deja fijo $\alpha$, por lo que $K^{H_1} \cap K^{H_2} \subseteq K^{\langle H_{1}, H_{2} \rangle }$. 
+            \end{itemize}
+        \end{itemize}
+    \end{dem} 
+
+    \item Si $k \rightarrow L$ es una extensión finita separable, probar que sólo hay un número finito de cuerpos intermedios. (p. 155 ej 28 Pedro)
+    \begin{dem}
+        [Pedro] Sea $L'$ la envolvente de Galois de $L$. Las subextensiones de $L'$ son un número finito, porque se corresponden con los subgrupos del grupo de Galois de $L'$. Por tanto, las subextensiones de $L$, que son subextensiones de $L'$, son un número finito.
+    \end{dem}
+    \begin{dem}
+        [Sara] La extensión $k \hookrightarrow L$ no es de Galois pero al ser finita y separable existe su cuerpo de descomposici\'on $k \hookrightarrow L \hookrightarrow K$ siendo ahora $k\hookrightarrow K$ de Galois y finita. 
+
+        Como $k \hookrightarrow K$ es de Galois finita, $|G| = |Aut_k K| = \dim_k K$, por lo que su grupo de Galois $G$ es finito.
+        
+        Por el teorema de Galois, $\{\text{subextensiones de } K \}= \{\text{subgrupos de }G\}$, por lo que como $G$ es finito, tiene un n\'umero finito de subgrupos, luego solo existe un n\'umero finito de subextensiones o cuerpos intermedios entre $k$ y $K$ y como todo cuerpo intermedio entre $k$ y $L$ es tambi\'en cuerpo intermedio entre $k$ y $K$, existe un n\'umero finito de extensiones entre $k$ y $L$. 
+    \end{dem}
+    
+    \item Si un polinomio separable con coeficientes reales tiene todas sus raíces reales, entonces su grupo de Galois sobre $\mathbb{R}$ es trivial: $G=1$. Por el contrario, si tiene alguna raíz imaginaria, entonces su cuerpo de descomposición sobre $\mathbb{R}$ es $L=\mathbb{C}$, y su grupo de Galois es $G=\{Id, \tau\}$ donde $\tau$ denota la conjugación compleja.
+    \begin{dem}
+        \begin{enumerate}
+            \item Si todas sus ra\'ices son reales, el cuerpo de descompsosici\'on se construye añadiendo a $\bb R$ las ra\'ices del polinomio $\alpha_1, \ldots, \alpha_n \in \bb R$ pero como ya pertenecen a $\bb R$, no estamos haciendo nada, por lo que el cuerpo de descomposici\'on es $L = \bb R$. 
+            
+            Su grupo de Galois es $G = Aut_{k} L = Aut_{\bb R} \bb R$, la \'unica aplicaci\'on con las operaciones de $\bb R$ que lo deja fijo es $Id$, por lo que $G=\{Id\}$. 
+
+            \item Si tiene una ra\'iz imaginaria, sea esta $z=a+bi$ (con $b\neq 0$), $\bar z = a-bi$ es tambi\'en ra\'iz. Su cuerpo de descomposici\'on debe contener a $z=a+bi$ y a $\bb R$, pero $i = \frac{z-a}{b}$ con las operaciones de $\bb R$ luego $i$ pertenece al cuerpo de descomposici\'on, contiene a la ra\'iz imaginaria y es $\bb R [i] = \bb C$ y como es algebraicamente cerrado, contiene a cualquier otra ra\'iz.
+            
+            El grado de la extensi\'on $\bb R \hookrightarrow \bb C$ es 2, luego sea $\{1,i\}$ una base $|G|=2$ y $\sigma \in Aut_{\bb R} \bb C$ est\'a determinado por la imagen de la base, y $\sigma(1)=1$ por ser el elemento neutro y solo hay dos automorfismos posibles $\sigma(i) = i$ (es la $Id$) o $\sigma(i)=-i$ es $\tau$ la conjugaci\'on compleja, luego $G = \{Id, \tau\}$.
+        \end{enumerate}
+    \end{dem}
+    \item Hallar el número de polinomios mónicos irreducibles de grado 3 con coeficientes en $\mathbb{F}_{p}$. Análogamente para los de grado 4, 6 y 8. (p. 160 ej 52 Pedro)
+    \begin{dem}
+        Si es irreducible, se tiene una extensi\'on $\bb F_q \overset{n}{\hookrightarrow} \bb F_{q'}$ y $x^{q^n-1}-1 = \prod p_n(x)$ siendo $p_n$ de grado $n$. Y como $\phi_n(x) = \prod p_n(x)$, entonces $\bb F_p \hookrightarrow \bb F_{p^3}$, $p^3-1$, $\phi_{p^3-1}(x)$
+
+        \noindent\textbf{Solución:}
+
+Podemos abordar este problema desde dos perspectivas equivalentes que se complementan: analizando la estructura de la extensión de cuerpos y utilizando la factorización de polinomios.
+
+\paragraph{Conteo de raíces}
+Si $p(x) \in \mathbb{F}_p[x]$ es un polinomio irreducible de grado 3, sabemos que el cociente genera una extensión de grado 3: 
+\[ \modulo{\mathbb{F}_p[x]}{(p(x))} \simeq \mathbb{F}_p[\alpha] = \mathbb{F}_{p^3} \]
+
+Un elemento $\alpha \in \mathbb{F}_{p^3}$ tendrá un polinomio mínimo de grado 3 si y solo si genera toda la extensión $\mathbb{F}_{p^3}$. 
+Como el grado de la extensión es 3 (que es un número primo), sabemos que la extensión $\mathbb{F}_p \hookrightarrow \mathbb{F}_{p^3}$ no tiene subextensiones intermedias no triviales. Por lo tanto, todo elemento $\alpha \in \mathbb{F}_{p^3}$ que no pertenezca al cuerpo base $\mathbb{F}_p$ tiene obligatoriamente un polinomio mínimo de grado 3.
+
+\underline{El número de elementos en $\mathbb{F}_{p^3}$ que no están en $\mathbb{F}_p$ es}:
+\[ |\mathbb{F}_{p^3} \setminus \mathbb{F}_p| = p^3 - p \]
+
+Además, cada uno de estos polinomios mínimos de grado 3 es separable y tiene exactamente 3 raíces distintas en el cuerpo de descomposición $\mathbb{F}_{p^3}$. Esto significa que cada polinomio ``agrupa'' a 3 de esos elementos.
+Luego, el número de polinomios mónicos irreducibles de grado 3 es:
+\[ N_3 = \frac{|\mathbb{F}_{p^3} \setminus \mathbb{F}_p|}{3} = \frac{p^3 - p}{3} \]
+
+\paragraph{Grado 4}
+Si $p(x) \in \mathbb{F}_p[x]$ es un polinomio irreducible de grado 4, el cociente genera una extensión de grado 4: 
+\[ \modulo{\mathbb{F}_p[x]}{(p(x))} \simeq \mathbb{F}_p[\alpha] = \mathbb{F}_{p^4} \]
+
+Un elemento $\alpha \in \mathbb{F}_{p^4}$ tendrá un polinomio mínimo de grado 4 si y solo si genera toda la extensión $\mathbb{F}_{p^4}$. 
+Los subcuerpos de $\mathbb{F}_{p^4}$ corresponden a los divisores de 4, es decir, $\mathbb{F}_p$ y $\mathbb{F}_{p^2}$. Como $\mathbb{F}_p \subset \mathbb{F}_{p^2}$, el subcuerpo propio maximal es $\mathbb{F}_{p^2}$. Por lo tanto, todo elemento $\alpha \in \mathbb{F}_{p^4}$ que no pertenezca a $\mathbb{F}_{p^2}$ genera obligatoriamente la extensión completa y tiene un polinomio mínimo de grado 4.
+
+\underline{El número de elementos en $\mathbb{F}_{p^4}$ que no están en $\mathbb{F}_{p^2}$ es}:
+\[ |\mathbb{F}_{p^4} \setminus \mathbb{F}_{p^2}| = p^4 - p^2 \]
+
+Como cada uno de estos polinomios es separable y tiene exactamente 4 raíces distintas en el cuerpo de descomposición $\mathbb{F}_{p^4}$, cada polinomio ``agrupa'' a 4 de esos elementos.
+Luego, el número de polinomios mónicos irreducibles de grado 4 es:
+\[ N_4 = \frac{|\mathbb{F}_{p^4} \setminus \mathbb{F}_{p^2}|}{4} = \frac{p^4 - p^2}{4} \]
+
+
+\paragraph{Grado 6}
+Si $p(x) \in \mathbb{F}_p[x]$ es irreducible de grado 6, tenemos la extensión:
+\[ \modulo{\mathbb{F}_p[x]}{(p(x))} \simeq \mathbb{F}_p[\alpha] = \mathbb{F}_{p^6} \]
+
+Para que un elemento $\alpha \in \mathbb{F}_{p^6}$ tenga un polinomio mínimo de grado 6, no debe pertenecer a ningún subcuerpo propio. Los divisores propios de 6 son 1, 2 y 3, por lo que los subcuerpos propios maximales son $\mathbb{F}_{p^2}$ y $\mathbb{F}_{p^3}$. 
+Debemos descartar los elementos que pertenezcan a $\mathbb{F}_{p^2}$ o a $\mathbb{F}_{p^3}$. Por el principio de inclusión-exclusión, al restar los elementos de ambos cuerpos estamos restando dos veces su intersección, que es $\mathbb{F}_{p^{\text{mcd}(2,3)}} = \mathbb{F}_p$, por lo que debemos sumarla de nuevo.
+
+\underline{El número de elementos en $\mathbb{F}_{p^6}$ que generan la extensión completa es}:
+\[ |\mathbb{F}_{p^6} \setminus (\mathbb{F}_{p^2} \cup \mathbb{F}_{p^3})| = p^6 - p^3 - p^2 + p \]
+
+Dado que cada polinomio agrupa a 6 de estos elementos (sus raíces), el número de polinomios mónicos irreducibles de grado 6 es:
+\[ N_6 = \frac{p^6 - p^3 - p^2 + p}{6} \]
+
+
+\paragraph{Grado 8}
+Si $p(x) \in \mathbb{F}_p[x]$ es irreducible de grado 8, se tiene:
+\[ \modulo{\mathbb{F}_p[x]}{(p(x))} \simeq \mathbb{F}_p[\alpha] = \mathbb{F}_{p^8} \]
+
+Los divisores de 8 son 1, 2, 4 y 8. Esto nos da una cadena lineal de subcuerpos: $\mathbb{F}_p \subset \mathbb{F}_{p^2} \subset \mathbb{F}_{p^4} \subset \mathbb{F}_{p^8}$. 
+El subcuerpo propio maximal es $\mathbb{F}_{p^4}$. Al igual que ocurría en el grado 4, este subcuerpo ya contiene en su interior a todos los subcuerpos más pequeños ($\mathbb{F}_{p^2}$ y $\mathbb{F}_p$). Por tanto, basta con descartar los elementos que pertenezcan a $\mathbb{F}_{p^4}$.
+
+\underline{El número de elementos en $\mathbb{F}_{p^8}$ que no están en $\mathbb{F}_{p^4}$ es}:
+\[ |\mathbb{F}_{p^8} \setminus \mathbb{F}_{p^4}| = p^8 - p^4 \]
+
+Finalmente, como cada polinomio mínimo de grado 8 tiene 8 raíces en $\mathbb{F}_{p^8}$, dividimos entre el grado de la extensión para obtener la cantidad de polinomios mónicos irreducibles:
+\[ N_8 = \frac{|\mathbb{F}_{p^8} \setminus \mathbb{F}_{p^4}|}{8} = \frac{p^8 - p^4}{8} \]
+    \end{dem}    
+    \item Determinar todas las extensiones de $\mathbb{Q}$ contenidas en $\mathbb{Q}(e^{2\pi i/n})$ en los casos $5 \le n \le 9$.  (p. 157 ej 38 Pedro)
+    \begin{dem}
+    Como $\bb Q \hookrightarrow \bb Q(\varepsilon_n) \simeq \modulo{\bb Q[x]}{(\phi_n(x))}$, el grupo de Galois es $G \simeq (\bb Z/n)^{\times}$. 
+    
+    \begin{enumerate}
+        \item \textbf{$n=5$}:
+        $$\phi_5(x) = 1+x+x^2+x^3+x^4 \qquad \phi(5)=4$$
+        $(\bb Z/5)^{\times} = \{1,2,-1,-2\} = \langle 2\rangle$. Los subcuerpos son las subextensiones (todas de grado 2 sobre $\bb Q$) y se corresponden con los subgrupos de orden 2. Solo hay uno: $H = \langle -1 \rangle = \{1, -1\}$. 
+        Si $\sigma(\varepsilon_5) = \varepsilon^{-1}_5 = \varepsilon_5^4$, buscamos el cuerpo fijo $\bb Q \hookrightarrow L^{\sigma} \hookrightarrow L=\bb Q(\varepsilon_5)$. 
+        Como bien planteaste:
+        $$\sigma(b_0 + b_1\varepsilon + b_2\varepsilon^2+b_3\varepsilon^3 + b_4 \varepsilon^4) = b_0 + b_1 \varepsilon^4 + b_2 \varepsilon^{3} + b_3 \varepsilon^{2} + b_4 \varepsilon \Rightarrow b_1=b_4, \, b_2=b_3$$
+        Por tanto, los elementos fijos son de la forma $b_0 + b_1(\varepsilon + \varepsilon^4) + b_2(\varepsilon^2 + \varepsilon^3)$. Usando que $\varepsilon^2+\varepsilon^3 = -1 - \varepsilon - \varepsilon^4$, vemos que el cuerpo está generado por $\alpha = \varepsilon + \varepsilon^4 = 2\cos(2\pi/5)$. Como $\cos(2\pi/5) = \frac{-1+\sqrt{5}}{4}$, el único subcuerpo propio es $\bb Q(\sqrt{5})$.
+
+        \item \textbf{$n=6$}: 
+        $\phi_6(x) = x^2-x+1$, con $\phi(6) = \phi(3)\cdot \phi(2) = 2$.
+        El grupo de Galois es $(\bb Z/6)^{\times} = \{1, -1\} \simeq \bb Z/2$. Al no tener subgrupos propios, no hay subextensiones intermedias estrictas. La única extensión completa es $\bb Q(\varepsilon_6) = \bb Q(e^{i\pi/3}) = \bb Q(\sqrt{-3})$.
+
+        \item \textbf{$n=7$}:
+        $\phi_7(x) = 1+x+\dots+x^6$, con $\phi(7)=6$. 
+        El grupo $G = (\bb Z/7)^{\times} \simeq \bb Z/6$ es cíclico generado por el elemento 3. Tiene dos subgrupos no triviales:
+        \begin{itemize}
+            \item Subgrupo de orden 2: $H_2 = \langle -1 \rangle = \{1, 6\}$. El elemento que queda fijo es la suma de la órbita de $\varepsilon_7$: $\alpha = \varepsilon_7 + \varepsilon_7^6 = 2\cos(2\pi/7)$. El subcuerpo es $\bb Q(\cos(2\pi/7))$, que es una extensión de grado 3 sobre $\bb Q$.
+            \item Subgrupo de orden 3: $H_3 = \langle 2 \rangle = \{1, 2, 4\}$. El elemento que queda fijo es $\beta = \varepsilon_7 + \varepsilon_7^2 + \varepsilon_7^4$. Si calculamos $\beta^2+\beta+2=0$, obtenemos que $\beta = \frac{-1 \pm \sqrt{-7}}{2}$. El subcuerpo es $\bb Q(\sqrt{-7})$, de grado 2 sobre $\bb Q$.
+        \end{itemize}
+
+        \item \textbf{$n=8$}:
+        $\phi_8(x) = x^4+1$, con $\phi(2^3) = (2-1)\cdot 2^2 = 4$. 
+        El grupo es $(\bb Z/8)^{\times}=\{1,3,5,7\} \equiv \{1,3,-3,-1\} \simeq \bb Z/2\times \bb Z/2$. Al ser el grupo de Klein, tiene tres subgrupos de orden 2, lo que da lugar a tres subcuerpos cuadráticos:
+        \begin{itemize}
+            \item $H_1 = \langle -1 \rangle = \{1, 7\}$. Fija a $\varepsilon_8 + \varepsilon_8^7 = 2\cos(2\pi/8) = \sqrt{2}$. Subcuerpo: $\bb Q(\sqrt{2})$.
+            \item $H_2 = \langle 5 \rangle \equiv \langle -3 \rangle = \{1, 5\}$. Fija a $\varepsilon_8^2 = e^{i\pi/2} = i$. Subcuerpo: $\bb Q(i)$.
+            \item $H_3 = \langle 3 \rangle = \{1, 3\}$. Fija a $\varepsilon_8 + \varepsilon_8^3 = i\sqrt{2}$. Subcuerpo: $\bb Q(\sqrt{-2})$.
+        \end{itemize}
+
+        \item \textbf{$n=9$}:
+        $\phi_9(x) = x^6+x^3+1$, con $\phi(3^2) =(3-1)\cdot 3 = 6$. 
+        El grupo es $(\bb Z/9)^{\times} = \{1,2,4,5,7,8\} \simeq \bb Z/6$ (es cíclico, generado por el 2). Tiene un subgrupo de orden 2 y otro de orden 3:
+        \begin{itemize}
+            \item Subgrupo de orden 2: $H_2 = \langle -1 \rangle = \{1, 8\}$. Fija a $\varepsilon_9 + \varepsilon_9^{-1} = 2\cos(2\pi/9)$. Subcuerpo: $\bb Q(\cos(2\pi/9))$.
+            \item Subgrupo de orden 3: $H_3 = \langle 4 \rangle = \{1, 4, 7\}$. Observamos que $\varepsilon_9^3 = \varepsilon_3$, que es una raíz cúbica de la unidad. Como $\sigma_4(\varepsilon_9^3) = \varepsilon_9^{12} = \varepsilon_9^3$, el elemento $\varepsilon_9^3$ queda fijo bajo $H_3$. El subcuerpo es $\bb Q(\varepsilon_3) = \bb Q(\sqrt{-3})$.
+        \end{itemize}
+    \end{enumerate}
+\end{dem}
+  \item Describir con detalle cómo se construye geométricamente con regla y compás:\begin{itemize}
+    \item[a)] Trazar la mediatriz de un segmento $AB$. \\ 
+    Con centro en el extremo $A$, trazamos una circunferencia de radio $r > \frac{1}{2}d(A,B)$. Con el mismo radio $r$, trazamos otra circunferencia con centro en el extremo $B$. Ambas circunferencias se cortan en dos puntos distintos, digamos $P$ y $Q$. La recta que une $P$ con $Q$ es la mediatriz del segmento $AB$ (y su intersección con $AB$ nos da el punto medio).
+
+    \item[b)] Paralela a la recta $BC$ por $A$. \\ 
+    Con centro en $A$, trazamos una circunferencia de radio igual a la distancia $BC$. Con centro en $C$, trazamos una circunferencia de radio igual a la distancia $AB$. Estas dos circunferencias se cortan en un punto $D$ (elegimos la intersección que hace que el polígono $ABCD$ no se cruce a sí mismo). El cuadrilátero $ABCD$ tiene lados opuestos iguales ($AD=BC$ y $AB=CD$), por lo que es un paralelogramo. Por tanto, la recta $AD$ es paralela a $BC$.
+
+    \item[c)] Perpendicular a la recta $BC$ por $A$. \\
+    Con centro en $A$, trazamos una circunferencia con un radio lo suficientemente grande para que corte a la recta $BC$ en dos puntos distintos, que llamaremos $P$ y $Q$. A continuación, construimos la mediatriz del segmento $PQ$ (siguiendo los pasos del apartado a). Como $A$ equidista de $P$ y $Q$ por construcción, esta mediatriz pasará obligatoriamente por $A$ y, por definición, será perpendicular a la recta $BC$.
+
+    \item[d)] Circunferencia por $A, B$ y $C$. \\ 
+    Trazamos los segmentos $AB$ y $BC$. Construimos la mediatriz de $AB$ y la mediatriz de $BC$ (usando el apartado a). Al no estar los tres puntos alineados, estas dos mediatrices no son paralelas y se cortarán en un único punto $O$. Este punto $O$ es el circuncentro del triángulo $ABC$, pues equidista de los tres vértices ($OA = OB = OC$). Finalmente, trazamos la circunferencia con centro en $O$ y radio $OA$.
+
+    \item[e)] Bisectriz de un ángulo de vértice $V$. \\ 
+    Con centro en $V$, trazamos una circunferencia de cualquier radio arbitrario. Esta circunferencia cortará a los dos lados del ángulo en dos puntos, $P$ y $Q$. Con centro en $P$ trazamos una circunferencia de radio $r > \frac{1}{2}d(P,Q)$, y con centro en $Q$ trazamos otra circunferencia con el mismo radio $r$. Ambas circunferencias se cortan en un punto $R$ situado en el interior del ángulo. La semirrecta que parte de $V$ y pasa por $R$ es la bisectriz buscada.
+
+    \item[f)] Construir el producto $\lambda \cdot \mu$. \\
+    Esta construcción se basa en el Teorema de Tales y requiere que fijemos un segmento de longitud 1. 
+    Trazamos dos semirrectas distintas con un origen común $O$ (formando un ángulo). En la primera semirrecta marcamos un punto $U$ tal que la distancia $OU = 1$. En esa misma semirrecta marcamos un punto $L$ tal que $OL = \lambda$. En la segunda semirrecta, marcamos un punto $M$ tal que $OM = \mu$. Trazamos el segmento $UM$. A continuación, trazamos una recta paralela a $UM$ que pase por el punto $L$ (usando el apartado b). Esta paralela cortará a la segunda semirrecta en un punto $P$. 
+    Por semejanza de triángulos (Tales), se cumple la proporción:
+    $$ \frac{OP}{OM} = \frac{OL}{OU} \implies \frac{OP}{\mu} = \frac{\lambda}{1} \implies OP = \lambda \cdot \mu $$
+    Por tanto, el segmento $OP$ tiene exactamente la longitud construible $\lambda \cdot \mu$.
+\end{itemize}
+    \item Traducir (por el teorema de Galois) los siguientes teoremas de grupos a teoremas de extensiones y recíprocamente.
+    \begin{itemize}
+        \item[a)] Todo grupo de orden un número primo es cíclico.\\
+        ``Toda extensión de Galois cuyo grado $[L : k]$ sea un número primo es necesariamente una extensión cíclica''
+        \item[b)] Todo grupo de orden un múltiplo de un número primo $p$ contiene un subgrupo de orden $p$.\\ 
+        ``Si $k \hookrightarrow L$ es una extensión de Galois cuyo grado es divisible por un primo $p$, entonces existe una subextensión intermedia $L'$ tal que el grado de la extensión superior $[L : L']$ es igual a $p$''
+        \item[c)] Si $H$ es un subgrupo de $G$ de índice 2, entonces $H$ es normal. (El índice de un subgrupo $H$ es el orden de $G/H$). \\
+        ``Sea $k \hookrightarrow L$ una extensión de Galois. Toda subextensión intermedia $L'$ tal que el grado $[L' : k] = 2$ es, de forma obligatoria, una extensión de Galois sobre el cuerpo base $k$''
+        \item[d)] Sea $G$ un grupo de orden $n$. Para cada número primo $p$ que divide a $n$, existe un subgrupo de $G$ cíclico de orden $p$. \\
+        ``Dada una extensión de Galois de grado $n$, para cada divisor primo $p$ de $n$, existe una subextensión $L'$ tal que la extensión $L' \hookrightarrow L$ es una extensión cíclica de grado $p$''
+        \item[e)] Toda extensión de Galois de orden $p^{n}$ ($p$ primo) es una extensión por radicales. \\
+        ``Todo $p$-grupo (un grupo cuyo orden es potencia de un primo $p$) es un grupo resoluble''
+    \end{itemize}\end{enumerate}
+    

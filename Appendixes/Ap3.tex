@@ -1,0 +1,258 @@
+\section{Parcial 29/04/2026}
+\subsection*{PREGUNTAS CORTAS} \justifying
+Decidir razonadamente si las siguiente afirmaciones son verdaderas o falsas (son todas verdaderas)
+\begin{enumerate}
+    \item Una sub\'algebra de una $k$-\'algebra trivializable es trivializable.
+    \begin{dem}
+        Sea $B \subset k^n$ una sub\'algebra siendo $k^n$ trivializable, es reducida y racional. 
+
+        Por ser $k^n$ reducida, esto implica que $B$ es reducida, por lo que $B=K_1 \times \cdots \times K_s$ siendo $K_i$ cuerpo $\forall \, i$. Veamos que $\dim_k K_i=1$. $\pi_i : k^n \longrightarrow k$ es morfismo de $k$-\'algebras y sea $f:K_1 \longrightarrow B$ morfismo inyectivo de espacios vectoriales con 
+        $$f(a) = (a,0,\ldots, 0) \qquad f(a\cdot b) = f(a) \cdot f(b) \, \forall a\in K_1$$
+        entonces existe $j \in \{1, \ldots, s\}\, / \, \pi_j((a,0,\ldots, 0)) \neq 0 \Rightarrow \ker(\pi_j \circ f) \subseteq K_1$ es un ideal y como $K_1$ es un cuerpo, $\ker(\pi_j \circ f) = 0$ \'o $\ker(\pi_j \circ f) = K_1$. 
+        Como $\pi_j(f(a))\neq 0$ no puede ser el total, $K_1$ luego es cero, siendo $\pi_i \circ f: K_1\longrightarrow k$ inyectiva y $\dim K_1 \le \dim k =1 \Rightarrow \dim K_1 =1 \Rightarrow K_1= k \Rightarrow B = k^s$ es trivializable.
+    \end{dem}
+    \item El cociente de una $k$-\'algebra separable es una $k$-\'algebra separable.
+    \begin{dem}
+        Si $\modulo{A}{B}$ es un cociente, $A \longrightarrow B$ es una epiyecci\'on y sea $k \hookrightarrow L$ la extensi\'on tal que $A\underset{k}{\otimes} L \simeq L^n$ por ser $A$ separable. Tensorializando la epiyecci\'on, $A\underset{k}{\otimes} L \simeq L^n \longrightarrow B\underset{k}{\otimes} L$ es epiyectiva, luego es de nuevo un cociente. Veamos que el cociente de una $k$-\'algebra trivial es trivial.
+        
+        $A\underset{k}{\otimes} L \simeq L^n \longrightarrow B \underset{k}{\otimes} L$ es epiyecci\'on de forma que  $B\underset{k}{\otimes} L = \modulo{L^n}{I}$ es un cociente con $I \subseteq L^n$ un ideal (de una $k$-\'algebra separable, por ser cuerpo), entonces $I = I_1 \times \cdots \times I_n \Rightarrow \modulo{L^n}{(I_1 \times \cdots \times I_n )} \simeq \modulo{L^n}{I_1}  \times \cdots \times \modulo{L^n}{I_n}$. Como $I_i\subset L$ es un ideal y $L$ es cuerpo, entonces $I_i=0$ \'o $I_i=L \Rightarrow B = L^s\times 0 \times \cdots \times 0 \simeq L^s$. 
+    \end{dem}
+    \item Toda extensi\'on finita de un cuerpo finito es de Galois.
+    \begin{dem}
+        Sea $\bb F_q$ el cuerpo finito de $q$ elementos, con $q=p^m$ y $p = ch(\bb F_q)$, entonces cualquier extensi\'on finita es $\bb F_q \overset{n}{\hookrightarrow} \bb F_{q^n}$ (para que sea de cuerpos, por las propiedades de las extensiones finitas ??). 
+        
+        Se tiene pues el automorfismo de Frobenius $\tau: \bb F_{q^n}\longrightarrow \bb F_{q^n}$ que es de $\bb F_{q}$-\'algebras y se define como $\tau(b)=b^q$. $\tau^s = b^{q^s} = b$ siendo $s=n$ el primero que hace que suceda que $\tau^s=Id$. As\'i, $|\langle \tau\rangle| = n = |Aut_{\bb F_q-alg} \bb F_{q^n}|$, y por el teorema que caracteriza a las extensiones de Galois, parte b), hemos terminado.     \end{dem}
+    \item Si A es una $k$-\'algebra finita separable y $k \hookrightarrow L$ una extensi\'on, entonces $A \underset{k}{\otimes} L$ es una $L$-\'algebra separable.
+    \begin{dem}
+        Sea $k \hookrightarrow \bar K$ la extensi\'on tal que $A \underset{k}{\otimes} \bar K \simeq \bar K^n$. Sea $k \subset L'$ una extensi\'on que contiene a $\bar K$ y a $L$ (un compuesto de ambas, por ejemplo), entonces
+        $$(A\underset{k}{\otimes} L) \underset{L}{\otimes} L' = A\underset{k}{\otimes} L' = (A\underset{k}{\otimes} \bar K) \otimes_{\bar K} L' \simeq \bar K^n \otimes_{\bar K} L' = (\bar K \otimes_{\bar K} L') \times \cdots \times (\bar K \otimes_{\bar K} L')   \simeq L'^n$$
+    \end{dem}
+    \item Si $k \hookrightarrow L$ es una extensi\'on de Galois de grado un n\'umero primo, entonces es c\'iclica.
+    \begin{dem}
+        El grado de una extensi\'on de Galoies es el orden del grupo de Galois asociado, es decir $|G|=p$ con $p$ primo. Como todo grupo orden primo es c\'iclico, por el Teorema de Lagrange, hemos terminado. 
+    \end{dem}
+    \item Si $k \hookrightarrow L$ es una extensi\'on finita y $k$ un cuerpo finito, entonces es una extensi\'on c\'iclica.
+    \begin{dem}
+        Por la pregunta 3 es de Galois. Como $G = Aut_{k} L$ est\'a generado por el automorfismo de Frobenius, $G = \{\tau, \tau^2, \ldots, \tau^n = Id\}$, es decir, $G = \langle \tau\rangle$, y la extensi\'on es c\'iclica.
+    \end{dem}
+    \item $k \hookrightarrow L$ es una extensi\'on de Galois si y solo si $|Aut_{k-alg}L| = \dim_k L$.
+    \begin{dem}
+        $L\underset{k}{\otimes} L$ es $L$-\'algebra con $\dim_k L = n$. Esta es trivial $\iff \{\text{ptos. racionales de } L\underset{k}{\otimes} L \} = n $ y por la f\'ormula de los puntos
+        $$ \{\text{ptos. racionales de } L\underset{k}{\otimes} L \}  = Hom_{L-alg}(L\underset{k}{\otimes} L,L ) = Hom_{k-alg}(L,L) = G$$
+    \end{dem}
+    \item Si $\Delta$ y $\Delta'$ son $G$-conjuntos, entonces $Hom(\Delta, \Delta')^G = Hom_{G-con}(\Delta, \Delta')$.
+    \begin{dem}
+        Sea $f: \Delta \longrightarrow \Delta' \Rightarrow f\in Hom( \Delta, \Delta')^G \iff f*g=f \, \forall \, g\in G \iff$
+        $$f*g=f=h_g \circ f \circ h_{g^{-1}}  \iff h_g \circ f = f \circ h_g \iff$$
+        $$(h_g \circ f)(x) = g\cdot f(x) = f(g\cdot x) = (f\circ h_g)(x) $$
+        y que se cumpla $g\cdot f(x) = f(g\cdot x) \, \forall \, g \in G$ y $x \in \Delta$ es la definici\'on de que $f\in Hom_{G-conj}(\Delta, \Delta')$.
+    \end{dem}
+    \item $Hom_{G-conj} (G/H, \Delta) \simeq \Delta^H$.
+    \begin{dem}
+        Construimos el isomorfismo
+        $$\bt &[-30mm] Hom_{G-conj}\left(\modulo{G}{H}, \Delta \right) \rar{\Phi}{\sim} & \Delta^H \\[-5mm]
+        &[-8mm] f\rarmaps & f({[1]}) \\[-5mm] 
+        \hspace{18mm} \Delta \leftarrow \modulo{G}{H} : &[6mm] f_z & z\arrow[mapsto]{l} \\[-5mm] 
+        g\cdot z = : f_z({[g]}) \leftarrow [g] &[-15mm]  \et$$
+
+        $\Rightarrow)$ Dado $f : \modulo{G}{H} \longrightarrow \Delta$ morfismo de $G$-conjuntos, $\modulo{G}{H} = \langle [1]\rangle = \langle [1] H\rangle$ y $[g] = g\cdot [1]$ luego por la definici\'on de morfismo de $G$-conjuntos, $f$ preserva la acci\'on del grupo $G$, es decir, $f([g]) = f(g\cdot [1]) = g\cdot f([1])$ y as\'i $f$ queda completamente determinado por la imagen de $[1]$. 
+
+        Si llamamos $z=f([1])\in \Delta$, este elemento pertenece a los invariantes, pues para todo $h \in H$, 
+        $h\cdot [1] = [h] =[1]$ por ser en $\modulo{G}{H}$, luego $f([h]) = f([1]) = f(h\cdot [1]) = h \cdot f([1])$ , es decir, $h \cdot z = z \, \forall \, h\in H$, es decir, $z\in \Delta^H$.
+
+        $\Leftarrow)$ Dado $z\in \Delta^H$, construimos $f_z : \modulo{G}{H} \longrightarrow \Delta \, / \, f_z([g])\coloneqq g\cdot z$. Veamos que:
+        \begin{enumerate}
+            \item Est\'a bien definida, es decir, no depende del representante escogido. Sea $g'$ otro representante tal que $[g']=[g]$, $g' \in gH \equiv g'=g\cdot h, \, h \in H$. 
+            $$f([g']) = g'\cdot z = (g\cdot h)\cdot z = g\cdot (h\cdot z)=g\cdot z = f([g])$$
+            por ser $z\in \Delta^H$, $h\cdot z = z$. 
+            \item Es morfismo de $G$-conjuntos, es decir, preserva la acci\'on de $G$. $\forall \, g' \in G, \, [g] \in \modulo{G}{H}$, 
+            $$f(g'\cdot [g]) = f([g'\cdot g]) = (g'g)\cdot z \qquad g'\cdot f([g]) = g'\cdot (g\cdot z) = (g'g)\cdot z$$
+            luego $f(g'\cdot [g])  = g'\cdot f([g])$ como quer\'iamos probar.
+            \item Es isomorfismo, viendo que $\Phi \circ \Phi^{-1}=Id$ y $\Phi^{-1} \circ \Phi=Id$. 
+            
+            $f \longmapsto f([1])  \longmapsto f_z\overset{?}{=} f$. $f_z([g]) = g \cdot z = g\cdot f([1]) = f(g\cdot [1]) = f([g]) \Rightarrow f_z=f$. 
+            
+            $z  \longmapsto f_z  \longmapsto f_z([1]) \overset{?}{=}  z$. $f_z([1]) = 1\cdot z = z$. 
+        \end{enumerate}
+    \end{dem}
+    \item Si $E$ es un $G$-m\'odulo y $k \hookrightarrow L$ una extensi\'on, entonces $(E \underset{k}{\otimes} L)^G \simeq E^G \underset{k}{\otimes} L$.
+    \begin{dem}
+        Sean $G = \{g_1, \ldots, g_n\}$, un $G$-m\'odulo $E$ y un $k$-espacio vectorial $E_2$ ($G$-m\'odulo trivial) se tiene la sucesi\'on exacta
+        $$\bt 0 \rar & E^G \rar & E \rar{\Phi} & E \times \cdots \times E \\[-5mm] & & e \rarmaps & (g_1\cdot e -e, \ldots, g_n\cdot e -e)  \et$$
+        se tiene que $\ker \Phi = E^G$ pues $g_i \cdot e - e = 0\iff g_i \cdot e= e \iff e \in E^G$.
+
+        Tensorializando la sucesi\'on por $\underset{k}{\otimes} E_2$
+        $$\bt 0 \rar & E^G\underset{k}{\otimes} E_2 \rar & E\underset{k}{\otimes} E_2 \rar{\Phi\otimes 1} & (E \times \cdots \times E)\underset{k}{\otimes} E_2  \simeq &[-12mm] (E\underset{k}{\otimes} E_2) \times \cdots \times (E\underset{k}{\otimes} E_2) \et$$
+        luego $\ker(\Phi\otimes 1) = $ invariantes de $E\underset{k}{\otimes} E_2 = (E\underset{k}{\otimes} E_2)^G$. Pero por ser exacta la sucesi\'on, $\ker (\Phi\otimes 1) = E^G\underset{k}{\otimes} E_2$, hemos calculado $\ker (\Phi \otimes 1)$ de dos formas, es decir, que $E^G\underset{k}{\otimes} E_2 = (E\underset{k}{\otimes} E_2)^G$. En nuestro caso, como $L$ es cuerpo conteniendo a $k$ es espacio vectorial.
+    \end{dem}
+    \item Si $k \hookrightarrow L$ una extensi\'on de Galois de grupo $G$, entonces $L^G = k$.
+    \begin{dem}
+        Denotamos $L'=L^G$ y tenemos que $k \hookrightarrow L' \hookrightarrow L$ son de Galois, probando que $L\underset{k}{\otimes} L$ es $L$-trivial.
+
+        Por ser $k \hookrightarrow L$ de Galois, $L \underset{k}{\otimes} L$ es $k$-trivial y al ser $L \underset{k}{\otimes} L\longrightarrow L \otimes_{L'} L$ epiyectiva, $L \otimes_{L'} L$ es un cociente de $L \underset{k}{\otimes} L$, y por el argumento de la pregunta 2, sigue sendo trivial, luego $L'\hookrightarrow L$ es de Galois.
+
+        Por tanto, 
+        $$\dim_k L = |Aut_{L'}L| = |Aut_{L^G} L | = ?? |G| \qquad \text{y} \qquad \dim_k L = |G|$$
+        y por la f\'ormula de la dimensi\'on de varias extensiones encadenadas,
+        $$|G| = \dim_k L = \dim_k L' \cdot \dim_{L'} L =\dim_k L^G \cdot |G| \Rightarrow \dim_k L^G = 1 \Rightarrow L^G = k  $$
+    \end{dem}
+    \item Sea $k \hookrightarrow L$ una extensi\'on de Galois de grupo $G$. $G$ como elementos del $k$-espacio vectorial $End_{k-esp}(L)$ son linealmente independientes.
+    \begin{dem}
+        Dados $\tau_1, \ldots, \tau_n \in End_{k-ev}L$, como $k \hookrightarrow L$ es de Galois tenemos el isomorfismo 
+        $$\bt L \underset{k}{\otimes} L \rar{\Phi} & L \times \cdots \times L \\[-5mm] a\otimes \lambda \rarmaps & (\tau_1(a) \cdot \lambda, \ldots, \tau_n(a) \cdot \lambda) \et$$
+        y por la f\'ormula de los puntos $End_{k-ev}L = Hom_{k-ev}(L,L) \simeq Hom_{L-ev}(L \underset{k}{\otimes} L, L)$ luego $\tau_1\otimes 1, \ldots, \tau_n\otimes 1 \in Hom_{L-ev}(L \underset{k}{\otimes} L, L)$ y componiendo $\Phi$ con las proyecciones can\'onicas
+        $$\bt L \underset{k}{\otimes} L \arrow[bend left=5mm]{rr}{\tau_i \otimes 1} \rar{\Phi} & L \times \cdots \times L \rar{\pi_i} & L \\[-5mm] a \otimes \lambda \rarmaps & (\tau_1(a) \cdot \lambda, \ldots, \tau_n(a) \cdot \lambda) \rarmaps & \tau_i(a) \cdot \lambda \\ [-5mm] a \otimes \lambda \arrow[mapsto]{rr} & & (\tau_i \otimes 1)(a \otimes \lambda) = \tau_i(a) \cdot \lambda  \et$$
+         luego $\pi_i \circ \Phi =\pi_i =\tau_i \otimes 1$ y como $\pi_i\in Hom(L^n, L)$ son linealmente independientes y a cada $\tau_i$ le corresponde una $\tau_i\otimes 1$, se concluye que $\tau_1, \ldots, \tau_n$ son linealmente independientes.
+    \end{dem}
+    \item Sea $H$ un subgrupo normal de $G$. $G$ es resoluble si y solo si $H$ y $G/H$ son grupos resolubles.
+    \begin{dem}
+    $\Rightarrow)$ Si $G$ es resoluble existe una cadena $H_o = \{1\} \subset H_1 \subset \cdots \subset H_n = G$ con $H_i \subset H_{i+1}$ es normal y $H_i / H_{i+1}$ es c\'iclico. Se coge la cadena de subrgupos de $H$
+    $$H_o = \{1\} \subset H_1 \cap H \subset \cdots \subset H_n \cap H= H$$
+     de forma que 
+     $$\modulo{H_{i+1} \cap H}{H_i \cap H} \subset H_{i+1}/H_i$$
+     y tenemos un subgrupo de un grupo c\'iclico, y todo subgrupo de un c\'iclico es c\'iclico, por lo que $H_{i+1}/H_i$ es c\'iclico. 
+
+        Sea $p$ epiyectiva
+     $$\bt H_i \rar[phantom]{\subset} \arrow{d}{p} &[-8mm] G \arrow{d}{p} \\ p(H_i) = \bar H_i \rar[phantom]{\subset} &[-8mm] G/H \et \qquad \bt H_i \rar[phantom]{\subset} \arrow{d}{p} &[-8mm] H_{i+1} \arrow{d}{p} \\ \bar H_i \rar[phantom]{\subset} &[-8mm] \bar H_{i+1} \et$$
+     y por tanto es normal, y es c\'iclico porque si $H_{i+1} / H_i \overset{p}{\longrightarrow} \bar H_{i+1} / \bar H_i$ es epiyectiva con $p([a]) = [p(a)]$ y  $\langle \sigma \rangle = H_{i+1} / H_i$, entonces $\langle p(\sigma) \rangle = \bar H_{i+1} / \bar H_i$.
+
+     $\Leftarrow)$ Sea $H$ resoluble con $H_o = \{1\} \subset H_1 \subset \cdots \subset H_k = H$ con $H_{i+1} / H_i$ c\'iclico, $\{1\} = \bar H_k \subset \bar H_{k+1} \subset \cdots \subset \bar H_n = G/H$ es una cadena de modo que $\bar H_{k+1} / \bar H_{k}$ es c\'iclico. Consideramos $p: G \longrightarrow G/H$ y como es epiyectiva, consideramos la cadena 
+     $$H_k = p^{-1}(\bar H_k) \subset  p^{-1}(\bar H_{k+1}) \subset \cdots \subset  p^{-1}(\bar H_n) = G$$
+     y $ p^{-1}(\bar H_{i+1}) /  p^{-1}(\bar H_i) \overset{p}{\longrightarrow} \bar H_{i+1} / \bar H_i$ es un morfismo epiyectivo y adem\'as es inyectivo pues si $[z] \longmapsto p(\bar z) = [p(z)] =  [1] \Rightarrow p(z) \in \bar H_i$, por lo que $z \in p^{-1}(H_i)\Rightarrow [z]=\{1\}$, por lo que es isomorfismo, y $p^{-1}(\bar H_{i+1}) /  p^{-1}(\bar H_i) $ es c\'iclico si $\bar H_{i+1} / \bar H_i$. 
+\end{dem}
+    \item Sea $k \hookrightarrow L$ una extensi\'on de Galois de grado $p$ = caracteristica de $k$ y grupo $G =\langle \sigma\rangle$. $R \in L$ es un radical modificado si y solo si $\sigma(R) = R + i$ para alg\'un $i \in \bb F_p$.
+    \begin{dem}
+    $\Rightarrow)$ $R = \usqrt[p]{a}$ es un radical modificado si es ra\'iz de $x^p-x+a$ luego $\sigma(R)$ con $\sigma \in G$ es tambi\'en ra\'iz. En $ch(k)=p$, $R+i$ con $i \in \bb F_p$ son ra\'ices ???, luego $\sigma(R)=R+i$.
+
+    $\Leftarrow)$ Como $\sigma(R) = R+i$, 
+    $$\sigma(R^p-R) = \sigma(R)^p - \sigma(R) = (R+i)^p - (R+i) = R^p - i^p - R - i$$
+    luego $\sigma(R^p-R) = R^p - R$, es decir, $R^p-R \in L^G = k \Rightarrow R^p-R = -a \Rightarrow R$ es ra\'iz de $x^p-x+a$, y por tanto, es radical modificado. 
+    \end{dem}
+\end{enumerate}
+\subsection*{PROBLEMAS}
+\begin{enumerate}
+    \item Calcular el cuerpo de descomposici\'on de $x^4 - x^2 + 1$ sobre $\bb Q$ y calcular su grupo de Galois.
+    \begin{dem}\textbf{Paso 1: Cálculo de las raíces del polinomio} \\
+Sea el polinomio bicuadrado $P(x) = x^4 - x^2 + 1$. Realizamos el cambio de variable $y = x^2$ para obtener una ecuación cuadrática:
+$$ y^2 - y + 1 = 0 $$
+Aplicando la fórmula general, encontramos las raíces para $y$:
+$$ y = \frac{1 \pm \sqrt{1 - 4}}{2} = \frac{1 \pm i\sqrt{3}}{2} $$
+Para hallar las raíces de $x$, debemos calcular $x = \pm\sqrt{y}$. Es conveniente expresar $y$ en forma polar. Calculamos su módulo $r$ y su argumento $\theta$:
+$$ r = \sqrt{\left(\frac{1}{2}\right)^2 + \left(\pm\frac{\sqrt{3}}{2}\right)^2} = \sqrt{\frac{1}{4} + \frac{3}{4}} = 1 $$
+$$ \cos(\theta) = \frac{1}{2}, \quad \sin(\theta) = \pm\frac{\sqrt{3}}{2} \implies \theta = \pm \frac{\pi}{3} $$
+Por tanto, $y_1 = e^{i\pi/3}$ e $y_2 = e^{-i\pi/3}$. Extraemos las raíces cuadradas dividiendo el argumento entre 2:
+$$ x = \pm e^{i\pi/6} \quad \text{y} \quad x = \pm e^{-i\pi/6} $$
+Deshaciendo el cambio a forma binómica ($\cos(\pm 30^\circ) + i\sin(\pm 30^\circ)$), obtenemos las cuatro raíces del polinomio original:
+$$ x = \pm\left(\frac{\sqrt{3}}{2} + i\frac{1}{2}\right) \quad \text{y} \quad x = \pm\left(\frac{\sqrt{3}}{2} - i\frac{1}{2}\right) $$
+Que podemos expresar de forma compacta como:
+$$ x = \frac{\pm\sqrt{3} \pm i}{2} $$
+
+\textbf{Paso 2: Determinación del cuerpo de descomposición} \\
+El cuerpo de descomposición $L$ es la extensión más pequeña de $\mathbb{Q}$ que contiene a todas estas raíces. Observando la forma de las raíces, necesitamos adjuntar $\sqrt{3}$ e $i$. Por tanto:
+$$ L = \mathbb{Q}(\sqrt{3}, i) $$
+Calculamos el grado de la extensión. Como $x^2-3$ es irreducible sobre $\mathbb{Q}$, $[\mathbb{Q}(\sqrt{3}) : \mathbb{Q}] = 2$. Además, como $i \notin \mathbb{Q}(\sqrt{3})$ (ya que $\mathbb{Q}(\sqrt{3}) \subset \mathbb{R}$), el polinomio $x^2+1$ es irreducible sobre $\mathbb{Q}(\sqrt{3})$, por lo que $[L : \mathbb{Q}(\sqrt{3})] = 2$.
+Aplicando la multiplicatividad de los grados en torres de extensiones:
+$$ [L : \mathbb{Q}] = [L : \mathbb{Q}(\sqrt{3})] \cdot [\mathbb{Q}(\sqrt{3}) : \mathbb{Q}] = 2 \cdot 2 = 4 $$
+\textbf{Paso 3: Cálculo del grupo de Galois} \\
+Como $L$ es el cuerpo de descomposición de un polinomio separable sobre $\mathbb{Q}$, la extensión es de Galois. El orden del grupo de Galois coincide con el grado de la extensión:
+$$ |G| = |\text{Aut}_{\mathbb{Q}}(L)| = [L : \mathbb{Q}] = 4 $$
+Cualquier automorfismo $\tau \in G$ queda completamente determinado por su acción sobre los generadores $\sqrt{3}$ e $i$. Las únicas imágenes posibles para un generador son sus raíces conjugadas (las raíces de su polinomio mínimo).
+\begin{itemize}
+    \item Para $\sqrt{3}$, las imágenes posibles son $\pm\sqrt{3}$.
+    \item Para $i$, las imágenes posibles son $\pm i$.
+\end{itemize}
+Esto nos da exactamente las $4$ combinaciones que conforman los elementos del grupo $G$:
+\begin{align*}
+    id&: \sqrt{3} \mapsto \sqrt{3}, \quad i \mapsto i \\
+    \tau_1&: \sqrt{3} \mapsto -\sqrt{3}, \quad i \mapsto i \\
+    \tau_2&: \sqrt{3} \mapsto \sqrt{3}, \quad i \mapsto -i \\
+    \tau_3&: \sqrt{3} \mapsto -\sqrt{3}, \quad i \mapsto -i \quad (\text{Notar que } \tau_3 = \tau_1 \circ \tau_2)
+\end{align*}
+Observamos que aplicar cualquiera de estos automorfismos dos veces devuelve cada elemento a su estado original (por ejemplo, $\tau_1(\tau_1(\sqrt{3})) = \tau_1(-\sqrt{3}) = -(-\sqrt{3}) = \sqrt{3}$). 
+Por tanto, $\tau_k^2 = id$ para todo $\tau_k \in G$. El único grupo de orden 4 donde todos los elementos tienen orden 2 es el grupo de Klein. Concluimos que:
+$$ G \simeq \mathbb{Z}_2 \times \mathbb{Z}_2 $$
+    \end{dem} 
+    \item Resolver por radicales $x^3 + x + 1 = 0$ sobre $\bb F_5$ usando la f\'ormula de Lagrange.
+    \begin{dem}\textbf{Paso 1: Cuerpo de descomposición y raíces del polinomio} \\
+Sea el polinomio $p(x) = x^3 + x + 1$. Al evaluar $p(x)$ para los valores $0, 1, 2, 3, 4 \in \mathbb{F}_5$, observamos que no se anula en ninguno, por lo que es irreducible sobre el cuerpo base $\mathbb{F}_5$.
+Añadimos una raíz abstracta $\alpha$ tal que $\alpha^3 + \alpha + 1 = 0 \implies \alpha^3 = -\alpha - 1 = 4\alpha + 4$.
+En cuerpos finitos las extensiones siempre son de Galois, y las otras dos raíces se obtienen directamente aplicando el automorfismo de Frobenius $\sigma(x) = x^5$:
+\begin{itemize}
+    \item $\alpha_1 = \alpha$
+    \item $\alpha_2 = \sigma(\alpha) = \alpha^5 = \alpha^2 \cdot \alpha^3 = \alpha^2(4\alpha + 4) = 4\alpha^3 + 4\alpha^2 \equiv -\alpha^2 + \alpha + 1 \pmod 5$
+    \item $\alpha_3 = \sigma^2(\alpha) = \alpha^{25} = \sigma(\alpha_2) = -(\alpha^5)^2 + \alpha^5 + 1 = \dots = \alpha^2 + 3\alpha + 4$
+\end{itemize}
+Como el polinomio mínimo es de grado 3, el cuerpo de descomposición es $\mathbb{F}_5(\alpha) = \mathbb{F}_5(\alpha, \alpha^{5}, \alpha^{25}) \simeq \mathbb{F}_{5^3} = \mathbb{F}_{125}$.
+
+\textbf{Paso 2: Las raíces cúbicas de la unidad ($\varepsilon$) y el cuerpo compuesto} \\
+Para aplicar la fórmula de Lagrange, necesitamos las raíces cúbicas de la unidad $\varepsilon$, que satisfacen la ecuación ciclotómica $x^2 + x + 1 = 0$. 
+El discriminante de esta ecuación es $-3 \equiv 2 \pmod 5$. Como $2$ no es un cuadrado perfecto en $\mathbb{F}_5$, necesitamos adjuntar esta raíz creando una extensión cuadrática $\mathbb{F}_{25} = \mathbb{F}_5(\varepsilon)$.
+Para poder operar conjuntamente con $\alpha \in \mathbb{F}_{125}$ y $\varepsilon \in \mathbb{F}_{25}$, todos los cálculos de las resolventes ocurren temporalmente en el cuerpo compuesto de ambos, que tiene dimensión $\text{m.c.m}(3, 2) = 6$, es decir, $\mathbb{F}_{5^6}$.
+
+\textbf{Paso 3: Cálculo de las Resolventes de Lagrange} \\
+Definimos la resolvente teórica $R(\alpha, \varepsilon) = \sum_{i=1}^3 \varepsilon^{i} \sigma^i(\alpha)$:
+\begin{align*}
+    R(\alpha, 1) &= \alpha_1 + \alpha_2 + \alpha_3 = 0 \quad (\text{pues la traza del polinomio es } 0) \\
+    R(\alpha, \varepsilon) &= \alpha + \sigma(\alpha) + \sigma^2(\alpha) = \alpha + \varepsilon \alpha^5 + \varepsilon^2 \alpha^{5^2} = \alpha + \varepsilon \alpha^5 + \varepsilon^2 \alpha^{25} 
+\end{align*}
+Al elevar estas resolventes al cubo, la teoría de Galois garantiza que los términos dependientes de $\alpha$ colapsan, y el resultado desciende de nuevo al cuerpo $\mathbb{F}_{25}$. Tras realizar las operaciones algebraicas en el cuerpo compuesto, obtenemos:
+$$ R(\alpha, \varepsilon)^3 = 1 - \varepsilon \implies  R(\alpha, \varepsilon) = \sqrt[3]{1 - \varepsilon} $$
+$$  R(\alpha, \varepsilon^2)^3 = 2 + \varepsilon \implies  R(\alpha, \varepsilon^2)= \sqrt[3]{2 + \varepsilon} $$
+\textbf{Paso 4: Inversión del sistema y solución final} \\
+Para recuperar la raíz original $\alpha_1$, utilizamos la fórmula de inversión de Lagrange:
+$$ \alpha = \frac{1}{3} (R(\alpha, \varepsilon)+R(\alpha, \varepsilon^2)) $$
+Dado que estamos trabajando en aritmética modular sobre $\mathbb{F}_5$, debemos multiplicar por el inverso multiplicativo de $3$. Como $3 \times 2 = 6 \equiv 1 \pmod 5$, deducimos que $\frac{1}{3} \equiv 2 \pmod 5$.
+Sustituyendo los valores hallados para cada resolvente, la solución final expresada íntegramente por radicales es:
+$$ \alpha = 2 \left( \sqrt[3]{1 - \varepsilon} + \sqrt[3]{2 + \varepsilon} \right) $$
+y como $\varepsilon$ es ra\'iz de $x^2+x+1$, 
+$$\varepsilon = \frac{-1\pm\sqrt{-3}}{2} = \frac{-1\pm \sqrt{2}}{2} = -3+3\sqrt{2}$$
+luego 
+$$\alpha = 2 \left( \sqrt[3]{2+2\sqrt{2}} + \sqrt[3]{-1-2\sqrt{2}} \right)$$
+    \end{dem}
+    \item Resolver por radicales modificados $p(x)=x^3 + x^2 -x+1=0$ sobre $\bb F_3$.
+    \begin{dem} 
+        \textbf{Paso 1: Transformación del polinomio a traza 1} \\
+Sea $\alpha$ una raíz del polinomio $p(x) = x^3 + x^2 - x + 1 = 0$. La traza de $\alpha$ es el coeficiente de grado $n-1=3-1=2$ cambiado de signo, es decir, $-1$. 
+Para utilizar la teoría de Artin-Schreier, necesitamos construir un elemento de traza 1. Definimos el siguiente cambio de variable:
+$$ \overline{\alpha} = \frac{\alpha}{-1} = -\alpha \implies \alpha = -\overline{\alpha} $$
+Sustituimos en el polinomio original para hallar la ecuación que satisface $\overline{\alpha}$:
+$$ (-\overline{\alpha})^3 + (-\overline{\alpha})^2 - (-\overline{\alpha}) + 1 = 0 \implies -\overline{\alpha}^3 + \overline{\alpha}^2 + \overline{\alpha} + 1 = 0 $$
+Despejamos el término de mayor grado, que utilizaremos repetidamente para reducir potencias:
+$$ \overline{\alpha}^3 = \overline{\alpha}^2 + \overline{\alpha} + 1 $$
+\textbf{Paso 2: Construcción de la resolvente modificada ($R_m$)} \\
+La fórmula teórica de la resolvente modificada en grado $p=3$ para un elemento de traza 1 es:
+$$ R_m = \overline{\alpha} + 2\sigma(\overline{\alpha}) =  \overline{\alpha} + 2\overline{\alpha}^3  $$
+sabiendo que el automorfismo generador es el de Frobenius ($\sigma(z) = z^3$). Aplicamos nuestra regla de reducción para $\overline{\alpha}^3$:
+$$ R_m = \overline{\alpha} + 2(\overline{\alpha}^2 + \overline{\alpha} + 1) = 2\overline{\alpha}^2 + 3\overline{\alpha} + 2 $$
+Operando en aritmética módulo 3 (donde $3 \equiv 0$ y $2 \equiv -1$), la expresión colapsa a:
+$$ R_m = -\overline{\alpha}^2 - 1 $$
+\textbf{Paso 3: Verificación del radical modificado} \\
+Comprobamos que $R_m$ es un radical modificado verificando que $R_m^3 - R_m \in \mathbb{F}_3$.
+Calculamos $R_m^3$, sabiendo que en característica 3 los términos cruzados del binomio se anulan:
+$$ R_m^3 = (-\overline{\alpha}^2 - 1)^3 = -\overline{\alpha}^6 - 1 $$
+Para reducir $\overline{\alpha}^6$, elevamos al cuadrado nuestra regla de reducción original:
+$$ \overline{\alpha}^6 = (\overline{\alpha}^2 + \overline{\alpha} + 1)^2 = \overline{\alpha}^4 + 2\overline{\alpha}^3 + 3\overline{\alpha}^2 + 2\overline{\alpha} + 1 $$
+Reduciendo en módulo 3 ($3 \equiv 0$, $2 \equiv -1$):
+$$ \overline{\alpha}^6 = \overline{\alpha}^4 - \overline{\alpha}^3 - \overline{\alpha} + 1 $$
+Reducimos $\overline{\alpha}^4 = \overline{\alpha}(\overline{\alpha}^3) = \overline{\alpha}(\overline{\alpha}^2 + \overline{\alpha} + 1) = \overline{\alpha}^3 + \overline{\alpha}^2 + \overline{\alpha}$ y lo sustituimos:
+$$ \overline{\alpha}^6 = (\overline{\alpha}^3 + \overline{\alpha}^2 + \overline{\alpha}) - \overline{\alpha}^3 - \overline{\alpha} + 1 = \overline{\alpha}^2 + 1 $$
+Sustituyendo este valor limpio en la ecuación de $R_m^3$:
+$$ R_m^3 = -(\overline{\alpha}^2 + 1) - 1 = -\overline{\alpha}^2 - 2 \equiv -\overline{\alpha}^2 + 1 \pmod 3 $$
+Calculamos finalmente la prueba del radical:
+$$ R_m^3 - R_m = (-\overline{\alpha}^2 + 1) - (-\overline{\alpha}^2 - 1) = 2 \equiv -1 \in \mathbb{F}_3 $$
+Como $-1 \in \mathbb{F}_3$, queda demostrado que es un radical modificado.
+
+\textbf{Paso 4: Inversión del sistema y solución final} \\
+Para expresar $\overline{\alpha}$ en función de $R_m$, calculamos la segunda potencia $R_m^2$:
+$$ R_m^2 = (-\overline{\alpha}^2 - 1)^2 = \overline{\alpha}^4 + 2\overline{\alpha}^2 + 1 \equiv \overline{\alpha}^4 - \overline{\alpha}^2 + 1 \pmod 3 $$
+Reducimos $\overline{\alpha}^4$ a base mínima: $\overline{\alpha}^4 = \overline{\alpha}^3 + \overline{\alpha}^2 + \overline{\alpha} = (\overline{\alpha}^2 + \overline{\alpha} + 1) + \overline{\alpha}^2 + \overline{\alpha} = 2\overline{\alpha}^2 + 2\overline{\alpha} + 1 \equiv -\overline{\alpha}^2 - \overline{\alpha} + 1$. \\
+Sustituimos en $R_m^2$:
+$$ R_m^2 = (-\overline{\alpha}^2 - \overline{\alpha} + 1) - \overline{\alpha}^2 + 1 = -2\overline{\alpha}^2 - \overline{\alpha} + 2 \equiv \overline{\alpha}^2 - \overline{\alpha} - 1 \pmod 3 $$
+A partir de la ecuación de $R_m = -\overline{\alpha}^2 - 1$, podemos despejar $\overline{\alpha}^2 = -R_m - 1$ e introducirlo en la expresión de $R_m^2$:
+$$ R_m^2 = (-R_m - 1) - \overline{\alpha} - 1 = -R_m - \overline{\alpha} - 2 \equiv -R_m - \overline{\alpha} + 1 \pmod 3 $$
+Despejando $\overline{\alpha}$:
+$$ \overline{\alpha} = 1 - R_m - R_m^2 $$
+Finalmente, deshacemos el cambio de variable original ($\alpha = -\overline{\alpha}$) para obtener la raíz del polinomio inicial:
+$$ \alpha = -1 + R_m + R_m^2 $$
+\end{dem}
+\end{enumerate}

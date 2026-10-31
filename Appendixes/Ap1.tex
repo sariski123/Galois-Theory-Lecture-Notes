@@ -1,0 +1,55 @@
+\chapter{Teor\'ia de Grupos}
+Recordemos que un grupo $(G,\cdot)$ es un conjunto $G$ con una operaci\'on binaria
+$$\bt G \times G \rar & G \\[-5mm] (g,g') \rarmaps & g\cdot g' \et$$
+con las propiedades:
+\begin{enumerate}
+    \item Propiedad asociativa
+    \item Elemento neutro
+    \item Elemento inverso
+\end{enumerate}
+
+Dados dos grupos $(G_1, \cdot)$ y $(G_2, *)$, una aplicaci\'on $f: G_1 \longrightarrow G_2$ es morfismo de grupos si $f(g_1 \cdot g'_1) = f(g_1) * f(g_1')$.
+
+$H\subset G$ es un subgrupo si $(H, \cdot )$ es un grupo. Y basta demostrar que si $h_1,h_2\in H \Rightarrow h_1 \cdot h_2^{-1} \in H$.
+
+$H \subset G$ es un subgrupo normal si $g \cdot H \cdot g^{-1} = H$ para todo $g \in G$. 
+
+Se tiene el cociente de $G$ por un subgrupo $H$: $\modulo{G}{H}$ siendo este el conjunto cociente por la relaci\'on de equivalencia $g_1\equiv g_2 \mod H \iff g_1=g_2\cdot h$ para alg\'un $h \in H$, y se tiene el morfismo de proyecci\'on can\'onica
+$$\bt \pi: G \rar & \modulo{G}{H} \\[-5mm] g \rarmaps & {[g]} = g\cdot H= \pi(g) \et$$
+y con la operaci\'on $[g_1] \cdot [g_2] = [g_1\cdot g_2]$, que est\'a bien definida $\iff$ $H$ es sugrupo normal, haciendo que $\modulo{G}{H}$ sea grupo y $\pi$ morfismo de grupos.
+
+En general, para $f:G_1 \longrightarrow G_2$ morfismo de grupos, $\ker f =\{ g\in G_1 \, / \, f(g_1) = 1_{G_2} \}$ es un subrgupo normal de $G_1$ e $\Im f\subset G_2$ es subrgupo (no normal). 
+
+Se tiene que $f$ factoriza por un morfismo inyectivo
+$$\bt G_1 \rar{f} \arrow{d}{\pi} & G_2 \\[5mm] \modulo{G_1}{\ker f} \arrow[swap]{ur}{\bar f} \et$$
+con $ ([\bar g]) = g$, y se tiene que $\bar f: \modulo{G_1}{\ker f} \longrightarrow \Im f$ es un isomorfismo.
+
+$G$ es un grupo finito si $|G| = ord(G) = n$, el n\'umero de elementos de $G$. 
+
+Dado un anillo $(A,+,\cdot)$, se tiene el conjunto de invertibles de $A^{\times} = \{a\in A \, / \, \exists b\in A \, / \, a\cdot b=1\}$ y $(A^{\times}, \cdot)$ es un grupo.
+
+Adem\'as, el teorema de Lagrange asegura que para un subgrupo $H \subset G$, $|H|$ divide a $|G|$, es decir, $\left|\modulo{G}{H} \right| = \frac{|G|}{|H|}$. 
+
+Todo elemento genera un subrgupo $\langle g\rangle =\{g^n \, / \, n \in \bb Z \}$
+
+Decimos que $G$ es c\'iclico si existe $g\in G$ tal que $\langle g\rangle = G$ y todo grupo c\'iclico es isomorfo a $\modulo{\bb Z}{n \bb Z}$. Se tiene el morfismo
+$$\bt \bb Z \rar{f} & G \\[-5mm] n \rarmaps & g^n \et$$
+con $\ker f = k \cdot \bb Z, \, \Im f = \langle g\rangle$, $\modulo{\bb Z}{k \bb Z} \simeq \Im f = \langle g \rangle$.
+
+\begin{ejem}
+    $\mu_n \subset \bb C^{\times}$ y $(\mu_n, \cdot), \, \mu_n = \langle \varepsilon \rangle$
+\end{ejem}
+
+El orden de $G$ es el m\'inimo $k \in \bb N$ tal que $g^k=1$ $= |\langle g \rangle|= \{g^0, g^1, \ldots, g^{k-1}\}$. 
+
+Sea $\bb Q \hookrightarrow L$ el cuerpo de descomposici\'on de $x^n-1$, $e^{\frac{2\pi i}{n}} = \varepsilon = \cos \frac{2\pi}{n} + i \sin\frac{2\pi}{n} \in \bb C$ ra\'iz primitiva $n$-\'esima de 1. $\bb Q \hookrightarrow \bb Q(\varepsilon) = L$, $L = \{\varepsilon^0, \varepsilon^1, \ldots, \varepsilon^{n-1}\} = \mu_n$ siendo $\varepsilon$ la ra\'iz del polinomio ciclot\'omico $\phi_n(x)$ y esta extensi\'on tiene por grado el grado de $\phi_n(x)$. 
+
+Veamos que $\bb Q(\varepsilon)$ es una extensi\'on de Galois, pues es el cuerpo de descomposici\'on de $x^n-1$, que no tiene ra\'ices m\'utiples. As\'i pues, podemos calcular su grupo de Galois, que es $\left(\modulo{\bb Z}{n \bb Z}\right)^{\times}, \cdot$, y los automorfismos ser\'an 
+$$ \bt {[k]} \in \left(\modulo{\bb Z}{n \bb Z}\right)^{\times} \rar & \tau_k : \bb Q (\varepsilon) \to \bb Q (\varepsilon) \\[-5mm] & \tau_k(\varepsilon) = \varepsilon^k \et$$ 
+y $\varepsilon$ es ra\'iz primitiva de 1 $\iff$ es ra\'iz de $\phi_n(x)$, el polinomio ciclot\'omico. Es decir, $\bb Q(\varepsilon) = \modulo{\bb Q[x]}{(\phi_n(x))}$, entonces todo automorfismo 
+$\tau: \bb Q(\varepsilon)  \longrightarrow  \bb Q(\varepsilon) $
+debe cumplir que $\tau(\varepsilon)  =\varepsilon^s$ debe ser ra\'iz primitiva de 1 tambi\'en, y falta ver que $\varepsilon^s$ es una ra\'iz primitiva $\iff$ $[s]\in \left(\modulo{\bb Z}{n \bb Z}\right)^{\times}$. $\varepsilon^s$ ser\'a generador de $\mu_n$, y tenemos que ver que los generadores con + de $\bb Z / n \bb Z$ son los invertibles de $\bb Z / n \bb Z$ con el producto. $s$ es generador de $\bb Z / n \bb Z$ cuando $\langle [s] \rangle = \{ k \cdot [s]\} = \bb Z / n \bb Z = \langle 1 \rangle \iff 1 \in \langle s \rangle \iff [k][s]=1 \iff [s]$ es invertible. 
+
+Esto nos dice que $gr(\phi_n(x)) = \left|\left(\modulo{\bb Z}{n \bb Z}\right)^{\times}\right| = \phi(n) = $nº de n\'umeros naturales menores que $n$ y primos con $n$, siendo $\left(\modulo{\bb Z}{n \bb Z}\right)^{\times} = \{[k] \, / \, k \text{ primo con }n\}$, por el teorema de Bezout $n \bb Z + k \bb Z = \bb Z$. 
+
+$\bb Z = \langle 1 \rangle$ y $\bb Z / n \bb Z = \left(\modulo{\bb Z}{n \bb Z}\right)^{\times}$
